@@ -91,7 +91,7 @@ subMenu.bind("<<ComboboxSelected>>", sub_select)
 subMenu.grid(row=1, column=2, padx=10, pady=5)
 
 
-subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu = ttk.Combobox(subMain, values=TEMP_SUB)
 subMenu.bind("<<ComboboxSelected>>", sub_select)
 subMenu.grid(row=2, column=2, padx=10, pady=5)
 

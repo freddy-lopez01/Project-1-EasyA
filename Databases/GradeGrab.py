@@ -1,6 +1,7 @@
 import sqlite3
 import json
 
+
 # Read data from the reduced JavaScript file that form: https://emeraldmediagroup.github.io/grade-data/gradedata.js
 # loads data form file into emd_data_js
 with open('gradedata-only.js', 'r') as file:
@@ -14,7 +15,7 @@ emd_data_js = emd_data_js.replace('var groups =', '').replace(';', '')
 groups_data = json.loads(emd_data_js)
 
 # Connect to SQLite database gradedatatbase 
-conn = sqlite3.connect('gradedatabase.sqlite')
+conn = sqlite3.connect('GradeDatabase.sqlite')
 cursor = conn.cursor()
 
 # Create a table of data course_data

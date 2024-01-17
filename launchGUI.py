@@ -7,7 +7,7 @@ from PIL import ImageTk, Image
 logobg = "#a3a3a3"
 navbg = "#374151"
 sideBarbg = "#52525b"
-submainbg = "#18181b"
+submainbg = "#3f3f46"
 
 
 #Temporary Lists to test dropdown box selections
@@ -73,10 +73,10 @@ subMain = tk.PanedWindow(root, bg=submainbg, width=200)
 
 # Contrary to the name subMain, this window will hold the bulk of the interation that the user will have with the GUI
 
-subjL = tk.Label(subMain, text="Subject Code: ", bg=submainbg).grid(row=1, column=1, ipadx=20, ipady=5)
-classL = tk.Label(subMain, text="Course Level: ", bg=submainbg).grid(row=2, column=1, ipadx=20, ipady=5)  
+subjL = tk.Label(subMain, text="Subject Code: ", bg=submainbg).grid(row=2, column=1, ipadx=20, ipady=5)
+classL = tk.Label(subMain, text="Course Level: ", bg=submainbg).grid(row=3, column=1, ipadx=20, ipady=5)  
 
-instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg).grid(row=3, column=1, ipadx=20, ipady=5) 
+instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg).grid(row=4, column=1, ipadx=20, ipady=5) 
 
 
 
@@ -86,19 +86,27 @@ def sub_select(event):
 
 #subselect = StringVar(subMain)
 #subselect.select(TEMP_OPT[0])
-subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
-subMenu.bind("<<ComboboxSelected>>", sub_select)
-subMenu.grid(row=1, column=2, padx=10, pady=5)
 
-
-subMenu = ttk.Combobox(subMain, values=TEMP_SUB)
-subMenu.bind("<<ComboboxSelected>>", sub_select)
-subMenu.grid(row=2, column=2, padx=10, pady=5)
-
+logoImgv2 = Image.open("assets/EasyA.png")
+logoS2 = logoImgv2.resize((90, 35))
+#logo = ImageTk.PhotoImage(file="assets/EasyA.png")
+logo2 = ImageTk.PhotoImage(logoS2)
+logo_widget2 = tk.Label(subMain, image=logo2, bg=submainbg)
+logo_widget2.grid(row=1, column=1, padx=30, pady=20, sticky="nsew")
 
 subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
 subMenu.bind("<<ComboboxSelected>>", sub_select)
-subMenu.grid(row=3, column=2, padx=10, pady=5)
+subMenu.grid(row=2, column=2, padx=10, pady=10)
+
+
+subMenu1 = ttk.Combobox(subMain, values=TEMP_SUB)
+subMenu1.bind("<<ComboboxSelected>>", sub_select)
+subMenu1.grid(row=3, column=2, padx=10, pady=10)
+
+
+subMenu2 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu2.bind("<<ComboboxSelected>>", sub_select)
+subMenu2.grid(row=4, column=2, padx=10, pady=10)
 
 
 main.add(NavBar)
@@ -108,15 +116,15 @@ main.add(subMain)
 
 # Labels that will turn into clickable buttons that will take you to the desired screen and information
 slab1 = tk.Label(NavBar, text="About", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
-slab1.grid(row=1, column=1, padx=5, pady=30)
+slab1.grid(row=1, column=1, padx=5, pady=40)
 
 
 slab2 = tk.Label(NavBar, text="Updates", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
-slab2.grid(row=2, column=1, padx=5, pady=30)
+slab2.grid(row=2, column=1, padx=5, pady=40)
 
 
 slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
-slab3.grid(row=3, column=1, padx=5, pady=30)
+slab3.grid(row=3, column=1, padx=5, pady=40)
 
 
 

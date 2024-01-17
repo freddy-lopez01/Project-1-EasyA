@@ -1,28 +1,114 @@
 import tkinter as tk 
-from tkinter import font 
-from PIL import ImageTk
+from tkinter import font, ttk 
+from PIL import ImageTk, Image
+
+
+# Color pallete used in GUI
+logobg = "#a3a3a3"
+navbg = "#374151"
+sideBarbg = "#52525b"
+submainbg = "#18181b"
+
+
+#Temporary Lists to test dropdown box selections
+
+TEMP_OPT = ["100", "200", "300", "400", "500"]
+#TEMP_SUB = ["MATH", ]
 
 
 
+
+# Create root Window for the GUI
 root = tk.Tk()
-
+root.tk.call("source", "assets/Azure-ttk-theme-main/azure.tcl")
+root.tk.call("set_theme", "dark")
 root.title("Easy A")
 root.eval("tk::PlaceWindow . center")
-root.geometry("700x700")
+root.geometry("500x600")
+#root.configure(bg=rootbg)
 
-f1 = tk.Frame(root, width=700, height=700, bg="#f59e42")
-f1.grid(row=0, column=0)
-f1.pack_propagate(False)
-# logo_img = Image.open("assets/EasyA.png")
-# logo_img = logo_img.resize((50, 30), Image.ANTIALIAS) 
-logo = ImageTk.PhotoImage(file="assets/EasyA.png")
-logo_widget = tk.Label(f1, image=logo, bg="#f59e42")
-logo_widget.image = logo
-logo_widget.pack()
 
-tk.Label(f1, text="Class selection", bg="#f59e42", fg="white", font=("TkMenuFont", 14)).pack()
-lab1 = tk.Label(root, text="EasyA", font=('Arial', 20))
-#lab1.pack()
+# Redesigning the base frames slightly 
+
+logoBar = tk.Frame(root, bg=logobg, height=60)
+
+# This is the Logo that I created in Adobe Illistrator
+
+logoFrame = tk.Frame(root, bg=logobg, height=50)
+logoImg = Image.open("assets/EasyA.png")
+logoS = logoImg.resize((100, 40))
+#logo = ImageTk.PhotoImage(file="assets/EasyA.png")
+logo = ImageTk.PhotoImage(logoS)
+logo_widget = tk.Label(logoBar, image=logo, bg=logobg)
+logo_widget.grid(row=1, column=1, padx=5, pady=8)
+
+
+main = tk.PanedWindow(root, bg=navbg)
+"""
+NavBar = tk.Frame(main, bg="#99fb99", width=100)
+subMain = tk.PanedWindow(root, bg="#FFF", width=200))
+main.add(NavBar)
+main.add(subMain)
+"""
+
+root.grid_rowconfigure(1, weight=1)
+root.grid_columnconfigure(0, weight=1)
+logoBar.grid(row=0, column=0, sticky="ew")
+main.grid(row=1, column=0, sticky="nsew")
+
+
+NavBar = tk.Frame(main, bg=navbg, width=100)
+subMain = tk.PanedWindow(root, bg=submainbg, width=200)
+
+# Contrary to the name subMain, this window will hold the bulk of the interation that the user will have with the GUI
+
+subjL = tk.Label(subMain, text="Subject Code: ", bg=submainbg).grid(row=1, column=1, ipadx=20, ipady=5)
+classL = tk.Label(subMain, text="Course Level: ", bg=submainbg).grid(row=2, column=1, ipadx=20, ipady=5)  
+
+instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg).grid(row=3, column=1, ipadx=20, ipady=5) 
+
+
+
+def sub_select(event):
+    print("Selection was made\n")
+
+
+#subselect = StringVar(subMain)
+#subselect.select(TEMP_OPT[0])
+subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu.bind("<<ComboboxSelected>>", sub_select)
+subMenu.grid(row=1, column=2, padx=10, pady=5)
+
+
+subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu.bind("<<ComboboxSelected>>", sub_select)
+subMenu.grid(row=2, column=2, padx=10, pady=5)
+
+
+subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu.bind("<<ComboboxSelected>>", sub_select)
+subMenu.grid(row=3, column=2, padx=10, pady=5)
+
+
+main.add(NavBar)
+main.add(subMain)
+
+
+
+# Labels that will turn into clickable buttons that will take you to the desired screen and information
+slab1 = tk.Label(NavBar, text="About", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
+slab1.grid(row=1, column=1, padx=5, pady=30)
+
+
+slab2 = tk.Label(NavBar, text="Updates", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
+slab2.grid(row=2, column=1, padx=5, pady=30)
+
+
+slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, fg="white", font=("Adobe Caslon Pro", 8))
+slab3.grid(row=3, column=1, padx=5, pady=30)
+
+
+
 
 
 

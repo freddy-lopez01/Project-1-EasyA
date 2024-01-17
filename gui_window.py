@@ -2,21 +2,28 @@
 
 from tkinter import *
 import tkinter as tk
+from tkinter import font
 
+wind = tk.Tk()
+fstyle1 = font.Font(size=20)
 
 def login(window):
-    welcomeLab = Label(window, text="EasyA")
-    welcomeLab.pack()
+
+    hpage = Frame(window)
+    hpage.grid(row=0, column=0, sticky="nsew") 
+    hpLabel = Label(hpage, text="Easy A", font=fstyle1) 
+    hpLabel.place(x=0.5, y=0.5, anchor=CENTER)
+
+
 
 def main():
-    rootWind = tk.Tk()
-    login(rootWind)
-    frame = Frame(rootWind)
-    frame.pack()
-    button = Button(frame, text='Login')
-    button.pack()
+    wind.geometry("650x650")
+    home = login(wind)
+    # frame = Frame(wind)
+    # button = Button(frame, text='Login')
+    # button.pack()
     
-    rootWind.mainloop()
+    wind.mainloop()
     
 
 

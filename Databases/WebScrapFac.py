@@ -1,48 +1,76 @@
-import mechanicalsoup
+import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
 
+# Set debug to True to enable debug messages
+debug = True
+verbose = True
+
+
 # Define a namedtuple to store department and faculty data for future use
-DeptFac = namedtuple('DeptFac', ['name', 'faculty'])
+DeptFac = namedtuple('DeptFac', ['dept', 'fac'])
 
-def scrape_DeptFac_data():
-    url = 'https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/'
-    browser = mechanicalsoup.StatefulBrowser()
-    browser.open(url)
+#def scrape_DeptFac_data():
 
-    # Extract department links form the html (you will need to inspect the page to see how it is listed)
-    # These links are in the following format:
-    # <ul id"/art_science/" class="nav">
-    # <a href="/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/africanstudies/">African Studies</a> </ul>
-    department_links = browser.page.select('ul.nav#arts_sciences a')
-    
-    # create an empty list to return the data
-    DeptFac_list = []
-    print('DeptFac_list after initialization:', DeptFac_list)
+url = 'https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/'
+# Debug message before making the request
+if debug:
+    print(f"Connecting to: {url}")
+response = requests.get(url)
 
-    # for each link in the links pulled from above save the name and url.
-    for department_link in department_links:
-        department_name = department_link.text
-        department_url = department_link['href']
+# Debug message after making the request
+if debug:
+    print(f"Status Code: {response.status_code}")
 
-        # Get faculty in each singular department by calling separate function that grabs FAC names as a list.
-        faculty = scrape_fac_in_dept(department_url)
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    soup = BeautifulSoup(response.text, 'html.parser')
+    # Must find the element to pull form the website the deptments are in the ntml elements
+    # Found:
+    #<ul id="/art_sciences/" class="nav"
+    # <li><a href="/web/20141107201343/http://catalog.uoregon.edu/arts_sciences/africanstudies/">African Studies</a></li>
+    # Find the <ul> element with class "nav" and id "/arts_sciences/"
+    department_elements = soup.find('ul', {'class': 'nav', 'id': '/arts_sciences/'})
 
-        # Create DeptFac namedtuple and append to the list
-        add_person = DeptFac(name=department_name, faculty=faculty)
-        DeptFac_list.append(add_person)
+    #Find all <a> tags within department_elements
+    department_elements = department_elements.find_all('a')
 
-    print('DeptFac_list after scraping:', DeptFac_list)
-    return DeptFac_list
+    #initialize lists to hold data
+    department_names = []
+    department_links = []
 
-def scrape_fac_in_dept(department_url):
-    browser = mechanicalsoup.StatefulBrowser()
-    browser.open(department_url)
+    # debug check to see if element is found
+    if verbose:
+        print(f"elements pulled: {department_elements}")
 
-    # Extract faculty names
-    faculty_list = []
-    for faculty_elem in browser.page.select('div#facultytextcontainer p.facultylist'):
-        faculty_list.append(faculty_elem.text.strip())
+    if department_elements:
+        #Iterate over each <a> tag in the department_elements
+        for department_element in department_elements:
+            #Retrieve the text content of the current <a> tag and append it to the departments list
+            department_name = department_element.text
+            # Retrieve the value of the href attribute of the current <a> tag
+            department_link =  "https://web.archive.org/" + department_element.get('href')
+            #department_links.append(department_link)
+            department_names.append(department_name)
+            #add function to pull facultiy
 
-    print('faculty_list:', faculty_list)
-    return faculty_list
+        #debug formating data
+        if debug:
+            print("List of Departments:")
+            for department in department_names:
+                    print(department)
+
+        # debug formating data
+        if debug:
+            print("List of Departments URLS:")
+            for link in department_links:
+                    print(link)
+
+    else:
+            if debug:
+                print("No department list found on the webpage.")
+else:
+    if debug:
+        print("Failed to retrieve the webpage. Status Code:", response.status_code)
+
+#def scrape_FacinDept():

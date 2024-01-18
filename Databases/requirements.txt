@@ -1,0 +1,3 @@
+sqlite3
+mechanicalsoup
+beautifulsoup4

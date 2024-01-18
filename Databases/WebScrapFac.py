@@ -113,13 +113,21 @@ if response.status_code == 200:
             department_name = department_element.text
             # Retrieve the value of the href attribute of the current <a> tag
             department_link =  "https://web.archive.org/" + department_element.get('href')
-            # Call the function to scrape additional data for each department link broken up for clarity
-            faculty_names = Scrape_FacinDept(department_link)
+            # try to Call the function to scrape additional data for each department link broken up for clarity
+            try:
+                faculty_names = Scrape_FacinDept(department_link)
+            except requests.exceptions.RequestException as e:
+                # Handle connection error
+                print(f"Connection error for {department_link}: {e}")
+                faculty_names = None
 
             # Do something with the returned data, for example, store it in a list
             if faculty_names:
             # Assuming you have a list to store the data
                 DeptFac_list.append(DeptFac(department_name, faculty_names))
+            elif faculty_names is None:
+                DeptFac_list.append(DeptFac(department_name, 'MissingData'))
+                print(f"Missing data due to connection failure, please run again: {department_name}")
 
             #debug indiviual data types Saved if need
             if verbose:

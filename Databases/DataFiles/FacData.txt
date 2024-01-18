@@ -41,7 +41,6 @@ Anthropology:
 	Paul E. Simonds
 	Harry F. Wolcott
 	Philip D. Young
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Cynthia J. Budlong
 	Thomas J. Connolly
 	Pamela E. Endzweig
@@ -153,7 +152,6 @@ Biology:
 	Norman K. Wessells
 	James A. Weston
 	Herbert P. Wisner
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 Canadian Studies:
 	C. Brian Barnett
 	Gaylene Carpenter
@@ -205,7 +203,6 @@ Chemistry and Biochemistry:
 	John A. Schellman
 	Peter H. von Hippel
 	Raymond G. Wolfe Jr.
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 Cinema Studies:
 	Michael G. Aronson
 	Richard Herskowitz
@@ -250,7 +247,6 @@ Classics:
 	Malcolm Wilson
 	John Nicols
 	C. Bennett Pascal
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Martha J. Bayless
 Comparative Literature:
 	Michael Allan
@@ -264,7 +260,6 @@ Comparative Literature:
 	Dawn Marlan
 	Leah Middlebrook
 	Jenifer Presto
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Barbara K. Altmann
 	Susan C. Anderson
 	Monique Balbuena
@@ -334,7 +329,6 @@ Computer and Information Science:
 	Virginia M. Lo
 	Eugene M. Luks
 	Kent A. Stevens
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Jeffrey Stolet
 	Joseph W. Thornton
 	Don M. Tucker
@@ -345,7 +339,6 @@ Creative Writing:
 	Ehud Havazelet
 	Garrett K. Hongo
 	Richard M. Lyons
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 East Asian Languages and Literatures:
 	Lucien Brown
 	Maram Epstein
@@ -364,7 +357,6 @@ East Asian Languages and Literatures:
 	Yugen Wang
 	Jason Webb
 	Jean Yuanpeng Wu
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 Economics:
 	Bruce A. Blonigen
 	Alfredo Burlando
@@ -393,7 +385,6 @@ Economics:
 	Chulsoon Khang
 	Joe A. Stone
 	W. Ed Whitelaw
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 English:
 	Michael G. Aronson
 	Martha J. Bayless
@@ -461,7 +452,6 @@ English:
 	Nathaniel Teich
 	Louise Westling
 	George Wickes
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Louise M. Bishop
 	David A. Frank
 	Michael Hames-García
@@ -486,7 +476,6 @@ Environmental Studies:
 	Marsha Weisiger
 	Louise Westling
 	Richard York
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Susan C. Anderson
 	William S. Ayres
 	Patrick J. Bartlein
@@ -606,7 +595,6 @@ Ethnic Studies:
 	Brian Klopotek
 	Ernesto J. Martínez
 	Irmary Reyes-Santos
-	The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.
 	Edward Olivos
 	Jeffrey Ostler
 	Priscilla P. Ovalle
@@ -657,398 +645,35 @@ Folklore:
 	Rachelle Saltzman
 	Gordon M. Sayre
 General Science:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 General Social Science:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Geography:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Geological Sciences:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 German and Scandinavian:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 German Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 History:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Humanities:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Human Physiology:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 International Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Judaic Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Latin American Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Linguistics:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Mathematics:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Mathematics and Computer Science:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Medieval Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Native American Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Neuroscience:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Pacific Island Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Peace Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Philosophy:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Physics:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Political Science:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Psychology:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Religious Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Romance Languages:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Russian, East European, and Eurasian Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Scandinavian Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Sociology:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Southeast Asian Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Statistics:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Theater Arts:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a
 Women's and Gender Studies:
-	M
-	i
-	s
-	s
-	i
-	n
-	g
-	D
-	a
-	t
-	a

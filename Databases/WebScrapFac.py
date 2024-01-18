@@ -1,4 +1,5 @@
 import os
+import sys
 import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
@@ -30,20 +31,29 @@ def Scrape_FacinDept(department_link):
 		#		<h3>Participating Faculty</h3>
         #        <p>Lindsay F. Braun, history</p>
         #        <p class="facultylist">Yvonne A. Braun, women’s and gender studies</p>
+        #
         # Find the <div> element with id "facultytextcontainer"
         faculty_container = department_soup.find('div', {'id': 'facultytextcontainer'})
         # Check if the faculty_container is found
+        # connect no longer needed data is now local
+        department_response.close()
         if faculty_container:
-            # Extract the text content of the <p> tags within faculty_container
-            faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
-            #connect no longer needed data is now local
-            department_response.close()
+            # Check for the <h2> tag with text "Faculty" since pages add other data that I was pulling
+            h2_tag = faculty_container.find('h2', text="Faculty")
+            if h2_tag:
+                # Find all <p> tags that follow the <h2> tag
+                faculty_paragraphs = h2_tag.find_all_next('p', {'class': ['facultylist', None]})
+            else:
+                faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
+
+            # Exclude paragraphs that contain specific elements
+            filtered_faculty_paragraphs = [p for p in faculty_paragraphs if not p.find('em')]
 
             # Initialize a list to store faculty names
             faculty_names = []
 
             # Iterate over each <p> tag within faculty_container
-            for faculty_paragraph in faculty_paragraphs:
+            for faculty_paragraph in filtered_faculty_paragraphs:
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
                 faculty_names.append(faculty_name)
 
@@ -77,7 +87,14 @@ url = 'https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/art
 # Debug message before making the request
 if debug_main:
     print(f"Connecting to: {url}")
-response = requests.get(url)
+
+try:
+    response = requests.get(url)
+except requests.exceptions.RequestException as e:
+    # Handle connection error
+    print(f"Connection error for {url}: {e}")
+    sys.exit()
+
 
 # Debug message after making the request
 if debug_main:
@@ -126,7 +143,7 @@ if response.status_code == 200:
             # Assuming you have a list to store the data
                 DeptFac_list.append(DeptFac(department_name, faculty_names))
             elif faculty_names is None:
-                DeptFac_list.append(DeptFac(department_name, 'MissingData'))
+                DeptFac_list.append(DeptFac(department_name, ''))
                 print(f"Missing data due to connection failure, please run again: {department_name}")
 
             #debug indiviual data types Saved if need

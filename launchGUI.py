@@ -1,7 +1,7 @@
 import tkinter as tk 
-from tkinter import font, ttk 
+from tkinter import font, ttk, StringVar, Button, Canvas 
 from PIL import ImageTk, Image
-
+import array
 
 # Color pallete used in GUI
 logobg = "#a3a3a3"
@@ -9,6 +9,13 @@ navbg = "#374151"
 sideBarbg = "#52525b"
 submainbg = "#3f3f46"
 
+
+
+
+# This section will be dynamically updated based off of user input
+# Dependencies:
+#               Most recent user selection will dictate database query
+#               
 
 #Temporary Lists to test dropdown box selections
 
@@ -71,22 +78,81 @@ main.grid(row=1, column=0, sticky="nsew")
 NavBar = tk.Frame(main, bg=navbg, width=100)
 subMain = tk.PanedWindow(root, bg=submainbg, width=200)
 
+
+
+
+
+
+
+
 # Contrary to the name subMain, this window will hold the bulk of the interation that the user will have with the GUI
 
-subjL = tk.Label(subMain, text="Subject Code: ", bg=submainbg).grid(row=2, column=1, ipadx=20, ipady=5)
+subjL = tk.Label(subMain, text="Subject Subject: ", bg=submainbg).grid(row=2, column=1, ipadx=20, ipady=5)
+
 classL = tk.Label(subMain, text="Course Level: ", bg=submainbg).grid(row=3, column=1, ipadx=20, ipady=5)  
 
-instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg).grid(row=4, column=1, ipadx=20, ipady=5) 
+courseL= tk.Label(subMain, text="Course: ", bg=submainbg).grid(row=4, column=1, ipadx=20, ipady=5) 
+
+facultyL = tk.Label(subMain, text="Faculty: ", bg=submainbg).grid(row=5, column=1, ipadx=20, ipady=5) 
+
+instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg).grid(row=6, column=1, ipadx=20, ipady=5) 
+
+graphTypeL = tk.Label(subMain, text="Graph Type ", bg=submainbg).grid(row=7, column=1, ipadx=20, ipady=5) 
 
 
-
-def sub_select(event):
-    print("Selection was made\n")
+PassTypeL = tk.Label(subMain, text="EasyA/Pass ", bg=submainbg).grid(row=8, column=1, ipadx=20, ipady=5) 
 
 
-#subselect = StringVar(subMain)
-#subselect.select(TEMP_OPT[0])
+# For some reason the passing of the Combobox object as an Argument 
+# did not parse correctly therefore the modulariy is exaggerated
 
+selectedList = []
+def sendSelected(data):
+    selectedList.append(data)
+    print(f"New array: {selectedList}")
+
+
+def sub_select0(event):
+    selected = subMenu0.get()
+    print(selected)
+    sendSelected(selected)
+
+def sub_select1(event):
+    selected = subMenu1.get()
+    print(selected)
+    sendSelected(selected)
+
+def sub_select2(event):
+    selected = subMenu2.get()
+    print(selected)
+    sendSelected(selected)
+
+
+def sub_select3(event):
+    selected = subMenu3.get()
+    print(selected)
+    sendSelected(selected)
+
+
+def sub_select4(event):
+    selected = subMenu4.get()
+    print(selected)
+    sendSelected(selected)
+
+
+def sub_select5(event):
+    selected = subMenu5.get()
+    print(selected)
+    sendSelected(selected)
+
+
+def sub_select6(event):
+    selected = subMenu6.get()
+    print(selected)
+    sendSelected(selected)
+
+#varSelect = StringVar(subMain)
+#varSelect.set(TEMP_OPT[0])
 logoImgv2 = Image.open("assets/EasyA.png")
 logoS2 = logoImgv2.resize((90, 35))
 #logo = ImageTk.PhotoImage(file="assets/EasyA.png")
@@ -94,19 +160,58 @@ logo2 = ImageTk.PhotoImage(logoS2)
 logo_widget2 = tk.Label(subMain, image=logo2, bg=submainbg)
 logo_widget2.grid(row=1, column=1, padx=30, pady=20, sticky="nsew")
 
-subMenu = ttk.Combobox(subMain, values=TEMP_OPT)
-subMenu.bind("<<ComboboxSelected>>", sub_select)
-subMenu.grid(row=2, column=2, padx=10, pady=10)
+varSelect = StringVar(subMain)
+#varSelect.set(TEMP_OPT[0])
+
+
+subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=TEMP_OPT)
+subMenu0.bind("<<ComboboxSelected>>", sub_select0)
+subMenu0.grid(row=2, column=2, padx=10, pady=10)
 
 
 subMenu1 = ttk.Combobox(subMain, values=TEMP_SUB)
-subMenu1.bind("<<ComboboxSelected>>", sub_select)
+subMenu1.bind("<<ComboboxSelected>>", sub_select1)
 subMenu1.grid(row=3, column=2, padx=10, pady=10)
 
 
 subMenu2 = ttk.Combobox(subMain, values=TEMP_OPT)
-subMenu2.bind("<<ComboboxSelected>>", sub_select)
+subMenu2.bind("<<ComboboxSelected>>", sub_select2)
 subMenu2.grid(row=4, column=2, padx=10, pady=10)
+
+
+subMenu3 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu3.bind("<<ComboboxSelected>>", sub_select3)
+subMenu3.grid(row=5, column=2, padx=10, pady=10)
+
+
+subMenu4 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu4.bind("<<ComboboxSelected>>", sub_select4)
+subMenu4.grid(row=6, column=2, padx=10, pady=10)
+
+
+subMenu5 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu5.bind("<<ComboboxSelected>>", sub_select5)
+subMenu5.grid(row=7, column=2, padx=10, pady=10)
+
+
+subMenu6 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu6.bind("<<ComboboxSelected>>", sub_select5)
+subMenu6.grid(row=8, column=2, padx=10, pady=10)
+
+# Submit Button to submit complete query to database API
+
+# Function for submitBttn Button Action
+def submitQuery():
+    print(f"Submitting complete query: {selectedList}")
+
+
+canvas = Canvas(subMain, width=100, height=10)
+canvas.grid(row=10, column=1, padx=10, pady=10)
+
+
+submitBttn = Button(subMain, text="Submit", command=submitQuery)
+submitBttn.grid(row=11, column=1, padx=10, pady=10) 
+
 
 
 main.add(NavBar)

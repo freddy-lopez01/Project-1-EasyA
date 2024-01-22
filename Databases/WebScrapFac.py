@@ -3,12 +3,15 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
+import time
 
 ''' Change bool as info is needed
 DEBUGING==========================================================================================================================================================='''
 debug_main = True
 #debug function
 debug_Fac = True
+#debug sorting function
+debug_sort = True
 #more info if needed
 verbose = False
 '''============================================================================================================================================================'''
@@ -16,6 +19,8 @@ verbose = False
 
 # Interative function to open link and pull name data
 def Scrape_FacinDept(department_link):
+    #sleep added to prevent web denial
+    time.sleep(2)
     # Make a request for the department link
     department_response = requests.get(department_link)
     # Debug message after making the request
@@ -49,23 +54,48 @@ def Scrape_FacinDept(department_link):
             # Exclude paragraphs that contain specific elements
             filtered_faculty_paragraphs = [p for p in faculty_paragraphs if not p.find('em')]
 
-            # Initialize a list to store faculty names
+            # Find any <h3> element to start marking temporary faculty
+            participating_header = faculty_container.find('h3')
+
+            # Determine if the faculty member is permanent ('p') or temporary ('t')
+            is_temporary = False
+
+            # Initialize a list to store faculty names and status
             faculty_names = []
 
             # Iterate over each <p> tag within faculty_container
             for faculty_paragraph in filtered_faculty_paragraphs:
+                # Check if the current <p> tag is after any <h3> header
+                if is_temporary or (participating_header and faculty_paragraph.find_previous('h3')):
+                    is_temporary = True  # Mark subsequent faculty as temporary
+                    faculty_type = 'T'
+                else:
+                    faculty_type = 'P'
+                #strips and grabs the data
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
-                faculty_names.append(faculty_name)
+                faculty_names.append((faculty_name, faculty_type))
+
+            # reset for next wedsite
+            is_temporary = False
+
 
             # Debug message for faculty names
             if debug_Fac:
-                print(f"Faculty Names for {department_link}:")
-                for faculty_name in faculty_names:
-                    print(faculty_name)
+                print(f"Faculty Names and Types for {department_link}:")
+                for faculty_name, faculty_type in faculty_names:
+                    print(f"{faculty_name} ({faculty_type})")
 
-            # Return the faculty names as a list close connection)
-            return faculty_names
+            #sort the names aphabectically
+            sorted_names = sorted(faculty_names, key=lambda  x: (x[0].split()[-1], x[0].split()[0], x[0]))
 
+            # Debug message for faculty name
+            if debug_sort:
+                print(f"Faculty Names and Types SORTED for {department_link}:")
+                formatted_string = '\n'.join([f"{name} ({faculty_type})" for name, faculty_type in sorted_names])
+                print(formatted_string)
+            return sorted_names
+
+# THIS IS ERROR CHECKING _____________________________________________________________________________________________________________________________
         else:
             if debug_Fac:
                 print(f"No faculty information found for {department_link} closing connection.")
@@ -140,7 +170,7 @@ if response.status_code == 200:
 
             # Do something with the returned data, for example, store it in a list
             if faculty_names:
-            # Assuming you have a list to store the data
+            #Store data in list if data was pulled else emtpy string
                 DeptFac_list.append(DeptFac(department_name, faculty_names))
             elif faculty_names is None:
                 DeptFac_list.append(DeptFac(department_name, ''))

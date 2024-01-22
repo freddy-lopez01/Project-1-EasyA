@@ -1,649 +1,610 @@
 African Studies:
-	Yvonne A. Braun
-	André Djiffack
-	Jenifer P. Craig
-	John Fenn
-	Stephen R. Frost
-	Dennis C. Galvan
-	Ibrahim J. Gassama
-	Lisa M. Gilman
-	Rita Honka
-	Karen McPherson
-	Doris L. Payne
-	Peter A. Walker
-	Janis C. Weeks
-	Frances J. White
-	Stephen R. Wooten
+	('Yvonne A. Braun', 'p')
+	('Jenifer P. Craig', 'p')
+	('André Djiffack', 'p')
+	('John Fenn', 'p')
+	('Stephen R. Frost', 'p')
+	('Dennis C. Galvan', 'p')
+	('Ibrahim J. Gassama', 'p')
+	('Lisa M. Gilman', 'p')
+	('Rita Honka', 'p')
+	('Karen McPherson', 'p')
+	('Doris L. Payne', 'p')
+	('Peter A. Walker', 'p')
+	('Janis C. Weeks', 'p')
+	('Frances J. White', 'p')
+	('Stephen R. Wooten', 'p')
 Anthropology:
-	William S. Ayres
-	Diane B. Baxter
-	Aletta Biersack
-	Jon M. Erlandson
-	Stephen R. Frost
-	Lamia Karim
-	Gyoung-Ah Lee
-	Sandra L. Morgen
-	Madonna L. Moss
-	Theresa D. O’Nell
-	Philip W. Scher
-	Carol T. Silverman
-	J. Josh Snodgrass
-	Lynn Stephen
-	Kirstin Sterner
-	Lawrence S. Sugiyama
-	Nelson Ting
-	Frances J. White
-	Stephen R. Wooten
-	C. Melvin Aikens
-	Don E. Dumond
-	John R. Lukacs
-	Geraldine Moreno Black
-	Paul E. Simonds
-	Harry F. Wolcott
-	Philip D. Young
-	Cynthia J. Budlong
-	Thomas J. Connolly
-	Pamela E. Endzweig
-	Dennis L. Jenkins
-	Brian Klopotek
-	Patricia Krier
-	Brian L. O’Neill
+	('C. Melvin Aikens', 't')
+	('William S. Ayres', 'p')
+	('Diane B. Baxter', 'p')
+	('Aletta Biersack', 'p')
+	('Geraldine Moreno Black', 't')
+	('Cynthia J. Budlong', 't')
+	('Thomas J. Connolly', 't')
+	('Don E. Dumond', 't')
+	('Pamela E. Endzweig', 't')
+	('Jon M. Erlandson', 'p')
+	('Stephen R. Frost', 'p')
+	('Dennis L. Jenkins', 't')
+	('Lamia Karim', 'p')
+	('Brian Klopotek', 't')
+	('Patricia Krier', 't')
+	('Gyoung-Ah Lee', 'p')
+	('John R. Lukacs', 't')
+	('Sandra L. Morgen', 'p')
+	('Madonna L. Moss', 'p')
+	('Brian L. O’Neill', 't')
+	('Theresa D. O’Nell', 'p')
+	('Philip W. Scher', 'p')
+	('Carol T. Silverman', 'p')
+	('Paul E. Simonds', 't')
+	('J. Josh Snodgrass', 'p')
+	('Lynn Stephen', 'p')
+	('Kirstin Sterner', 'p')
+	('Lawrence S. Sugiyama', 'p')
+	('Nelson Ting', 'p')
+	('Frances J. White', 'p')
+	('Harry F. Wolcott', 't')
+	('Stephen R. Wooten', 'p')
+	('Philip D. Young', 't')
 Asian Studies:
-	Ina Asim
-	William S. Ayres
-	Aletta Biersack
-	Lucien Brown
-	Steven T. Brown
-	Daniel P. Buck
-	Kathie Carpenter
-	Scott DeLancey
-	Stephen W. Durrant
-	Maram Epstein
-	Alisa D. Freedman
-	Andrew E. Goble
-	Bryna Goodman
-	Sangita Gopal
-	Alison Groppe
-	Jeffrey E. Hanes
-	Kaori Idemaru
-	Dong Hoon Kim
-	Karrie Koesel
-	Stephen W. Kohl
-	Robert Kyr
-	Charles H. Lachman
-	Gyoung-Ah Lee
-	David Leiwei Li
-	John R. Lukacs
-	Daisuke Miyao
-	Roxann Prazniak
-	Eric Priest
-	Tze-Lan Sang
-	Xiaobo Su
-	Ying Tan
-	Mark T. Unno
-	Tuong Vu
-	Yugen Wang
-	Jason Webb
-	Anita M. Weiss
-	Kyu Ho Youm
+	('Ina Asim', 't')
+	('William S. Ayres', 't')
+	('Aletta Biersack', 't')
+	('Lucien Brown', 't')
+	('Steven T. Brown', 't')
+	('Daniel P. Buck', 't')
+	('Kathie Carpenter', 't')
+	('Scott DeLancey', 't')
+	('Stephen W. Durrant', 't')
+	('Maram Epstein', 't')
+	('Alisa D. Freedman', 't')
+	('Andrew E. Goble', 't')
+	('Bryna Goodman', 't')
+	('Sangita Gopal', 't')
+	('Alison Groppe', 't')
+	('Jeffrey E. Hanes', 't')
+	('Kaori Idemaru', 't')
+	('Dong Hoon Kim', 't')
+	('Karrie Koesel', 't')
+	('Stephen W. Kohl', 't')
+	('Robert Kyr', 't')
+	('Charles H. Lachman', 't')
+	('Gyoung-Ah Lee', 't')
+	('David Leiwei Li', 't')
+	('John R. Lukacs', 't')
+	('Daisuke Miyao', 't')
+	('Roxann Prazniak', 't')
+	('Eric Priest', 't')
+	('Tze-Lan Sang', 't')
+	('Xiaobo Su', 't')
+	('Ying Tan', 't')
+	('Mark T. Unno', 't')
+	('Tuong Vu', 't')
+	('Yugen Wang', 't')
+	('Jason Webb', 't')
+	('Anita M. Weiss', 't')
+	('Kyu Ho Youm', 't')
 Biology:
-	Alice Barkan
-	Brendan J. M. Bohannan
-	Bruce A. Bowerman
-	William E. Bradshaw
-	Scott D. Bridgham
-	Mark C. Carrier
-	John S. Conery
-	William A. Cresko
-	Alan Dickman
-	Chris Q. Doe
-	Judith S. Eisen
-	Richard B. Emlet
-	Jessica L. Green
-	Karen J. Guillemin
-	Victoria Herman
-	Janet Hodder
-	Cristin L. Hulslander
-	Eric A. Johnson
-	Alan J. Kelly
-	Shawn R. Lockery
-	V. Patteson Lombardi
-	Svetlana Maslakova
-	Cristopher M. Neill
-	Peter M. O’Day
-	Patrick C. Phillips
-	John H. Postlethwait
-	William Roberts
-	Bitty A. Roy
-	Debbie Schlenoff
-	Eric Selker
-	Jeanne M. Selker
-	Alan Shanks
-	George F. Sprague Jr.
-	Karen U. Sprague
-	Kryn Stankunas
-	Carl A. Stiefbold
-	Matthew A. Streisfeld
-	Terry Takahashi
-	Joseph W. Thornton
-	Nathan J. Tublitz
-	Philip E. Washbourne
-	Janis C. Weeks
-	Monte Westerfield
-	Peter B. Wetherwax
-	A. Michelle Wood
-	Craig M. Young
-	Hui Zong
-	Steven S. Rumrill
-	David H. Wagner
-	Andrew S. Bajer
-	Howard T. Bonnett Jr.
-	Roderick A. Capaldi
-	George C. Carroll
-	Richard W. Castenholz
-	Charles B. Kimmel
-	Frederick W. Munz
-	Paul P. Rudy
-	Eric Schabtach
-	Lynda P. Shapiro
-	Franklin W. Stahl
-	Nora B. Terwilliger
-	Daniel Udovic
-	Norman K. Wessells
-	James A. Weston
-	Herbert P. Wisner
+	('Andrew S. Bajer', 't')
+	('Alice Barkan', 'p')
+	('Brendan J. M. Bohannan', 'p')
+	('Bruce A. Bowerman', 'p')
+	('William E. Bradshaw', 'p')
+	('Scott D. Bridgham', 'p')
+	('Roderick A. Capaldi', 't')
+	('Mark C. Carrier', 'p')
+	('George C. Carroll', 't')
+	('Richard W. Castenholz', 't')
+	('John S. Conery', 'p')
+	('William A. Cresko', 'p')
+	('Alan Dickman', 'p')
+	('Chris Q. Doe', 'p')
+	('Judith S. Eisen', 'p')
+	('Richard B. Emlet', 'p')
+	('Jessica L. Green', 'p')
+	('Karen J. Guillemin', 'p')
+	('Victoria Herman', 'p')
+	('Janet Hodder', 'p')
+	('Cristin L. Hulslander', 'p')
+	('Eric A. Johnson', 'p')
+	('George F. Sprague Jr.', 'p')
+	('Howard T. Bonnett Jr.', 't')
+	('Alan J. Kelly', 'p')
+	('Charles B. Kimmel', 't')
+	('Shawn R. Lockery', 'p')
+	('V. Patteson Lombardi', 'p')
+	('Svetlana Maslakova', 'p')
+	('Frederick W. Munz', 't')
+	('Cristopher M. Neill', 'p')
+	('Peter M. O’Day', 'p')
+	('Patrick C. Phillips', 'p')
+	('John H. Postlethwait', 'p')
+	('William Roberts', 'p')
+	('Bitty A. Roy', 'p')
+	('Paul P. Rudy', 't')
+	('Steven S. Rumrill', 't')
+	('Eric Schabtach', 't')
+	('Debbie Schlenoff', 'p')
+	('Eric Selker', 'p')
+	('Jeanne M. Selker', 'p')
+	('Alan Shanks', 'p')
+	('Lynda P. Shapiro', 't')
+	('Karen U. Sprague', 'p')
+	('Franklin W. Stahl', 't')
+	('Kryn Stankunas', 'p')
+	('Carl A. Stiefbold', 'p')
+	('Matthew A. Streisfeld', 'p')
+	('Terry Takahashi', 'p')
+	('Nora B. Terwilliger', 't')
+	('Joseph W. Thornton', 'p')
+	('Nathan J. Tublitz', 'p')
+	('Daniel Udovic', 't')
+	('David H. Wagner', 't')
+	('Philip E. Washbourne', 'p')
+	('Janis C. Weeks', 'p')
+	('Norman K. Wessells', 't')
+	('Monte Westerfield', 'p')
+	('James A. Weston', 't')
+	('Peter B. Wetherwax', 'p')
+	('Herbert P. Wisner', 't')
+	('A. Michelle Wood', 'p')
+	('Craig M. Young', 'p')
+	('Hui Zong', 'p')
 Canadian Studies:
-	C. Brian Barnett
-	Gaylene Carpenter
-	Patricia M. Dewey
-	Michael Fakhri
-	Susan W. Hardwick
-	Nancy Heapes
-	Madonna L. Moss
-	Karen McPherson
-	Michael Malek Najjar
-	Gordon M. Sayre
+	('C. Brian Barnett', 't')
+	('Gaylene Carpenter', 't')
+	('Patricia M. Dewey', 't')
+	('Michael Fakhri', 't')
+	('Susan W. Hardwick', 't')
+	('Nancy Heapes', 't')
+	('Karen McPherson', 't')
+	('Madonna L. Moss', 't')
+	('Michael Malek Najjar', 't')
+	('Gordon M. Sayre', 't')
 Chemistry and Biochemistry:
-	Andy Berglund
-	Shannon W. Boettcher
-	Jeffrey A. Cina
-	Victoria J. De Rose
-	Kenneth M. Doxsee
-	Paul C. Engelking
-	Deborah B. Exton
-	Marina G. Guenza
-	Julie A. Haack
-	Michael M. Haley
-	Diane K. Hawley
-	Darren W. Johnson
-	David C. Johnson
-	Michael E. Kellman
-	Michael Koscho
-	Andrew H. Marcus
-	George V. Nazin
-	Brad J. Nolen
-	Catherine J. Page
-	Michael D. Pluth
-	Kenneth E. Prehoda
-	Geraldine L. Richmond
-	Tom H. Stevens
-	David R. "Randy" Sullivan
-	David R. Tyler
-	Gregory M. Williams
-	John Hardwick
-	Ralph J. Barnhard
-	Bruce P. Branchaud
-	Frederick W. Dahlquist
-	Thomas R. Dyke
-	O. Hayes Griffith
-	David R. Herrick
-	John F. W. Keana
-	James W. Long
-	Robert M. Mazo
-	John A. Schellman
-	Peter H. von Hippel
-	Raymond G. Wolfe Jr.
+	('Ralph J. Barnhard', 't')
+	('Andy Berglund', 'p')
+	('Shannon W. Boettcher', 'p')
+	('Bruce P. Branchaud', 't')
+	('Jeffrey A. Cina', 'p')
+	('Frederick W. Dahlquist', 't')
+	('Kenneth M. Doxsee', 'p')
+	('Thomas R. Dyke', 't')
+	('Paul C. Engelking', 'p')
+	('Deborah B. Exton', 'p')
+	('O. Hayes Griffith', 't')
+	('Marina G. Guenza', 'p')
+	('Julie A. Haack', 'p')
+	('Michael M. Haley', 'p')
+	('John Hardwick', 't')
+	('Diane K. Hawley', 'p')
+	('David R. Herrick', 't')
+	('Peter H. von Hippel', 't')
+	('Darren W. Johnson', 'p')
+	('David C. Johnson', 'p')
+	('Raymond G. Wolfe Jr.', 't')
+	('John F. W. Keana', 't')
+	('Michael E. Kellman', 'p')
+	('Michael Koscho', 'p')
+	('James W. Long', 't')
+	('Andrew H. Marcus', 'p')
+	('Robert M. Mazo', 't')
+	('George V. Nazin', 'p')
+	('Brad J. Nolen', 'p')
+	('Catherine J. Page', 'p')
+	('Michael D. Pluth', 'p')
+	('Kenneth E. Prehoda', 'p')
+	('Geraldine L. Richmond', 'p')
+	('Victoria J. De Rose', 'p')
+	('John A. Schellman', 't')
+	('Tom H. Stevens', 'p')
+	('David R. "Randy" Sullivan', 'p')
+	('David R. Tyler', 'p')
+	('Gregory M. Williams', 'p')
 Cinema Studies:
-	Michael G. Aronson
-	Richard Herskowitz
-	Lesli A. Larson
-	Gabriela Martinez
-	Daisuke Miyao
-	Kate Mondloch
-	Priscilla P. Ovalle
-	Kartz Ucci
-	Janet Wasko
-	Michael Allan
-	Steven T. Brown
-	Carl R. Bybee
-	Kenneth S. Calhoon
-	John Fenn
-	Alisa D. Freedman
-	Sangita Gopal
-	Colin H. Ives
-	Kathryn Rowe Karlin
-	Dong Hoon Kim
-	David Leiwei Li
-	Katharina E. Loew
-	Debra L. Merskin
-	Daniel L. Miller
-	Jon Palfreman
-	Elizabeth M. Peterson
-	Jenifer Presto
-	John T. Ryan
-	Biswarup Sen
-	Carol Stabile
-	Ying Tan
-	William Cadbury
-	Julia Lesage
-	Sharon R. Sherman
+	('Michael Allan', 't')
+	('Michael G. Aronson', 't')
+	('Steven T. Brown', 't')
+	('Carl R. Bybee', 't')
+	('William Cadbury', 't')
+	('Kenneth S. Calhoon', 't')
+	('John Fenn', 't')
+	('Alisa D. Freedman', 't')
+	('Sangita Gopal', 't')
+	('Richard Herskowitz', 't')
+	('Colin H. Ives', 't')
+	('Kathryn Rowe Karlin', 't')
+	('Dong Hoon Kim', 't')
+	('Lesli A. Larson', 't')
+	('Julia Lesage', 't')
+	('David Leiwei Li', 't')
+	('Katharina E. Loew', 't')
+	('Gabriela Martinez', 't')
+	('Debra L. Merskin', 't')
+	('Daniel L. Miller', 't')
+	('Daisuke Miyao', 't')
+	('Kate Mondloch', 't')
+	('Priscilla P. Ovalle', 't')
+	('Jon Palfreman', 't')
+	('Elizabeth M. Peterson', 't')
+	('Jenifer Presto', 't')
+	('John T. Ryan', 't')
+	('Biswarup Sen', 't')
+	('Sharon R. Sherman', 't')
+	('Carol Stabile', 't')
+	('Ying Tan', 't')
+	('Kartz Ucci', 't')
+	('Janet Wasko', 't')
 Classics:
-	P. Lowell Bowditch
-	Cristina Calhoon
-	Christopher Eckerman
-	Jeffrey M. Hurwit
-	Mary K. Jaeger
-	Steven Shankman
-	Malcolm Wilson
-	John Nicols
-	C. Bennett Pascal
-	Martha J. Bayless
+	('Martha J. Bayless', 't')
+	('P. Lowell Bowditch', 'p')
+	('Cristina Calhoon', 'p')
+	('Christopher Eckerman', 'p')
+	('Jeffrey M. Hurwit', 'p')
+	('Mary K. Jaeger', 'p')
+	('John Nicols', 't')
+	('C. Bennett Pascal', 't')
+	('Steven Shankman', 'p')
+	('Malcolm Wilson', 'p')
 Comparative Literature:
-	Michael Allan
-	Steven T. Brown
-	Kenneth S. Calhoon
-	Karen R. Emmerich
-	Lisa Freinkel
-	Warren Ginsberg
-	Sangita Gopal
-	Katya E. Hokanson
-	Dawn Marlan
-	Leah Middlebrook
-	Jenifer Presto
-	Barbara K. Altmann
-	Susan C. Anderson
-	Monique Balbuena
-	P. Lowell Bowditch
-	Carl R. Bybee
-	Joyce Cheng
-	Suzanne Clark
-	James R. Crosswhite
-	Dianne M. Dugaw
-	Cecilia Enjuto Rangel
-	Maram Epstein
-	Pedro García-Caro
-	Evlyn Gould
-	D. Gantt Gurley
-	Michael Hames-García
-	Kathleen Rowe Karlyn
-	Linda Kintz
-	Martin Klebes
-	David Leiwei Li
-	Jeffrey S. Librett
-	Massimo Lollini
-	Katharina Loew
-	John McCole
-	Randall E. McGowen
-	Karen McPherson
-	Fabienne Moore
-	Dorothee Ostmeier
-	Paul W. Peppis
-	Amanda W. Powell
-	F. Regina Psaki
-	Forest Pyle
-	Judith Raiskin
-	Daniel Rosenberg
-	George Rowe
-	Tze-Lan Sang
-	Gordon M. Sayre
-	John Schmor
-	Steven Shankman
-	Carol T. Silverman
-	Michael Stern
-	Analisa Taylor
-	Ted Toadvine
-	Alejandro Vallega
-	David J. Vazquez
-	Elizabeth A. Wheeler
-	Daniel N. Wojcik
-	Rocio Zambrana
+	('Michael Allan', 'p')
+	('Barbara K. Altmann', 't')
+	('Susan C. Anderson', 't')
+	('Monique Balbuena', 't')
+	('P. Lowell Bowditch', 't')
+	('Steven T. Brown', 'p')
+	('Carl R. Bybee', 't')
+	('Kenneth S. Calhoon', 'p')
+	('Joyce Cheng', 't')
+	('Suzanne Clark', 't')
+	('James R. Crosswhite', 't')
+	('Dianne M. Dugaw', 't')
+	('Karen R. Emmerich', 'p')
+	('Maram Epstein', 't')
+	('Lisa Freinkel', 'p')
+	('Pedro García-Caro', 't')
+	('Warren Ginsberg', 'p')
+	('Sangita Gopal', 'p')
+	('Evlyn Gould', 't')
+	('D. Gantt Gurley', 't')
+	('Michael Hames-García', 't')
+	('Katya E. Hokanson', 'p')
+	('Kathleen Rowe Karlyn', 't')
+	('Linda Kintz', 't')
+	('Martin Klebes', 't')
+	('David Leiwei Li', 't')
+	('Jeffrey S. Librett', 't')
+	('Katharina Loew', 't')
+	('Massimo Lollini', 't')
+	('Dawn Marlan', 'p')
+	('John McCole', 't')
+	('Randall E. McGowen', 't')
+	('Karen McPherson', 't')
+	('Leah Middlebrook', 'p')
+	('Fabienne Moore', 't')
+	('Dorothee Ostmeier', 't')
+	('Paul W. Peppis', 't')
+	('Amanda W. Powell', 't')
+	('Jenifer Presto', 'p')
+	('F. Regina Psaki', 't')
+	('Forest Pyle', 't')
+	('Judith Raiskin', 't')
+	('Cecilia Enjuto Rangel', 't')
+	('Daniel Rosenberg', 't')
+	('George Rowe', 't')
+	('Tze-Lan Sang', 't')
+	('Gordon M. Sayre', 't')
+	('John Schmor', 't')
+	('Steven Shankman', 't')
+	('Carol T. Silverman', 't')
+	('Michael Stern', 't')
+	('Analisa Taylor', 't')
+	('Ted Toadvine', 't')
+	('Alejandro Vallega', 't')
+	('David J. Vazquez', 't')
+	('Elizabeth A. Wheeler', 't')
+	('Daniel N. Wojcik', 't')
+	('Rocio Zambrana', 't')
 Computer and Information Science:
-	Zena M. Ariola
-	Hank Childs
-	Dejing Dou
-	Stuart Faulk
-	Stephen F. Fickas
-	Kathleen Freeman Hennessy
-	Michael Hennessy
-	Anthony J. Hornof
-	Jun Li
-	Daniel Lowd
-	Allen D. Malony
-	Andrzej Proskurowski
-	Reza Rejaie
-	Eric D. Wills
-	Christopher B. Wilson
-	Michal Young
-	Sarah A. Douglas
-	Arthur M. Farley
-	Virginia M. Lo
-	Eugene M. Luks
-	Kent A. Stevens
-	Jeffrey Stolet
-	Joseph W. Thornton
-	Don M. Tucker
+	('Zena M. Ariola', 'p')
+	('Hank Childs', 'p')
+	('Dejing Dou', 'p')
+	('Sarah A. Douglas', 't')
+	('Arthur M. Farley', 't')
+	('Stuart Faulk', 'p')
+	('Stephen F. Fickas', 'p')
+	('Kathleen Freeman Hennessy', 'p')
+	('Michael Hennessy', 'p')
+	('Anthony J. Hornof', 'p')
+	('Jun Li', 'p')
+	('Virginia M. Lo', 't')
+	('Daniel Lowd', 'p')
+	('Eugene M. Luks', 't')
+	('Allen D. Malony', 'p')
+	('Andrzej Proskurowski', 'p')
+	('Reza Rejaie', 'p')
+	('Kent A. Stevens', 't')
+	('Jeffrey Stolet', 't')
+	('Joseph W. Thornton', 't')
+	('Don M. Tucker', 't')
+	('Eric D. Wills', 'p')
+	('Christopher B. Wilson', 'p')
+	('Michal Young', 'p')
 Creative Writing:
-	Daniel Anderson
-	Jason Brown
-	Geri Doran
-	Ehud Havazelet
-	Garrett K. Hongo
-	Richard M. Lyons
+	('Daniel Anderson', 'p')
+	('Jason Brown', 'p')
+	('Geri Doran', 'p')
+	('Ehud Havazelet', 'p')
+	('Garrett K. Hongo', 'p')
+	('Richard M. Lyons', 't')
 East Asian Languages and Literatures:
-	Lucien Brown
-	Maram Epstein
-	Alisa D. Freedman
-	Denise Gigliotti
-	Alison Groppe
-	Reiko Hashimoto
-	Kaori Idemaru
-	Rika Ikei
-	Zhuo Jing-Schmidt
-	Dong Hoon Kim
-	Daisuke Miyao
-	Naoko Nakadate
-	Tze-Lan Sang
-	Glynne Walley
-	Yugen Wang
-	Jason Webb
-	Jean Yuanpeng Wu
+	('Lucien Brown', 'p')
+	('Maram Epstein', 'p')
+	('Alisa D. Freedman', 'p')
+	('Denise Gigliotti', 'p')
+	('Alison Groppe', 'p')
+	('Reiko Hashimoto', 'p')
+	('Kaori Idemaru', 'p')
+	('Rika Ikei', 'p')
+	('Zhuo Jing-Schmidt', 'p')
+	('Dong Hoon Kim', 'p')
+	('Daisuke Miyao', 'p')
+	('Naoko Nakadate', 'p')
+	('Tze-Lan Sang', 'p')
+	('Glynne Walley', 'p')
+	('Yugen Wang', 'p')
+	('Jason Webb', 'p')
+	('Jean Yuanpeng Wu', 'p')
 Economics:
-	Bruce A. Blonigen
-	Alfredo Burlando
-	Trudy Ann Cameron
-	Shankha Chakraborty
-	Anca D. Cristea
-	Timothy A. Duy
-	Christopher J. Ellis
-	George W. Evans
-	Benjamin Hansen
-	William T. Harbaugh
-	Van Kolpin
-	Peter J. Lambert
-	Ralph Mastromonaco
-	Jeremy M. Piger
-	Nicholas Sly
-	Anne van den Nouweland
-	Glen R. Waddell
-	Caroline E. Weber
-	Wesley W. Wilson
-	Cathleen S. Leué
-	Robert Campbell
-	Henry N. Goldstein
-	Jo Anna Gray
-	Stephen E. Haynes
-	Chulsoon Khang
-	Joe A. Stone
-	W. Ed Whitelaw
+	('Bruce A. Blonigen', 'p')
+	('Alfredo Burlando', 'p')
+	('Trudy Ann Cameron', 'p')
+	('Robert Campbell', 't')
+	('Shankha Chakraborty', 'p')
+	('Anca D. Cristea', 'p')
+	('Timothy A. Duy', 'p')
+	('Christopher J. Ellis', 'p')
+	('George W. Evans', 'p')
+	('Henry N. Goldstein', 't')
+	('Jo Anna Gray', 't')
+	('Benjamin Hansen', 'p')
+	('William T. Harbaugh', 'p')
+	('Stephen E. Haynes', 't')
+	('Chulsoon Khang', 't')
+	('Van Kolpin', 'p')
+	('Peter J. Lambert', 'p')
+	('Cathleen S. Leué', 't')
+	('Ralph Mastromonaco', 'p')
+	('Anne van den Nouweland', 'p')
+	('Jeremy M. Piger', 'p')
+	('Nicholas Sly', 'p')
+	('Joe A. Stone', 't')
+	('Glen R. Waddell', 'p')
+	('Caroline E. Weber', 'p')
+	('W. Ed Whitelaw', 't')
+	('Wesley W. Wilson', 'p')
 English:
-	Michael G. Aronson
-	Martha J. Bayless
-	Carolyn Bergquist
-	Elizabeth A. Bohls
-	Tina Boscha
-	Lara Bovilsky
-	Kirby Brown
-	Stephanie Clark
-	Michael Copperman
-	James R. Crosswhite
-	Dianne M. Dugaw
-	Karen J. Ford
-	Lisa Freinkel
-	John T. Gage
-	Miriam Gershow
-	Lisa M. Gilman
-	Warren Ginsberg
-	Sangita Gopal
-	Kathleen Horton
-	Kathleen Rowe Karlyn
-	Heidi N. Kaufman
-	C. Anne Laskaya
-	Stephanie LeMenager
-	David Leiwei Li
-	Quinn Miller
-	Kathleen O’Fallon
-	Priscilla P. Ovalle
-	Paul W. Peppis
-	Forest Pyle
-	Mark Quigley
-	William Rossi
-	George Rowe
-	Benjamin D. Saunders
-	Gordon M. Sayre
-	Steven Shankman
-	Courtney Thorsson
-	Corbett Upton
-	David J. Vazquez
-	Mark Whalan
-	Elizabeth A. Wheeler
-	John C. Witte
-	Daniel N. Wojcik
-	Henry B. Wonham
-	Mary E. Wood
-	James L. Boren
-	William Cadbury
-	Suzanne Clark
-	Edwin L. Coleman II
-	James W. Earl
-	Marilyn Farwell
-	Thelma Greenfield
-	Robert Grudin
-	Joseph A. Hynes Jr.
-	Ruth F. Jackson
-	Gloria E. Johnson
-	Linda Kintz
-	Julia Lesage
-	Glen A. Love
-	William Rockett
-	Ralph J. Salisbury
-	Sharon R. Sherman
-	Richard L. Stein
-	Richard C. Stevenson
-	Nathaniel Teich
-	Louise Westling
-	George Wickes
-	Louise M. Bishop
-	David A. Frank
-	Michael Hames-García
-	Lee Rumbarger
+	('Michael G. Aronson', 'p')
+	('Martha J. Bayless', 'p')
+	('Carolyn Bergquist', 'p')
+	('Louise M. Bishop', 't')
+	('Elizabeth A. Bohls', 'p')
+	('James L. Boren', 't')
+	('Tina Boscha', 'p')
+	('Lara Bovilsky', 'p')
+	('Kirby Brown', 'p')
+	('William Cadbury', 't')
+	('Stephanie Clark', 'p')
+	('Suzanne Clark', 't')
+	('Michael Copperman', 'p')
+	('James R. Crosswhite', 'p')
+	('Dianne M. Dugaw', 'p')
+	('James W. Earl', 't')
+	('Marilyn Farwell', 't')
+	('Karen J. Ford', 'p')
+	('David A. Frank', 't')
+	('Lisa Freinkel', 'p')
+	('John T. Gage', 'p')
+	('Miriam Gershow', 'p')
+	('Lisa M. Gilman', 'p')
+	('Warren Ginsberg', 'p')
+	('Sangita Gopal', 'p')
+	('Thelma Greenfield', 't')
+	('Robert Grudin', 't')
+	('Michael Hames-García', 't')
+	('Kathleen Horton', 'p')
+	('Edwin L. Coleman II', 't')
+	('Ruth F. Jackson', 't')
+	('Gloria E. Johnson', 't')
+	('Joseph A. Hynes Jr.', 't')
+	('Kathleen Rowe Karlyn', 'p')
+	('Heidi N. Kaufman', 'p')
+	('Linda Kintz', 't')
+	('C. Anne Laskaya', 'p')
+	('Stephanie LeMenager', 'p')
+	('Julia Lesage', 't')
+	('David Leiwei Li', 'p')
+	('Glen A. Love', 't')
+	('Quinn Miller', 'p')
+	('Priscilla P. Ovalle', 'p')
+	('Kathleen O’Fallon', 'p')
+	('Paul W. Peppis', 'p')
+	('Forest Pyle', 'p')
+	('Mark Quigley', 'p')
+	('William Rockett', 't')
+	('William Rossi', 'p')
+	('George Rowe', 'p')
+	('Lee Rumbarger', 't')
+	('Ralph J. Salisbury', 't')
+	('Benjamin D. Saunders', 'p')
+	('Gordon M. Sayre', 'p')
+	('Steven Shankman', 'p')
+	('Sharon R. Sherman', 't')
+	('Richard L. Stein', 't')
+	('Richard C. Stevenson', 't')
+	('Nathaniel Teich', 't')
+	('Courtney Thorsson', 'p')
+	('Corbett Upton', 'p')
+	('David J. Vazquez', 'p')
+	('Louise Westling', 't')
+	('Mark Whalan', 'p')
+	('Elizabeth A. Wheeler', 'p')
+	('George Wickes', 't')
+	('John C. Witte', 'p')
+	('Daniel N. Wojcik', 'p')
+	('Henry B. Wonham', 'p')
+	('Mary E. Wood', 'p')
 Environmental Studies:
-	Brendan J. M. Bohannan
-	Peg Boulay
-	Scott D. Bridgham
-	Trudy Ann Cameron
-	Matthew Dennis
-	Alan Dickman
-	Kathryn A. Lynch
-	Richard D. Margerum
-	Patricia F. McDowell
-	Ronald B. Mitchell
-	Brook Muller
-	Kari Norgaard
-	Joshua J. Roering
-	David Sutherland
-	Ted Toadvine
-	Peter A. Walker
-	Marsha Weisiger
-	Louise Westling
-	Richard York
-	Susan C. Anderson
-	William S. Ayres
-	Patrick J. Bartlein
-	Carol Ann Bassett
-	Carla Bengtson
-	Ann Bettman
-	Aletta Biersack
-	Thomas H. Bivins
-	Christopher Bone
-	John E. Bonine
-	Gregory D. Bothun
-	William E. Bradshaw
-	Yvonne A. Braun
-	G. Z. Brown
-	Mark Carey
-	George C. Carroll
-	Katharine V. Cashman
-	Richard W. Castenholz
-	Suzanne Clark
-	Shaul E. Cohen
-	John S. Conery
-	William A. Cresko
-	James R. Crosswhite
-	Edward B. Davis
-	Jerome Diethelm
-	Rebecca J. Dorsey
-	Michael C. Dreiling
-	Jeffrey Edmundson
-	James R. Elliott
-	Richard B. Emlet
-	Paul C. Engelking
-	Arthur M. Farley
-	Mark Fonstad
-	John B. Foster
-	John T. Gage
-	Daniel Goldrich
-	Jessica L. Green
-	Patricia A. Gwartney
-	William T. Harbaugh
-	Susan W. Hardwick
-	Jill A. Harrison
-	Kenneth I. Helphand
-	Michael Hibbard
-	Derrick Hindery
-	Janet Hodder
-	Garrett K. Hongo
-	Samantha Hopkins
-	Carl J. Hosticka
-	David Hulse
-	James E. Hutchison
-	Renee A. Irvin
-	Colin Ives
-	Grant Jacobsen
-	Bart Johnson
-	Mark Johnson
-	Lamia Karim
-	Craig Kauffman
-	Lauren J. Kessler
-	Gyoung-Ah Lee
-	Glen A. Love
-	Bonnie Mann
-	W. Andrew Marcus
-	Ralph Mastromonaco
-	Theresa May
-	Gregory McLauchlan
-	Jerry F. Medler
-	Kate Meehan
-	Robert Z. Melnick
-	Debra L. Merskin
-	Erin Moore
-	Geraldine Moreno Black
-	Cassandra Moseley
-	Madonna L. Moss
-	Alexander B. Murphy
-	Lise Nelson
-	Jeffrey Ostler
-	Robert G. Parker
-	Max Nielsen-Pincus
-	Stephen E. Ponder
-	Daniel A. Pope
-	Scott L. Pratt
-	Mark H. Reed
-	Gregory J. Retallack
-	John S. Reynolds
-	Robert G. Ribe
-	William Rossi
-	Bitty A. Roy
-	Michael V. Russo
-	Gordon M. Sayre
-	Marc Schlossberg
-	Alan Shanks
-	Lynda P. Shapiro
-	Paul Slovic
-	J. Josh Snodgrass
-	Lawrence S. Sugiyama
-	Kelly Sutherland
-	Richard P. Suttmeier
-	Nora B. Terwilliger
-	Roxi Thoren
-	Joseph W. Thornton
-	Nelson Ting
-	Douglas R. Toomey
-	Daniel Udovic
-	Peter Warnek
-	Peter B. Wetherwax
-	Ray J. Weldon
-	W. Ed Whitelaw
-	A. Michelle Wood
-	Mary C. Wood
-	Stephen R. Wooten
-	Yizhao Yang
+	('Susan C. Anderson', 't')
+	('William S. Ayres', 't')
+	('Patrick J. Bartlein', 't')
+	('Carol Ann Bassett', 't')
+	('Carla Bengtson', 't')
+	('Ann Bettman', 't')
+	('Aletta Biersack', 't')
+	('Thomas H. Bivins', 't')
+	('Geraldine Moreno Black', 't')
+	('Brendan J. M. Bohannan', 'p')
+	('Christopher Bone', 't')
+	('John E. Bonine', 't')
+	('Gregory D. Bothun', 't')
+	('Peg Boulay', 'p')
+	('William E. Bradshaw', 't')
+	('Yvonne A. Braun', 't')
+	('Scott D. Bridgham', 'p')
+	('G. Z. Brown', 't')
+	('Trudy Ann Cameron', 'p')
+	('Mark Carey', 't')
+	('George C. Carroll', 't')
+	('Katharine V. Cashman', 't')
+	('Richard W. Castenholz', 't')
+	('Suzanne Clark', 't')
+	('Shaul E. Cohen', 't')
+	('John S. Conery', 't')
+	('William A. Cresko', 't')
+	('James R. Crosswhite', 't')
+	('Edward B. Davis', 't')
+	('Matthew Dennis', 'p')
+	('Alan Dickman', 'p')
+	('Jerome Diethelm', 't')
+	('Rebecca J. Dorsey', 't')
+	('Michael C. Dreiling', 't')
+	('Jeffrey Edmundson', 't')
+	('James R. Elliott', 't')
+	('Richard B. Emlet', 't')
+	('Paul C. Engelking', 't')
+	('Arthur M. Farley', 't')
+	('Mark Fonstad', 't')
+	('John B. Foster', 't')
+	('John T. Gage', 't')
+	('Daniel Goldrich', 't')
+	('Jessica L. Green', 't')
+	('Patricia A. Gwartney', 't')
+	('William T. Harbaugh', 't')
+	('Susan W. Hardwick', 't')
+	('Jill A. Harrison', 't')
+	('Kenneth I. Helphand', 't')
+	('Michael Hibbard', 't')
+	('Derrick Hindery', 't')
+	('Janet Hodder', 't')
+	('Garrett K. Hongo', 't')
+	('Samantha Hopkins', 't')
+	('Carl J. Hosticka', 't')
+	('David Hulse', 't')
+	('James E. Hutchison', 't')
+	('Renee A. Irvin', 't')
+	('Colin Ives', 't')
+	('Grant Jacobsen', 't')
+	('Bart Johnson', 't')
+	('Mark Johnson', 't')
+	('Lamia Karim', 't')
+	('Craig Kauffman', 't')
+	('Lauren J. Kessler', 't')
+	('Gyoung-Ah Lee', 't')
+	('Glen A. Love', 't')
+	('Kathryn A. Lynch', 'p')
+	('Bonnie Mann', 't')
+	('W. Andrew Marcus', 't')
+	('Richard D. Margerum', 'p')
+	('Ralph Mastromonaco', 't')
+	('Theresa May', 't')
+	('Patricia F. McDowell', 'p')
+	('Gregory McLauchlan', 't')
+	('Jerry F. Medler', 't')
+	('Kate Meehan', 't')
+	('Robert Z. Melnick', 't')
+	('Debra L. Merskin', 't')
+	('Ronald B. Mitchell', 'p')
+	('Erin Moore', 't')
+	('Cassandra Moseley', 't')
+	('Madonna L. Moss', 't')
+	('Brook Muller', 'p')
+	('Alexander B. Murphy', 't')
+	('Lise Nelson', 't')
+	('Max Nielsen-Pincus', 't')
+	('Kari Norgaard', 'p')
+	('Jeffrey Ostler', 't')
+	('Robert G. Parker', 't')
+	('Stephen E. Ponder', 't')
+	('Daniel A. Pope', 't')
+	('Scott L. Pratt', 't')
+	('Mark H. Reed', 't')
+	('Gregory J. Retallack', 't')
+	('John S. Reynolds', 't')
+	('Robert G. Ribe', 't')
+	('Joshua J. Roering', 'p')
+	('William Rossi', 't')
+	('Bitty A. Roy', 't')
+	('Michael V. Russo', 't')
+	('Gordon M. Sayre', 't')
+	('Marc Schlossberg', 't')
+	('Alan Shanks', 't')
+	('Lynda P. Shapiro', 't')
+	('Paul Slovic', 't')
+	('J. Josh Snodgrass', 't')
+	('Lawrence S. Sugiyama', 't')
+	('David Sutherland', 'p')
+	('Kelly Sutherland', 't')
+	('Richard P. Suttmeier', 't')
+	('Nora B. Terwilliger', 't')
+	('Roxi Thoren', 't')
+	('Joseph W. Thornton', 't')
+	('Nelson Ting', 't')
+	('Ted Toadvine', 'p')
+	('Douglas R. Toomey', 't')
+	('Daniel Udovic', 't')
+	('Peter A. Walker', 'p')
+	('Peter Warnek', 't')
+	('Marsha Weisiger', 'p')
+	('Ray J. Weldon', 't')
+	('Louise Westling', 'p')
+	('Peter B. Wetherwax', 't')
+	('W. Ed Whitelaw', 't')
+	('A. Michelle Wood', 't')
+	('Mary C. Wood', 't')
+	('Stephen R. Wooten', 't')
+	('Yizhao Yang', 't')
+	('Richard York', 'p')
 Ethnic Studies:
-	Charise L. Cheney
-	Lynn H. Fujiwara
-	Michael Hames-García
-	Daniel HoSang
-	Brian Klopotek
-	Ernesto J. Martínez
-	Irmary Reyes-Santos
-	Edward Olivos
-	Jeffrey Ostler
-	Priscilla P. Ovalle
-	Gerardo Sandoval
-	Melissa N. Stuckey
-	Courtney Thorsson
-	Jessica M. Vasquez
-	David J. Vazquez
+	('Charise L. Cheney', 'p')
+	('Lynn H. Fujiwara', 'p')
+	('Michael Hames-García', 'p')
+	('Daniel HoSang', 'p')
+	('Brian Klopotek', 'p')
+	('Ernesto J. Martínez', 'p')
+	('Edward Olivos', 'p')
+	('Jeffrey Ostler', 'p')
+	('Priscilla P. Ovalle', 'p')
+	('Irmary Reyes-Santos', 'p')
+	('Gerardo Sandoval', 'p')
+	('Melissa N. Stuckey', 'p')
+	('Courtney Thorsson', 'p')
+	('Jessica M. Vasquez', 'p')
+	('David J. Vazquez', 'p')
 European Studies:
-	Patricia M. Dewey
-	Evlyn Gould
-	Gina Herrmann
-	Nathalie Hester
-	Scott R. Maier
-	Ian F. McNeely
-	Fabienne Moore
-	Alexander B. Murphy
-	Craig Parsons
-	George J. Sheridan Jr.
-	Priscilla Southwell
-	Michael Stern
 Folklore:
-	Doug Blandy
-	Dianne M. Dugaw
-	John Fenn
-	Lisa M. Gilman
-	Philip W. Scher
-	Sharon R. Sherman
-	Carol T. Silverman
-	Daniel N. Wojcik
-	Juan Eduardo "Ed" Wolf
-	Roger Adkins
-	Ina Asim
-	Martha J. Bayless
-	Carl R. Bybee
-	Matthew Dennis
-	Patricia M. Dewey
-	James D. Fox
-	Lori Hager
-	Kingston Heath
-	Kenneth I. Helphand
-	Lamia Karim
-	Gabriela Martinez
-	Debra L. Merskin
-	Julianne H. Newton
-	Jeffrey Ostler
-	Priscilla P. Ovalle
-	Rachelle Saltzman
-	Gordon M. Sayre
 General Science:
 General Social Science:
 Geography:
@@ -652,7 +613,58 @@ German and Scandinavian:
 German Studies:
 History:
 Humanities:
+	('Ina Asim', 't')
+	('Kenneth S. Calhoon', 't')
+	('Christopher Eckerman', 't')
+	('Mary K. Jaeger', 't')
+	('George J. Sheridan Jr.', 't')
+	('James C. Mohr', 't')
+	('John Nicols', 't')
 Human Physiology:
+	('John Brandon', 't')
+	('Richard L. Brown', 't')
+	('Chien-Chi Chang', 't')
+	('Mark S. Chesnutt', 't')
+	('Li-Shan Chou', 'p')
+	('Anita Christie', 'p')
+	('Michael Colasurdo', 't')
+	('Dennis Collis', 't')
+	('Sierra Dawson', 'p')
+	('Hans Dreyer', 'p')
+	('Mathews Fish', 't')
+	('Daniel Fitzpatrick', 't')
+	('Jeffrey Gilbert', 'p')
+	('Igor Gladstone', 't')
+	('Grace Golden', 'p')
+	('Randall Goodman', 't')
+	('Sarah Grall', 't')
+	('Michael Hahn', 'p')
+	('John Halliwill', 'p')
+	('Aaron Harding', 't')
+	('Jerold Hawn', 't')
+	('Stanley L. James', 't')
+	('Brian Jewett', 't')
+	('Donald C. Jones', 't')
+	('Paul Kaplan', 't')
+	('Andrew Karduna', 'p')
+	('Vern Katz', 't')
+	('Peter Kosek', 't')
+	('Brett (Brick) Lantz', 't')
+	('Samuel Lau', 't')
+	('Victor Lin', 't')
+	('Andrew Lovering', 'p')
+	('John Melton', 't')
+	('Christopher T. Minson', 'p')
+	('Brian Nichols', 't')
+	('Louis R. Osternig', 't')
+	('Richard Padgett', 't')
+	('Rick Robertson', 't')
+	('Jon Runyeon', 'p')
+	('Anne Shumway-Cook', 't')
+	('Kenneth M. Singer', 't')
+	('Kimberly Terrell', 't')
+	('Richard K. Troxel', 't')
+	('Marjorie Woollacott', 't')
 International Studies:
 Judaic Studies:
 Latin American Studies:
@@ -673,7 +685,150 @@ Romance Languages:
 Russian, East European, and Eurasian Studies:
 Scandinavian Studies:
 Sociology:
+	('Joan R. Acker', 't')
+	('Michael B. Aguilera', 'p')
+	('Scott Coltrane', 'p')
+	('Steven Deutsch', 't')
+	('Michael C. Dreiling', 'p')
+	('James R. Elliott', 'p')
+	('John B. Foster', 'p')
+	('Marion Sherman Goldman', 't')
+	('Aaron O. Gullickson', 'p')
+	('Patricia A. Gwartney', 'p')
+	('Jill A. Harrison', 'p')
+	('Jocelyn Hollander', 'p')
+	('Donald R. Van Houten', 't')
+	('Benton Johnson', 't')
+	('Kenneth B. Liberman', 't')
+	('Ryan Light', 'p')
+	('Gregory McLauchlan', 'p')
+	('David Milton', 't')
+	('Kari Norgaard', 'p')
+	('Matthew Norton', 'p')
+	("Robert M. O'Brien", 't')
+	('Eileen M. Otis', 'p')
+	('Cheri "C.J." Pascoe', 'p')
+	('Elaine Replogle', 'p')
+	('Ellen K. Scott', 'p')
+	('Jiannbin Lee Shiao', 'p')
+	('Caleb Southworth', 'p')
+	('Jessica M. Vasquez', 'p')
+	('Richard York', 'p')
 Southeast Asian Studies:
 Statistics:
 Theater Arts:
+	('Robert Barton', 't')
+	('Alexandra Bonds', 'p')
+	('Bradley Branam', 'p')
+	('Faber B. DeChaine', 't')
+	('La Donna Forsgren', 'p')
+	('Joseph Gilg', 'p')
+	('Jerry Hooker', 'p')
+	('Theresa May', 'p')
+	('Grant F. McKernie', 't')
+	('Michael Malek Najjar', 'p')
+	('Janet Rose', 'p')
+	('John Schmor', 'p')
+	('John C. Watson', 't')
+	('Jerry R. Williams', 't')
 Women's and Gender Studies:
+	('Joan R. Acker', 't')
+	('Barbara Bader Aldave', 't')
+	('Laura J. Alpert', 't')
+	('Barbara K. Altmann', 't')
+	('Susan C. Anderson', 't')
+	('Monique Balbuena', 't')
+	('Oluwakemi Balogun', 'p')
+	('Judith R. Baskin', 't')
+	('Diane B. Baxter', 't')
+	('Erin Beck', 't')
+	('Aletta Biersack', 't')
+	('Louise M. Bishop', 't')
+	('Geraldine Moreno Black', 't')
+	('Elizabeth A. Bohls', 't')
+	('Yvonne A. Braun', 'p')
+	('Sara N. Brownmiller', 't')
+	('Krista Chronister', 't')
+	('Suzanne Clark', 't')
+	('Frances B. Cogan', 't')
+	('Jane K. Cramer', 't')
+	('Dianne M. Dugaw', 't')
+	('Maram Epstein', 't')
+	('Caroline Forell', 't')
+	('Linda M. Forrest', 't')
+	('Lisa Freinkel', 't')
+	('Jennifer J. Freyd', 't')
+	('Lynn H. Fujiwara', 'p')
+	('Linda O. Fuller', 't')
+	('Alison Gash', 't')
+	('Lisa M. Gilman', 't')
+	('Amalia Gladhart', 't')
+	('Marion Sherman Goldman', 't')
+	('Bryna Goodman', 't')
+	('Sangita Gopal', 't')
+	('Deborah A. Green', 't')
+	('Michael Hames-Garcia', 't')
+	('Susan W. Hardwick', 't')
+	('Leslie J. Harris', 't')
+	('Ellen Herman', 't')
+	('Daniel HoSang', 't')
+	('Jocelyn Hollander', 't')
+	('Lamia Karim', 't')
+	('Kathleen Rowe Karlyn', 't')
+	('Lauren J. Kessler', 't')
+	('Linda Kintz', 't')
+	('Brian Klopotek', 't')
+	('Cheris Kramarae', 't')
+	('C. Anne Laskaya', 't')
+	('David Leiwei Li', 't')
+	('Joseph E. Lowndes', 't')
+	('Kathryn A. Lynch', 't')
+	('Bonnie Mann', 't')
+	('Gabriela Martinez', 't')
+	('Ernesto J. Martínez', 'p')
+	('Barbara D. May', 't')
+	('Randall E. McGowen', 't')
+	('Michelle McKinley', 't')
+	('Karen McPherson', 't')
+	('Debra L. Merskin', 't')
+	('Quinn Miller', 't')
+	('Fabienne Moore', 't')
+	('Sandra L. Morgen', 't')
+	('Madonna L. Moss', 't')
+	('Lise Nelson', 't')
+	('Kari Norgaard', 't')
+	('Dorothee Ostmeier', 't')
+	('Eileen M. Otis', 't')
+	('Priscilla P. Ovalle', 't')
+	('Barbara Corrado Pope', 't')
+	('Scott L. Pratt', 't')
+	('Jenifer Presto', 't')
+	('F. Regina Psaki', 't')
+	('Forest Pyle', 't')
+	('Judith Raiskin', 'p')
+	('Elizabeth Reis', 'p')
+	('Mary K. Rothbart', 't')
+	('Suzanne E. Rowe', 't')
+	('Tze-Lan Sang', 't')
+	('Ellen K. Scott', 'p')
+	('Stephen J. Shoemaker', 't')
+	('Nancy E. Shurtz', 't')
+	('Carol T. Silverman', 't')
+	('Carol Stabile', 'p')
+	('Beata Stawarska', 't')
+	('Lynn Stephen', 't')
+	('Analisa Taylor', 't')
+	('Courtney Thorsson', 't')
+	('Mia Tuan', 't')
+	('Mark T. Unno', 't')
+	('Dominick R. Vetri', 't')
+	('Merle H. Weiner', 't')
+	('Anita M. Weiss', 't')
+	('Louise Westling', 't')
+	('Elizabeth A. Wheeler', 't')
+	('Frances J. White', 't')
+	('Lisa Wolverton', 't')
+	('Mary E. Wood', 't')
+	('Priscilla Yamin', 't')
+	('Naomi Zack', 't')
+	('Virpi Zuck', 't')

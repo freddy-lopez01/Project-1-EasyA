@@ -46,6 +46,9 @@ def Scrape_FacinDept(department_link):
 
             filtered_faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
 
+            # Exclude paragraphs that contain specific elements
+            filtered_faculty_paragraphs = [p for p in filtered_faculty_paragraphs  if not p.find('em')]
+
             # Initialize a list to store faculty names
             faculty_names = []
 

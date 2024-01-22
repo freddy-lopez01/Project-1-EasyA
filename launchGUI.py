@@ -15,9 +15,10 @@ sideBarbg = "#"
 #submainbg = "#3f3f46"
 
 submainbg = "#fef6e4"
-darksubmainbg = "#242424"
+darksubmainbg = "#282828"
 darkslabbg = "#787878"
-
+darklogobg="#242424"
+#darksubmainbg = "#242424"
 # This section will be dynamically updated based off of user input
 # Dependencies:
 #               Most recent user selection will dictate database query
@@ -87,6 +88,11 @@ def toggle():
         slab2.config(bg=navbg)
         slab3.config(bg=navbg)
         NavBar.config(bg=navbg)
+        logoBar.config(bg=logobg)
+        paddLab.config(bg=logobg)
+        toggleLab.config(bg=logobg)
+        toggleB.config(bg=logobg)
+        logo_widget.config(bg=logobg)
         color_Mode = True
 
     else:
@@ -105,6 +111,11 @@ def toggle():
         slab2.config(bg=darkslabbg)
         slab3.config(bg=darkslabbg)
         NavBar.config(bg=darkslabbg)
+        logoBar.config(bg=darklogobg)
+        paddLab.config(bg=darklogobg)
+        toggleLab.config(bg=darklogobg)
+        toggleB.config(bg=darklogobg)
+        logo_widget.config(bg=darklogobg)
         color_Mode = False
 
 logoBar = tk.Frame(root, bg=logobg, height=60)
@@ -379,9 +390,9 @@ slab2 = tk.Label(NavBar, text="GitHub", bg=navbg, cursor="hand2", font=("Adobe C
 slab2.grid(row=2, column=1, padx=5, pady=40)
 slab2.bind("<Button-1>", lambda e: openWeb("https://github.com/freddy-lopez01/Project-1-EasyA"))
 
-slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, font=("Adobe Caslon Pro", 8))
+slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 slab3.grid(row=3, column=1, padx=5, pady=40)
-
+slab3.bind("<Button-1>", lambda e: openWeb("https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/"))
 
 
 def closeGUI():

@@ -18,3 +18,9 @@ Grey out everything prior to the first selection being made
 - Make sure the greyed out goes away 
 
 https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/
+
+
+paddLab
+toggleLab
+toggleB
+logo_widget

@@ -314,17 +314,17 @@ def clearBox():
     selectedList.clear()
 
 
-subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=TEMP_OPT)
+subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=TEMP_SUB)
 subMenu0.bind("<<ComboboxSelected>>", sub_select0)
 subMenu0.grid(row=2, column=2, padx=10, pady=10)
 
 
-subMenu1 = ttk.Combobox(subMain, values=TEMP_SUB)
+subMenu1 = ttk.Combobox(subMain, values=TEMP_OPT)
 subMenu1.bind("<<ComboboxSelected>>", sub_select1)
 subMenu1.grid(row=3, column=2, padx=10, pady=10)
 
 
-subMenu2 = ttk.Combobox(subMain, values=TEMP_OPT)
+subMenu2 = ttk.Combobox(subMain, values=TEMP_SUB)
 subMenu2.bind("<<ComboboxSelected>>", sub_select2)
 subMenu2.grid(row=4, column=2, padx=10, pady=10)
 

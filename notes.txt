@@ -1,0 +1,18 @@
+subjL
+classL
+courseL
+facultyL
+instructL
+graphTypeL
+PassTypeL
+
+
+
+
+
+
+first box: subject 
+
+Grey out everything prior to the first selection being made
+- Everything will then be populated based off prior selection
+- Make sure the greyed out goes away 

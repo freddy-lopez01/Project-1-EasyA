@@ -1,650 +1,666 @@
 African Studies:
-	Yvonne A. Braun
-	André Djiffack
-	Jenifer P. Craig
-	John Fenn
-	Stephen R. Frost
-	Dennis C. Galvan
-	Ibrahim J. Gassama
-	Lisa M. Gilman
-	Rita Honka
-	Karen McPherson
-	Doris L. Payne
-	Peter A. Walker
-	Janis C. Weeks
-	Frances J. White
-	Stephen R. Wooten
+	('Yvonne A. Braun', 'P')
+	('André Djiffack', 'P')
+	('Jenifer P. Craig', 'P')
+	('John Fenn', 'P')
+	('Stephen R. Frost', 'P')
+	('Dennis C. Galvan', 'P')
+	('Ibrahim J. Gassama', 'P')
+	('Lisa M. Gilman', 'P')
+	('Rita Honka', 'P')
+	('Karen McPherson', 'P')
+	('Doris L. Payne', 'P')
+	('Peter A. Walker', 'P')
+	('Janis C. Weeks', 'P')
+	('Frances J. White', 'P')
+	('Stephen R. Wooten', 'P')
 Anthropology:
-	William S. Ayres
-	Diane B. Baxter
-	Aletta Biersack
-	Jon M. Erlandson
-	Stephen R. Frost
-	Lamia Karim
-	Gyoung-Ah Lee
-	Sandra L. Morgen
-	Madonna L. Moss
-	Theresa D. O’Nell
-	Philip W. Scher
-	Carol T. Silverman
-	J. Josh Snodgrass
-	Lynn Stephen
-	Kirstin Sterner
-	Lawrence S. Sugiyama
-	Nelson Ting
-	Frances J. White
-	Stephen R. Wooten
-	C. Melvin Aikens
-	Don E. Dumond
-	John R. Lukacs
-	Geraldine Moreno Black
-	Paul E. Simonds
-	Harry F. Wolcott
-	Philip D. Young
-	Cynthia J. Budlong
-	Thomas J. Connolly
-	Pamela E. Endzweig
-	Dennis L. Jenkins
-	Brian Klopotek
-	Patricia Krier
-	Brian L. O’Neill
+	('William S. Ayres', 'T')
+	('Diane B. Baxter', 'T')
+	('Aletta Biersack', 'T')
+	('Jon M. Erlandson', 'T')
+	('Stephen R. Frost', 'T')
+	('Lamia Karim', 'T')
+	('Gyoung-Ah Lee', 'T')
+	('Sandra L. Morgen', 'T')
+	('Madonna L. Moss', 'T')
+	('Theresa D. O’Nell', 'T')
+	('Philip W. Scher', 'T')
+	('Carol T. Silverman', 'T')
+	('J. Josh Snodgrass', 'T')
+	('Lynn Stephen', 'T')
+	('Kirstin Sterner', 'T')
+	('Lawrence S. Sugiyama', 'T')
+	('Nelson Ting', 'T')
+	('Frances J. White', 'T')
+	('Stephen R. Wooten', 'T')
+	('C. Melvin Aikens', 'P')
+	('Don E. Dumond', 'P')
+	('John R. Lukacs', 'P')
+	('Geraldine Moreno Black', 'P')
+	('Paul E. Simonds', 'P')
+	('Harry F. Wolcott', 'P')
+	('Philip D. Young', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Cynthia J. Budlong', 'P')
+	('Thomas J. Connolly', 'P')
+	('Pamela E. Endzweig', 'P')
+	('Dennis L. Jenkins', 'P')
+	('Brian Klopotek', 'P')
+	('Patricia Krier', 'P')
+	('Brian L. O’Neill', 'P')
 Asian Studies:
-	Ina Asim
-	William S. Ayres
-	Aletta Biersack
-	Lucien Brown
-	Steven T. Brown
-	Daniel P. Buck
-	Kathie Carpenter
-	Scott DeLancey
-	Stephen W. Durrant
-	Maram Epstein
-	Alisa D. Freedman
-	Andrew E. Goble
-	Bryna Goodman
-	Sangita Gopal
-	Alison Groppe
-	Jeffrey E. Hanes
-	Kaori Idemaru
-	Dong Hoon Kim
-	Karrie Koesel
-	Stephen W. Kohl
-	Robert Kyr
-	Charles H. Lachman
-	Gyoung-Ah Lee
-	David Leiwei Li
-	John R. Lukacs
-	Daisuke Miyao
-	Roxann Prazniak
-	Eric Priest
-	Tze-Lan Sang
-	Xiaobo Su
-	Ying Tan
-	Mark T. Unno
-	Tuong Vu
-	Yugen Wang
-	Jason Webb
-	Anita M. Weiss
-	Kyu Ho Youm
+	('Ina Asim', 'P')
+	('William S. Ayres', 'P')
+	('Aletta Biersack', 'P')
+	('Lucien Brown', 'P')
+	('Steven T. Brown', 'P')
+	('Daniel P. Buck', 'P')
+	('Kathie Carpenter', 'P')
+	('Scott DeLancey', 'P')
+	('Stephen W. Durrant', 'P')
+	('Maram Epstein', 'P')
+	('Alisa D. Freedman', 'P')
+	('Andrew E. Goble', 'P')
+	('Bryna Goodman', 'P')
+	('Sangita Gopal', 'P')
+	('Alison Groppe', 'P')
+	('Jeffrey E. Hanes', 'P')
+	('Kaori Idemaru', 'P')
+	('Dong Hoon Kim', 'P')
+	('Karrie Koesel', 'P')
+	('Stephen W. Kohl', 'P')
+	('Robert Kyr', 'P')
+	('Charles H. Lachman', 'P')
+	('Gyoung-Ah Lee', 'P')
+	('David Leiwei Li', 'P')
+	('John R. Lukacs', 'P')
+	('Daisuke Miyao', 'P')
+	('Roxann Prazniak', 'P')
+	('Eric Priest', 'P')
+	('Tze-Lan Sang', 'P')
+	('Xiaobo Su', 'P')
+	('Ying Tan', 'P')
+	('Mark T. Unno', 'P')
+	('Tuong Vu', 'P')
+	('Yugen Wang', 'P')
+	('Jason Webb', 'P')
+	('Anita M. Weiss', 'P')
+	('Kyu Ho Youm', 'P')
 Biology:
-	Alice Barkan
-	Brendan J. M. Bohannan
-	Bruce A. Bowerman
-	William E. Bradshaw
-	Scott D. Bridgham
-	Mark C. Carrier
-	John S. Conery
-	William A. Cresko
-	Alan Dickman
-	Chris Q. Doe
-	Judith S. Eisen
-	Richard B. Emlet
-	Jessica L. Green
-	Karen J. Guillemin
-	Victoria Herman
-	Janet Hodder
-	Cristin L. Hulslander
-	Eric A. Johnson
-	Alan J. Kelly
-	Shawn R. Lockery
-	V. Patteson Lombardi
-	Svetlana Maslakova
-	Cristopher M. Neill
-	Peter M. O’Day
-	Patrick C. Phillips
-	John H. Postlethwait
-	William Roberts
-	Bitty A. Roy
-	Debbie Schlenoff
-	Eric Selker
-	Jeanne M. Selker
-	Alan Shanks
-	George F. Sprague Jr.
-	Karen U. Sprague
-	Kryn Stankunas
-	Carl A. Stiefbold
-	Matthew A. Streisfeld
-	Terry Takahashi
-	Joseph W. Thornton
-	Nathan J. Tublitz
-	Philip E. Washbourne
-	Janis C. Weeks
-	Monte Westerfield
-	Peter B. Wetherwax
-	A. Michelle Wood
-	Craig M. Young
-	Hui Zong
-	Steven S. Rumrill
-	David H. Wagner
-	Andrew S. Bajer
-	Howard T. Bonnett Jr.
-	Roderick A. Capaldi
-	George C. Carroll
-	Richard W. Castenholz
-	Charles B. Kimmel
-	Frederick W. Munz
-	Paul P. Rudy
-	Eric Schabtach
-	Lynda P. Shapiro
-	Franklin W. Stahl
-	Nora B. Terwilliger
-	Daniel Udovic
-	Norman K. Wessells
-	James A. Weston
-	Herbert P. Wisner
+	('Alice Barkan', 'T')
+	('Brendan J. M. Bohannan', 'T')
+	('Bruce A. Bowerman', 'T')
+	('William E. Bradshaw', 'T')
+	('Scott D. Bridgham', 'T')
+	('Mark C. Carrier', 'T')
+	('John S. Conery', 'T')
+	('William A. Cresko', 'T')
+	('Alan Dickman', 'T')
+	('Chris Q. Doe', 'T')
+	('Judith S. Eisen', 'T')
+	('Richard B. Emlet', 'T')
+	('Jessica L. Green', 'T')
+	('Karen J. Guillemin', 'T')
+	('Victoria Herman', 'T')
+	('Janet Hodder', 'T')
+	('Cristin L. Hulslander', 'T')
+	('Eric A. Johnson', 'T')
+	('Alan J. Kelly', 'T')
+	('Shawn R. Lockery', 'T')
+	('V. Patteson Lombardi', 'T')
+	('Svetlana Maslakova', 'T')
+	('Cristopher M. Neill', 'T')
+	('Peter M. O’Day', 'T')
+	('Patrick C. Phillips', 'T')
+	('John H. Postlethwait', 'T')
+	('William Roberts', 'T')
+	('Bitty A. Roy', 'T')
+	('Debbie Schlenoff', 'T')
+	('Eric Selker', 'T')
+	('Jeanne M. Selker', 'T')
+	('Alan Shanks', 'T')
+	('George F. Sprague Jr.', 'T')
+	('Karen U. Sprague', 'T')
+	('Kryn Stankunas', 'T')
+	('Carl A. Stiefbold', 'T')
+	('Matthew A. Streisfeld', 'T')
+	('Terry Takahashi', 'T')
+	('Joseph W. Thornton', 'T')
+	('Nathan J. Tublitz', 'T')
+	('Philip E. Washbourne', 'T')
+	('Janis C. Weeks', 'T')
+	('Monte Westerfield', 'T')
+	('Peter B. Wetherwax', 'T')
+	('A. Michelle Wood', 'T')
+	('Craig M. Young', 'T')
+	('Hui Zong', 'T')
+	('Steven S. Rumrill', 'P')
+	('David H. Wagner', 'P')
+	('Andrew S. Bajer', 'P')
+	('Howard T. Bonnett Jr.', 'P')
+	('Roderick A. Capaldi', 'P')
+	('George C. Carroll', 'P')
+	('Richard W. Castenholz', 'P')
+	('Charles B. Kimmel', 'P')
+	('Frederick W. Munz', 'P')
+	('Paul P. Rudy', 'P')
+	('Eric Schabtach', 'P')
+	('Lynda P. Shapiro', 'P')
+	('Franklin W. Stahl', 'P')
+	('Nora B. Terwilliger', 'P')
+	('Daniel Udovic', 'P')
+	('Norman K. Wessells', 'P')
+	('James A. Weston', 'P')
+	('Herbert P. Wisner', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Canadian Studies:
-	C. Brian Barnett
-	Gaylene Carpenter
-	Patricia M. Dewey
-	Michael Fakhri
-	Susan W. Hardwick
-	Nancy Heapes
-	Madonna L. Moss
-	Karen McPherson
-	Michael Malek Najjar
-	Gordon M. Sayre
+	('C. Brian Barnett', 'P')
+	('Gaylene Carpenter', 'P')
+	('Patricia M. Dewey', 'P')
+	('Michael Fakhri', 'P')
+	('Susan W. Hardwick', 'P')
+	('Nancy Heapes', 'P')
+	('Madonna L. Moss', 'P')
+	('Karen McPherson', 'P')
+	('Michael Malek Najjar', 'P')
+	('Gordon M. Sayre', 'P')
 Chemistry and Biochemistry:
-	Andy Berglund
-	Shannon W. Boettcher
-	Jeffrey A. Cina
-	Victoria J. De Rose
-	Kenneth M. Doxsee
-	Paul C. Engelking
-	Deborah B. Exton
-	Marina G. Guenza
-	Julie A. Haack
-	Michael M. Haley
-	Diane K. Hawley
-	Darren W. Johnson
-	David C. Johnson
-	Michael E. Kellman
-	Michael Koscho
-	Andrew H. Marcus
-	George V. Nazin
-	Brad J. Nolen
-	Catherine J. Page
-	Michael D. Pluth
-	Kenneth E. Prehoda
-	Geraldine L. Richmond
-	Tom H. Stevens
-	David R. "Randy" Sullivan
-	David R. Tyler
-	Gregory M. Williams
-	John Hardwick
-	Ralph J. Barnhard
-	Bruce P. Branchaud
-	Frederick W. Dahlquist
-	Thomas R. Dyke
-	O. Hayes Griffith
-	David R. Herrick
-	John F. W. Keana
-	James W. Long
-	Robert M. Mazo
-	John A. Schellman
-	Peter H. von Hippel
-	Raymond G. Wolfe Jr.
+	('Andy Berglund', 'T')
+	('Shannon W. Boettcher', 'T')
+	('Jeffrey A. Cina', 'T')
+	('Victoria J. De Rose', 'T')
+	('Kenneth M. Doxsee', 'T')
+	('Paul C. Engelking', 'T')
+	('Deborah B. Exton', 'T')
+	('Marina G. Guenza', 'T')
+	('Julie A. Haack', 'T')
+	('Michael M. Haley', 'T')
+	('Diane K. Hawley', 'T')
+	('Darren W. Johnson', 'T')
+	('David C. Johnson', 'T')
+	('Michael E. Kellman', 'T')
+	('Michael Koscho', 'T')
+	('Andrew H. Marcus', 'T')
+	('George V. Nazin', 'T')
+	('Brad J. Nolen', 'T')
+	('Catherine J. Page', 'T')
+	('Michael D. Pluth', 'T')
+	('Kenneth E. Prehoda', 'T')
+	('Geraldine L. Richmond', 'T')
+	('Tom H. Stevens', 'T')
+	('David R. "Randy" Sullivan', 'T')
+	('David R. Tyler', 'T')
+	('Gregory M. Williams', 'T')
+	('John Hardwick', 'P')
+	('Ralph J. Barnhard', 'P')
+	('Bruce P. Branchaud', 'P')
+	('Frederick W. Dahlquist', 'P')
+	('Thomas R. Dyke', 'P')
+	('O. Hayes Griffith', 'P')
+	('David R. Herrick', 'P')
+	('John F. W. Keana', 'P')
+	('James W. Long', 'P')
+	('Robert M. Mazo', 'P')
+	('John A. Schellman', 'P')
+	('Peter H. von Hippel', 'P')
+	('Raymond G. Wolfe Jr.', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Cinema Studies:
-	Michael G. Aronson
-	Richard Herskowitz
-	Lesli A. Larson
-	Gabriela Martinez
-	Daisuke Miyao
-	Kate Mondloch
-	Priscilla P. Ovalle
-	Kartz Ucci
-	Janet Wasko
-	Michael Allan
-	Steven T. Brown
-	Carl R. Bybee
-	Kenneth S. Calhoon
-	John Fenn
-	Alisa D. Freedman
-	Sangita Gopal
-	Colin H. Ives
-	Kathryn Rowe Karlin
-	Dong Hoon Kim
-	David Leiwei Li
-	Katharina E. Loew
-	Debra L. Merskin
-	Daniel L. Miller
-	Jon Palfreman
-	Elizabeth M. Peterson
-	Jenifer Presto
-	John T. Ryan
-	Biswarup Sen
-	Carol Stabile
-	Ying Tan
-	William Cadbury
-	Julia Lesage
-	Sharon R. Sherman
+	('Michael G. Aronson', 'P')
+	('Richard Herskowitz', 'P')
+	('Lesli A. Larson', 'P')
+	('Gabriela Martinez', 'P')
+	('Daisuke Miyao', 'P')
+	('Kate Mondloch', 'P')
+	('Priscilla P. Ovalle', 'P')
+	('Kartz Ucci', 'P')
+	('Janet Wasko', 'P')
+	('Michael Allan', 'P')
+	('Steven T. Brown', 'P')
+	('Carl R. Bybee', 'P')
+	('Kenneth S. Calhoon', 'P')
+	('John Fenn', 'P')
+	('Alisa D. Freedman', 'P')
+	('Sangita Gopal', 'P')
+	('Colin H. Ives', 'P')
+	('Kathryn Rowe Karlin', 'P')
+	('Dong Hoon Kim', 'P')
+	('David Leiwei Li', 'P')
+	('Katharina E. Loew', 'P')
+	('Debra L. Merskin', 'P')
+	('Daniel L. Miller', 'P')
+	('Jon Palfreman', 'P')
+	('Elizabeth M. Peterson', 'P')
+	('Jenifer Presto', 'P')
+	('John T. Ryan', 'P')
+	('Biswarup Sen', 'P')
+	('Carol Stabile', 'P')
+	('Ying Tan', 'P')
+	('William Cadbury', 'P')
+	('Julia Lesage', 'P')
+	('Sharon R. Sherman', 'P')
 Classics:
-	P. Lowell Bowditch
-	Cristina Calhoon
-	Christopher Eckerman
-	Jeffrey M. Hurwit
-	Mary K. Jaeger
-	Steven Shankman
-	Malcolm Wilson
-	John Nicols
-	C. Bennett Pascal
-	Martha J. Bayless
+	('P. Lowell Bowditch', 'P')
+	('Cristina Calhoon', 'P')
+	('Christopher Eckerman', 'P')
+	('Jeffrey M. Hurwit', 'P')
+	('Mary K. Jaeger', 'P')
+	('Steven Shankman', 'P')
+	('Malcolm Wilson', 'P')
+	('John Nicols', 'P')
+	('C. Bennett Pascal', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Martha J. Bayless', 'P')
 Comparative Literature:
-	Michael Allan
-	Steven T. Brown
-	Kenneth S. Calhoon
-	Karen R. Emmerich
-	Lisa Freinkel
-	Warren Ginsberg
-	Sangita Gopal
-	Katya E. Hokanson
-	Dawn Marlan
-	Leah Middlebrook
-	Jenifer Presto
-	Barbara K. Altmann
-	Susan C. Anderson
-	Monique Balbuena
-	P. Lowell Bowditch
-	Carl R. Bybee
-	Joyce Cheng
-	Suzanne Clark
-	James R. Crosswhite
-	Dianne M. Dugaw
-	Cecilia Enjuto Rangel
-	Maram Epstein
-	Pedro García-Caro
-	Evlyn Gould
-	D. Gantt Gurley
-	Michael Hames-García
-	Kathleen Rowe Karlyn
-	Linda Kintz
-	Martin Klebes
-	David Leiwei Li
-	Jeffrey S. Librett
-	Massimo Lollini
-	Katharina Loew
-	John McCole
-	Randall E. McGowen
-	Karen McPherson
-	Fabienne Moore
-	Dorothee Ostmeier
-	Paul W. Peppis
-	Amanda W. Powell
-	F. Regina Psaki
-	Forest Pyle
-	Judith Raiskin
-	Daniel Rosenberg
-	George Rowe
-	Tze-Lan Sang
-	Gordon M. Sayre
-	John Schmor
-	Steven Shankman
-	Carol T. Silverman
-	Michael Stern
-	Analisa Taylor
-	Ted Toadvine
-	Alejandro Vallega
-	David J. Vazquez
-	Elizabeth A. Wheeler
-	Daniel N. Wojcik
-	Rocio Zambrana
+	('Michael Allan', 'T')
+	('Steven T. Brown', 'T')
+	('Kenneth S. Calhoon', 'T')
+	('Karen R. Emmerich', 'T')
+	('Lisa Freinkel', 'T')
+	('Warren Ginsberg', 'T')
+	('Sangita Gopal', 'T')
+	('Katya E. Hokanson', 'T')
+	('Dawn Marlan', 'T')
+	('Leah Middlebrook', 'T')
+	('Jenifer Presto', 'T')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'T')
+	('Barbara K. Altmann', 'P')
+	('Susan C. Anderson', 'P')
+	('Monique Balbuena', 'P')
+	('P. Lowell Bowditch', 'P')
+	('Carl R. Bybee', 'P')
+	('Joyce Cheng', 'P')
+	('Suzanne Clark', 'P')
+	('James R. Crosswhite', 'P')
+	('Dianne M. Dugaw', 'P')
+	('Cecilia Enjuto Rangel', 'P')
+	('Maram Epstein', 'P')
+	('Pedro García-Caro', 'P')
+	('Evlyn Gould', 'P')
+	('D. Gantt Gurley', 'P')
+	('Michael Hames-García', 'P')
+	('Kathleen Rowe Karlyn', 'P')
+	('Linda Kintz', 'P')
+	('Martin Klebes', 'P')
+	('David Leiwei Li', 'P')
+	('Jeffrey S. Librett', 'P')
+	('Massimo Lollini', 'P')
+	('Katharina Loew', 'P')
+	('John McCole', 'P')
+	('Randall E. McGowen', 'P')
+	('Karen McPherson', 'P')
+	('Fabienne Moore', 'P')
+	('Dorothee Ostmeier', 'P')
+	('Paul W. Peppis', 'P')
+	('Amanda W. Powell', 'P')
+	('F. Regina Psaki', 'P')
+	('Forest Pyle', 'P')
+	('Judith Raiskin', 'P')
+	('Daniel Rosenberg', 'P')
+	('George Rowe', 'P')
+	('Tze-Lan Sang', 'P')
+	('Gordon M. Sayre', 'P')
+	('John Schmor', 'P')
+	('Steven Shankman', 'P')
+	('Carol T. Silverman', 'P')
+	('Michael Stern', 'P')
+	('Analisa Taylor', 'P')
+	('Ted Toadvine', 'P')
+	('Alejandro Vallega', 'P')
+	('David J. Vazquez', 'P')
+	('Elizabeth A. Wheeler', 'P')
+	('Daniel N. Wojcik', 'P')
+	('Rocio Zambrana', 'P')
 Computer and Information Science:
-	Zena M. Ariola
-	Hank Childs
-	Dejing Dou
-	Stuart Faulk
-	Stephen F. Fickas
-	Kathleen Freeman Hennessy
-	Michael Hennessy
-	Anthony J. Hornof
-	Jun Li
-	Daniel Lowd
-	Allen D. Malony
-	Andrzej Proskurowski
-	Reza Rejaie
-	Eric D. Wills
-	Christopher B. Wilson
-	Michal Young
-	Sarah A. Douglas
-	Arthur M. Farley
-	Virginia M. Lo
-	Eugene M. Luks
-	Kent A. Stevens
-	Jeffrey Stolet
-	Joseph W. Thornton
-	Don M. Tucker
+	('Zena M. Ariola', 'P')
+	('Hank Childs', 'P')
+	('Dejing Dou', 'P')
+	('Stuart Faulk', 'P')
+	('Stephen F. Fickas', 'P')
+	('Kathleen Freeman Hennessy', 'P')
+	('Michael Hennessy', 'P')
+	('Anthony J. Hornof', 'P')
+	('Jun Li', 'P')
+	('Daniel Lowd', 'P')
+	('Allen D. Malony', 'P')
+	('Andrzej Proskurowski', 'P')
+	('Reza Rejaie', 'P')
+	('Eric D. Wills', 'P')
+	('Christopher B. Wilson', 'P')
+	('Michal Young', 'P')
+	('Sarah A. Douglas', 'P')
+	('Arthur M. Farley', 'P')
+	('Virginia M. Lo', 'P')
+	('Eugene M. Luks', 'P')
+	('Kent A. Stevens', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Jeffrey Stolet', 'P')
+	('Joseph W. Thornton', 'P')
+	('Don M. Tucker', 'P')
 Creative Writing:
-	Daniel Anderson
-	Jason Brown
-	Geri Doran
-	Ehud Havazelet
-	Garrett K. Hongo
-	Richard M. Lyons
+	('Daniel Anderson', 'T')
+	('Jason Brown', 'T')
+	('Geri Doran', 'T')
+	('Ehud Havazelet', 'T')
+	('Garrett K. Hongo', 'T')
+	('Richard M. Lyons', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 East Asian Languages and Literatures:
-	Lucien Brown
-	Maram Epstein
-	Alisa D. Freedman
-	Denise Gigliotti
-	Alison Groppe
-	Reiko Hashimoto
-	Kaori Idemaru
-	Rika Ikei
-	Zhuo Jing-Schmidt
-	Dong Hoon Kim
-	Daisuke Miyao
-	Naoko Nakadate
-	Tze-Lan Sang
-	Glynne Walley
-	Yugen Wang
-	Jason Webb
-	Jean Yuanpeng Wu
+	('Lucien Brown', 'T')
+	('Maram Epstein', 'T')
+	('Alisa D. Freedman', 'T')
+	('Denise Gigliotti', 'T')
+	('Alison Groppe', 'T')
+	('Reiko Hashimoto', 'T')
+	('Kaori Idemaru', 'T')
+	('Rika Ikei', 'T')
+	('Zhuo Jing-Schmidt', 'T')
+	('Dong Hoon Kim', 'T')
+	('Daisuke Miyao', 'T')
+	('Naoko Nakadate', 'T')
+	('Tze-Lan Sang', 'T')
+	('Glynne Walley', 'T')
+	('Yugen Wang', 'T')
+	('Jason Webb', 'T')
+	('Jean Yuanpeng Wu', 'T')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Economics:
-	Bruce A. Blonigen
-	Alfredo Burlando
-	Trudy Ann Cameron
-	Shankha Chakraborty
-	Anca D. Cristea
-	Timothy A. Duy
-	Christopher J. Ellis
-	George W. Evans
-	Benjamin Hansen
-	William T. Harbaugh
-	Van Kolpin
-	Peter J. Lambert
-	Ralph Mastromonaco
-	Jeremy M. Piger
-	Nicholas Sly
-	Anne van den Nouweland
-	Glen R. Waddell
-	Caroline E. Weber
-	Wesley W. Wilson
-	Cathleen S. Leué
-	Robert Campbell
-	Henry N. Goldstein
-	Jo Anna Gray
-	Stephen E. Haynes
-	Chulsoon Khang
-	Joe A. Stone
-	W. Ed Whitelaw
+	('Bruce A. Blonigen', 'T')
+	('Alfredo Burlando', 'T')
+	('Trudy Ann Cameron', 'T')
+	('Shankha Chakraborty', 'T')
+	('Anca D. Cristea', 'T')
+	('Timothy A. Duy', 'T')
+	('Christopher J. Ellis', 'T')
+	('George W. Evans', 'T')
+	('Benjamin Hansen', 'T')
+	('William T. Harbaugh', 'T')
+	('Van Kolpin', 'T')
+	('Peter J. Lambert', 'T')
+	('Ralph Mastromonaco', 'T')
+	('Jeremy M. Piger', 'T')
+	('Nicholas Sly', 'T')
+	('Anne van den Nouweland', 'T')
+	('Glen R. Waddell', 'T')
+	('Caroline E. Weber', 'T')
+	('Wesley W. Wilson', 'T')
+	('Cathleen S. Leué', 'P')
+	('Robert Campbell', 'P')
+	('Henry N. Goldstein', 'P')
+	('Jo Anna Gray', 'P')
+	('Stephen E. Haynes', 'P')
+	('Chulsoon Khang', 'P')
+	('Joe A. Stone', 'P')
+	('W. Ed Whitelaw', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 English:
-	Michael G. Aronson
-	Martha J. Bayless
-	Carolyn Bergquist
-	Elizabeth A. Bohls
-	Tina Boscha
-	Lara Bovilsky
-	Kirby Brown
-	Stephanie Clark
-	Michael Copperman
-	James R. Crosswhite
-	Dianne M. Dugaw
-	Karen J. Ford
-	Lisa Freinkel
-	John T. Gage
-	Miriam Gershow
-	Lisa M. Gilman
-	Warren Ginsberg
-	Sangita Gopal
-	Kathleen Horton
-	Kathleen Rowe Karlyn
-	Heidi N. Kaufman
-	C. Anne Laskaya
-	Stephanie LeMenager
-	David Leiwei Li
-	Quinn Miller
-	Kathleen O’Fallon
-	Priscilla P. Ovalle
-	Paul W. Peppis
-	Forest Pyle
-	Mark Quigley
-	William Rossi
-	George Rowe
-	Benjamin D. Saunders
-	Gordon M. Sayre
-	Steven Shankman
-	Courtney Thorsson
-	Corbett Upton
-	David J. Vazquez
-	Mark Whalan
-	Elizabeth A. Wheeler
-	John C. Witte
-	Daniel N. Wojcik
-	Henry B. Wonham
-	Mary E. Wood
-	James L. Boren
-	William Cadbury
-	Suzanne Clark
-	Edwin L. Coleman II
-	James W. Earl
-	Marilyn Farwell
-	Thelma Greenfield
-	Robert Grudin
-	Joseph A. Hynes Jr.
-	Ruth F. Jackson
-	Gloria E. Johnson
-	Linda Kintz
-	Julia Lesage
-	Glen A. Love
-	William Rockett
-	Ralph J. Salisbury
-	Sharon R. Sherman
-	Richard L. Stein
-	Richard C. Stevenson
-	Nathaniel Teich
-	Louise Westling
-	George Wickes
-	Louise M. Bishop
-	David A. Frank
-	Michael Hames-García
-	Lee Rumbarger
+	('Michael G. Aronson', 'P')
+	('Martha J. Bayless', 'P')
+	('Carolyn Bergquist', 'P')
+	('Elizabeth A. Bohls', 'P')
+	('Tina Boscha', 'P')
+	('Lara Bovilsky', 'P')
+	('Kirby Brown', 'P')
+	('Stephanie Clark', 'P')
+	('Michael Copperman', 'P')
+	('James R. Crosswhite', 'P')
+	('Dianne M. Dugaw', 'P')
+	('Karen J. Ford', 'P')
+	('Lisa Freinkel', 'P')
+	('John T. Gage', 'P')
+	('Miriam Gershow', 'P')
+	('Lisa M. Gilman', 'P')
+	('Warren Ginsberg', 'P')
+	('Sangita Gopal', 'P')
+	('Kathleen Horton', 'P')
+	('Kathleen Rowe Karlyn', 'P')
+	('Heidi N. Kaufman', 'P')
+	('C. Anne Laskaya', 'P')
+	('Stephanie LeMenager', 'P')
+	('David Leiwei Li', 'P')
+	('Quinn Miller', 'P')
+	('Kathleen O’Fallon', 'P')
+	('Priscilla P. Ovalle', 'P')
+	('Paul W. Peppis', 'P')
+	('Forest Pyle', 'P')
+	('Mark Quigley', 'P')
+	('William Rossi', 'P')
+	('George Rowe', 'P')
+	('Benjamin D. Saunders', 'P')
+	('Gordon M. Sayre', 'P')
+	('Steven Shankman', 'P')
+	('Courtney Thorsson', 'P')
+	('Corbett Upton', 'P')
+	('David J. Vazquez', 'P')
+	('Mark Whalan', 'P')
+	('Elizabeth A. Wheeler', 'P')
+	('John C. Witte', 'P')
+	('Daniel N. Wojcik', 'P')
+	('Henry B. Wonham', 'P')
+	('Mary E. Wood', 'P')
+	('James L. Boren', 'P')
+	('William Cadbury', 'P')
+	('Suzanne Clark', 'P')
+	('Edwin L. Coleman II', 'P')
+	('James W. Earl', 'P')
+	('Marilyn Farwell', 'P')
+	('Thelma Greenfield', 'P')
+	('Robert Grudin', 'P')
+	('Joseph A. Hynes Jr.', 'P')
+	('Ruth F. Jackson', 'P')
+	('Gloria E. Johnson', 'P')
+	('Linda Kintz', 'P')
+	('Julia Lesage', 'P')
+	('Glen A. Love', 'P')
+	('William Rockett', 'P')
+	('Ralph J. Salisbury', 'P')
+	('Sharon R. Sherman', 'P')
+	('Richard L. Stein', 'P')
+	('Richard C. Stevenson', 'P')
+	('Nathaniel Teich', 'P')
+	('Louise Westling', 'P')
+	('George Wickes', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Louise M. Bishop', 'P')
+	('David A. Frank', 'P')
+	('Michael Hames-García', 'P')
+	('Lee Rumbarger', 'P')
 Environmental Studies:
-	Brendan J. M. Bohannan
-	Peg Boulay
-	Scott D. Bridgham
-	Trudy Ann Cameron
-	Matthew Dennis
-	Alan Dickman
-	Kathryn A. Lynch
-	Richard D. Margerum
-	Patricia F. McDowell
-	Ronald B. Mitchell
-	Brook Muller
-	Kari Norgaard
-	Joshua J. Roering
-	David Sutherland
-	Ted Toadvine
-	Peter A. Walker
-	Marsha Weisiger
-	Louise Westling
-	Richard York
-	Susan C. Anderson
-	William S. Ayres
-	Patrick J. Bartlein
-	Carol Ann Bassett
-	Carla Bengtson
-	Ann Bettman
-	Aletta Biersack
-	Thomas H. Bivins
-	Christopher Bone
-	John E. Bonine
-	Gregory D. Bothun
-	William E. Bradshaw
-	Yvonne A. Braun
-	G. Z. Brown
-	Mark Carey
-	George C. Carroll
-	Katharine V. Cashman
-	Richard W. Castenholz
-	Suzanne Clark
-	Shaul E. Cohen
-	John S. Conery
-	William A. Cresko
-	James R. Crosswhite
-	Edward B. Davis
-	Jerome Diethelm
-	Rebecca J. Dorsey
-	Michael C. Dreiling
-	Jeffrey Edmundson
-	James R. Elliott
-	Richard B. Emlet
-	Paul C. Engelking
-	Arthur M. Farley
-	Mark Fonstad
-	John B. Foster
-	John T. Gage
-	Daniel Goldrich
-	Jessica L. Green
-	Patricia A. Gwartney
-	William T. Harbaugh
-	Susan W. Hardwick
-	Jill A. Harrison
-	Kenneth I. Helphand
-	Michael Hibbard
-	Derrick Hindery
-	Janet Hodder
-	Garrett K. Hongo
-	Samantha Hopkins
-	Carl J. Hosticka
-	David Hulse
-	James E. Hutchison
-	Renee A. Irvin
-	Colin Ives
-	Grant Jacobsen
-	Bart Johnson
-	Mark Johnson
-	Lamia Karim
-	Craig Kauffman
-	Lauren J. Kessler
-	Gyoung-Ah Lee
-	Glen A. Love
-	Bonnie Mann
-	W. Andrew Marcus
-	Ralph Mastromonaco
-	Theresa May
-	Gregory McLauchlan
-	Jerry F. Medler
-	Kate Meehan
-	Robert Z. Melnick
-	Debra L. Merskin
-	Erin Moore
-	Geraldine Moreno Black
-	Cassandra Moseley
-	Madonna L. Moss
-	Alexander B. Murphy
-	Lise Nelson
-	Jeffrey Ostler
-	Robert G. Parker
-	Max Nielsen-Pincus
-	Stephen E. Ponder
-	Daniel A. Pope
-	Scott L. Pratt
-	Mark H. Reed
-	Gregory J. Retallack
-	John S. Reynolds
-	Robert G. Ribe
-	William Rossi
-	Bitty A. Roy
-	Michael V. Russo
-	Gordon M. Sayre
-	Marc Schlossberg
-	Alan Shanks
-	Lynda P. Shapiro
-	Paul Slovic
-	J. Josh Snodgrass
-	Lawrence S. Sugiyama
-	Kelly Sutherland
-	Richard P. Suttmeier
-	Nora B. Terwilliger
-	Roxi Thoren
-	Joseph W. Thornton
-	Nelson Ting
-	Douglas R. Toomey
-	Daniel Udovic
-	Peter Warnek
-	Peter B. Wetherwax
-	Ray J. Weldon
-	W. Ed Whitelaw
-	A. Michelle Wood
-	Mary C. Wood
-	Stephen R. Wooten
-	Yizhao Yang
+	('Brendan J. M. Bohannan', 'P')
+	('Peg Boulay', 'P')
+	('Scott D. Bridgham', 'P')
+	('Trudy Ann Cameron', 'P')
+	('Matthew Dennis', 'P')
+	('Alan Dickman', 'P')
+	('Kathryn A. Lynch', 'P')
+	('Richard D. Margerum', 'P')
+	('Patricia F. McDowell', 'P')
+	('Ronald B. Mitchell', 'P')
+	('Brook Muller', 'P')
+	('Kari Norgaard', 'P')
+	('Joshua J. Roering', 'P')
+	('David Sutherland', 'P')
+	('Ted Toadvine', 'P')
+	('Peter A. Walker', 'P')
+	('Marsha Weisiger', 'P')
+	('Louise Westling', 'P')
+	('Richard York', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Susan C. Anderson', 'P')
+	('William S. Ayres', 'P')
+	('Patrick J. Bartlein', 'P')
+	('Carol Ann Bassett', 'P')
+	('Carla Bengtson', 'P')
+	('Ann Bettman', 'P')
+	('Aletta Biersack', 'P')
+	('Thomas H. Bivins', 'P')
+	('Christopher Bone', 'P')
+	('John E. Bonine', 'P')
+	('Gregory D. Bothun', 'P')
+	('William E. Bradshaw', 'P')
+	('Yvonne A. Braun', 'P')
+	('G. Z. Brown', 'P')
+	('Mark Carey', 'P')
+	('George C. Carroll', 'P')
+	('Katharine V. Cashman', 'P')
+	('Richard W. Castenholz', 'P')
+	('Suzanne Clark', 'P')
+	('Shaul E. Cohen', 'P')
+	('John S. Conery', 'P')
+	('William A. Cresko', 'P')
+	('James R. Crosswhite', 'P')
+	('Edward B. Davis', 'P')
+	('Jerome Diethelm', 'P')
+	('Rebecca J. Dorsey', 'P')
+	('Michael C. Dreiling', 'P')
+	('Jeffrey Edmundson', 'P')
+	('James R. Elliott', 'P')
+	('Richard B. Emlet', 'P')
+	('Paul C. Engelking', 'P')
+	('Arthur M. Farley', 'P')
+	('Mark Fonstad', 'P')
+	('John B. Foster', 'P')
+	('John T. Gage', 'P')
+	('Daniel Goldrich', 'P')
+	('Jessica L. Green', 'P')
+	('Patricia A. Gwartney', 'P')
+	('William T. Harbaugh', 'P')
+	('Susan W. Hardwick', 'P')
+	('Jill A. Harrison', 'P')
+	('Kenneth I. Helphand', 'P')
+	('Michael Hibbard', 'P')
+	('Derrick Hindery', 'P')
+	('Janet Hodder', 'P')
+	('Garrett K. Hongo', 'P')
+	('Samantha Hopkins', 'P')
+	('Carl J. Hosticka', 'P')
+	('David Hulse', 'P')
+	('James E. Hutchison', 'P')
+	('Renee A. Irvin', 'P')
+	('Colin Ives', 'P')
+	('Grant Jacobsen', 'P')
+	('Bart Johnson', 'P')
+	('Mark Johnson', 'P')
+	('Lamia Karim', 'P')
+	('Craig Kauffman', 'P')
+	('Lauren J. Kessler', 'P')
+	('Gyoung-Ah Lee', 'P')
+	('Glen A. Love', 'P')
+	('Bonnie Mann', 'P')
+	('W. Andrew Marcus', 'P')
+	('Ralph Mastromonaco', 'P')
+	('Theresa May', 'P')
+	('Gregory McLauchlan', 'P')
+	('Jerry F. Medler', 'P')
+	('Kate Meehan', 'P')
+	('Robert Z. Melnick', 'P')
+	('Debra L. Merskin', 'P')
+	('Erin Moore', 'P')
+	('Geraldine Moreno Black', 'P')
+	('Cassandra Moseley', 'P')
+	('Madonna L. Moss', 'P')
+	('Alexander B. Murphy', 'P')
+	('Lise Nelson', 'P')
+	('Jeffrey Ostler', 'P')
+	('Robert G. Parker', 'P')
+	('Max Nielsen-Pincus', 'P')
+	('Stephen E. Ponder', 'P')
+	('Daniel A. Pope', 'P')
+	('Scott L. Pratt', 'P')
+	('Mark H. Reed', 'P')
+	('Gregory J. Retallack', 'P')
+	('John S. Reynolds', 'P')
+	('Robert G. Ribe', 'P')
+	('William Rossi', 'P')
+	('Bitty A. Roy', 'P')
+	('Michael V. Russo', 'P')
+	('Gordon M. Sayre', 'P')
+	('Marc Schlossberg', 'P')
+	('Alan Shanks', 'P')
+	('Lynda P. Shapiro', 'P')
+	('Paul Slovic', 'P')
+	('J. Josh Snodgrass', 'P')
+	('Lawrence S. Sugiyama', 'P')
+	('Kelly Sutherland', 'P')
+	('Richard P. Suttmeier', 'P')
+	('Nora B. Terwilliger', 'P')
+	('Roxi Thoren', 'P')
+	('Joseph W. Thornton', 'P')
+	('Nelson Ting', 'P')
+	('Douglas R. Toomey', 'P')
+	('Daniel Udovic', 'P')
+	('Peter Warnek', 'P')
+	('Peter B. Wetherwax', 'P')
+	('Ray J. Weldon', 'P')
+	('W. Ed Whitelaw', 'P')
+	('A. Michelle Wood', 'P')
+	('Mary C. Wood', 'P')
+	('Stephen R. Wooten', 'P')
+	('Yizhao Yang', 'P')
 Ethnic Studies:
-	Charise L. Cheney
-	Lynn H. Fujiwara
-	Michael Hames-García
-	Daniel HoSang
-	Brian Klopotek
-	Ernesto J. Martínez
-	Irmary Reyes-Santos
-	Edward Olivos
-	Jeffrey Ostler
-	Priscilla P. Ovalle
-	Gerardo Sandoval
-	Melissa N. Stuckey
-	Courtney Thorsson
-	Jessica M. Vasquez
-	David J. Vazquez
+	('Charise L. Cheney', 'T')
+	('Lynn H. Fujiwara', 'T')
+	('Michael Hames-García', 'T')
+	('Daniel HoSang', 'T')
+	('Brian Klopotek', 'T')
+	('Ernesto J. Martínez', 'T')
+	('Irmary Reyes-Santos', 'T')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'T')
+	('Edward Olivos', 'P')
+	('Jeffrey Ostler', 'P')
+	('Priscilla P. Ovalle', 'P')
+	('Gerardo Sandoval', 'P')
+	('Melissa N. Stuckey', 'P')
+	('Courtney Thorsson', 'P')
+	('Jessica M. Vasquez', 'P')
+	('David J. Vazquez', 'P')
 European Studies:
-	Patricia M. Dewey
-	Evlyn Gould
-	Gina Herrmann
-	Nathalie Hester
-	Scott R. Maier
-	Ian F. McNeely
-	Fabienne Moore
-	Alexander B. Murphy
-	Craig Parsons
-	George J. Sheridan Jr.
-	Priscilla Southwell
-	Michael Stern
+	('Patricia M. Dewey', 'P')
+	('Evlyn Gould', 'P')
+	('Gina Herrmann', 'P')
+	('Nathalie Hester', 'P')
+	('Scott R. Maier', 'P')
+	('Ian F. McNeely', 'P')
+	('Fabienne Moore', 'P')
+	('Alexander B. Murphy', 'P')
+	('Craig Parsons', 'P')
+	('George J. Sheridan Jr.', 'P')
+	('Priscilla Southwell', 'P')
+	('Michael Stern', 'P')
 Folklore:
-	Doug Blandy
-	Dianne M. Dugaw
-	John Fenn
-	Lisa M. Gilman
-	Philip W. Scher
-	Sharon R. Sherman
-	Carol T. Silverman
-	Daniel N. Wojcik
-	Juan Eduardo "Ed" Wolf
-	Roger Adkins
-	Ina Asim
-	Martha J. Bayless
-	Carl R. Bybee
-	Matthew Dennis
-	Patricia M. Dewey
-	James D. Fox
-	Lori Hager
-	Kingston Heath
-	Kenneth I. Helphand
-	Lamia Karim
-	Gabriela Martinez
-	Debra L. Merskin
-	Julianne H. Newton
-	Jeffrey Ostler
-	Priscilla P. Ovalle
-	Rachelle Saltzman
-	Gordon M. Sayre
+	('Doug Blandy', 'P')
+	('Dianne M. Dugaw', 'P')
+	('John Fenn', 'P')
+	('Lisa M. Gilman', 'P')
+	('Philip W. Scher', 'P')
+	('Sharon R. Sherman', 'P')
+	('Carol T. Silverman', 'P')
+	('Daniel N. Wojcik', 'P')
+	('Juan Eduardo "Ed" Wolf', 'P')
+	('Roger Adkins', 'P')
+	('Ina Asim', 'P')
+	('Martha J. Bayless', 'P')
+	('Carl R. Bybee', 'P')
+	('Matthew Dennis', 'P')
+	('Patricia M. Dewey', 'P')
+	('James D. Fox', 'P')
+	('Lori Hager', 'P')
+	('Kingston Heath', 'P')
+	('Kenneth I. Helphand', 'P')
+	('Lamia Karim', 'P')
+	('Gabriela Martinez', 'P')
+	('Debra L. Merskin', 'P')
+	('Julianne H. Newton', 'P')
+	('Jeffrey Ostler', 'P')
+	('Priscilla P. Ovalle', 'P')
+	('Rachelle Saltzman', 'P')
+	('Gordon M. Sayre', 'P')
 General Science:
+	N
+	O
+	N
+	E
 General Social Science:
 Geography:
 Geological Sciences:
@@ -653,27 +669,513 @@ German Studies:
 History:
 Humanities:
 Human Physiology:
+	('Li-Shan Chou', 'T')
+	('Anita Christie', 'T')
+	('Sierra Dawson', 'T')
+	('Hans Dreyer', 'T')
+	('Jeffrey Gilbert', 'T')
+	('Grace Golden', 'T')
+	('Michael Hahn', 'T')
+	('John Halliwill', 'T')
+	('Andrew Karduna', 'T')
+	('Andrew Lovering', 'T')
+	('Christopher T. Minson', 'T')
+	('Jon Runyeon', 'T')
+	('John Brandon', 'P')
+	('Richard L. Brown', 'P')
+	('Chien-Chi Chang', 'P')
+	('Mark S. Chesnutt', 'P')
+	('Michael Colasurdo', 'P')
+	('Dennis Collis', 'P')
+	('Mathews Fish', 'P')
+	('Daniel Fitzpatrick', 'P')
+	('Igor Gladstone', 'P')
+	('Randall Goodman', 'P')
+	('Sarah Grall', 'P')
+	('Aaron Harding', 'P')
+	('Jerold Hawn', 'P')
+	('Stanley L. James', 'P')
+	('Brian Jewett', 'P')
+	('Donald C. Jones', 'P')
+	('Paul Kaplan', 'P')
+	('Vern Katz', 'P')
+	('Peter Kosek', 'P')
+	('Brett (Brick) Lantz', 'P')
+	('Samuel Lau', 'P')
+	('Victor Lin', 'P')
+	('John Melton', 'P')
+	('Brian Nichols', 'P')
+	('Richard Padgett', 'P')
+	('Rick Robertson', 'P')
+	('Anne Shumway-Cook', 'P')
+	('Kenneth M. Singer', 'P')
+	('Kimberly Terrell', 'P')
+	('Louis R. Osternig', 'P')
+	('Richard K. Troxel', 'P')
+	('Marjorie Woollacott', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 International Studies:
 Judaic Studies:
 Latin American Studies:
+	('Michael B. Aguilera', 'P')
+	('Carlos Aguirre', 'P')
+	('Monique Balbuena', 'P')
+	('Erin Beck', 'P')
+	('Mark Carey', 'P')
+	('Cecilia Enjuto Rangel', 'P')
+	('Juan A. Epple', 'P')
+	('Linda O. Fuller', 'P')
+	('Leonardo García-Pabón', 'P')
+	('Spike Gildea', 'P')
+	('Amalia Gladhart', 'P')
+	('Michael Hames-García', 'P')
+	('James Harper', 'P')
+	('Robert S. Haskett', 'P')
+	('Derrick Hindery', 'P')
+	('Craig Kauffman', 'P')
+	('Linda Kintz', 'P')
+	('Kathryn A. Lynch', 'P')
+	('Gabriela Martinez', 'P')
+	('Michelle McKinley', 'P')
+	('Katharine Meehan', 'P')
+	('Lise Nelson', 'P')
+	('Priscilla P. Ovalle', 'P')
+	('Amanda W. Powell', 'P')
+	('Gerardo Sandoval', 'P')
+	('Irmary Reyes-Santos', 'P')
+	('Philip W. Scher', 'P')
+	('Lynn Stephen', 'P')
+	('Analisa Taylor', 'P')
+	('Alejandro Vallega', 'P')
+	('David J. Vazquez', 'P')
+	('Peter B. Wetherwax', 'P')
+	('Kristin Yarris', 'P')
+	('Reuben Zahler', 'P')
+	('Rocio Zambrana', 'P')
 Linguistics:
 Mathematics:
+	('Shabnam Akhtari', 'P')
+	('Arkadiy D. Berenstein', 'P')
+	('Boris Botvinnik', 'P')
+	('Marcin Bownik', 'P')
+	('Jonathan Brundan', 'P')
+	('Daniel K. Dugger', 'P')
+	('Peter B. Gilkey', 'P')
+	('Hayden Harker', 'P')
+	('Weiyong He', 'P')
+	('Fred Hervert', 'P')
+	('James A. Isenberg', 'P')
+	('Alexander S. Kleshchev', 'P')
+	('David A. Levin', 'P')
+	('Huaxin Lin', 'P')
+	('Peng Lu', 'P')
+	('Jean B. Nganou', 'P')
+	('Victor V. Ostrik', 'P')
+	('N. Christopher Phillips', 'P')
+	('Alexander Polishchuk', 'P')
+	('Michael R. Price', 'P')
+	('Nicholas J. Proudfoot', 'P')
+	('Hal Sadofsky', 'P')
+	('Brad S. Shelton', 'P')
+	('Christopher D. Sinclair', 'P')
+	('Dev P. Sinha', 'P')
+	('Bartlomiej A. Siudeja', 'P')
+	('Craig Tingey', 'P')
+	('Arkady Vaintrob', 'P')
+	('Hao Wang', 'P')
+	('Micah Warren', 'P')
+	('Yuan Xu', 'P')
+	('Benjamin Young', 'P')
+	('Sergey Yuzvinsky', 'P')
+	('Robert M. Solovay', 'P')
+	('Frank W. Anderson', 'P')
+	('Fred C. Andrews', 'P')
+	('Bruce A. Barnes', 'P')
+	('Richard B. Barrar', 'P')
+	('Glenn T. Beelman', 'P')
+	('Charles W. Curtis', 'P')
+	('Micheal N. Dyer', 'P')
+	('Robert S. Freeman', 'P')
+	('William M. Kantor', 'P')
+	('Richard M. Koch', 'P')
+	('John V. Leahy', 'P')
+	('Shlomo Libeskind', 'P')
+	('Theodore W. Palmer', 'P')
+	('Kenneth A. Ross', 'P')
+	('Gary M. Seitz', 'P')
+	('Allan J. Sieradski', 'P')
+	('Stuart Thomas', 'P')
+	('Donald R. Truax', 'P')
+	('Marie A. Vitulli', 'P')
+	('Marion I. Walter', 'P')
+	('Lewis E. Ward Jr.', 'P')
+	('Jerry M. Wolfe', 'P')
+	('Charles R. B. Wright', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Mathematics and Computer Science:
+	N
+	O
+	N
+	E
 Medieval Studies:
+	('Barbara K. Altmann', 'P')
+	('Judith R. Baskin', 'P')
+	('Martha J. Bayless', 'P')
+	('Louise M. Bishop', 'P')
+	('Nicola Camerlenghi', 'P')
+	('Stephanie Clark', 'P')
+	('Frederick Colby', 'P')
+	('James W. Earl', 'P')
+	('Warren Ginsberg', 'P')
+	('Andrew E. Goble', 'P')
+	('D. Gantt Gurley', 'P')
+	('David Hollenberg', 'P')
+	('Mary Jaeger', 'P')
+	('Lori Kruckenberg', 'P')
+	('C. Anne Laskaya', 'P')
+	('Eric Mentzel', 'P')
+	('F. Regina Psaki', 'P')
+	('Stephen J. Shoemaker', 'P')
+	('Richard A. Sundt', 'P')
+	('Cynthia M. Vakareliyska', 'P')
+	('David Wacks', 'P')
+	('Lisa Wolverton', 'P')
 Native American Studies:
+	N
+	O
+	N
+	E
 Neuroscience:
+	('Edward Awh', 'P')
+	('Paul Dassonville', 'P')
+	('Chris Q. Doe', 'P')
+	('Judith S. Eisen', 'P')
+	('Clifford Kentros', 'P')
+	('Charles B. Kimmel', 'P')
+	('Shawn R. Lockery', 'P')
+	('Peter M. O’Day', 'P')
+	('Cristopher Neill', 'P')
+	('John H. Postlethwait', 'P')
+	('William Roberts', 'P')
+	('Terry Takahashi', 'P')
+	('Edward Vogel', 'P')
+	('Janis C. Weeks', 'P')
+	('Michael Wehr', 'P')
+	('Monte Westerfield', 'P')
+	('Marjorie Woollacott', 'P')
 Pacific Island Studies:
+	('William S. Ayres', 'P')
+	('Aletta Biersack', 'P')
+	('Shirley Ann Coale', 'P')
+	('Richard G. Hildreth', 'P')
+	('Stephen M. Johnson', 'P')
+	('Judith Raiskin', 'P')
+	('Richard A. Sundt', 'P')
+	('Richard W. Zeller', 'P')
 Peace Studies:
+	('Shaul E. Cohen', 'P')
+	('David A. Frank', 'P')
+	('Gregory McLauchlan', 'P')
 Philosophy:
+	('Steven Brence', 'T')
+	('Mark Johnson', 'T')
+	('Colin Koopman', 'T')
+	('Bonnie Mann', 'T')
+	('Scott L. Pratt', 'T')
+	('Beata Stawarska', 'T')
+	('Ted Toadvine', 'T')
+	('Alejandro Vallega', 'T')
+	('Daniela Vallega-Neu', 'T')
+	('Peter Warnek', 'T')
+	('Naomi Zack', 'T')
+	('Rocio Zambrana', 'T')
+	('William E. Davie', 'P')
+	('Don S. Levi', 'P')
+	('Arnulf Zweig', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Physics:
+	('Dietrich Belitz', 'T')
+	('Gregory D. Bothun', 'T')
+	('James E. Brau', 'T')
+	('Spencer Chang', 'T')
+	('Eric Corwin', 'T')
+	('Paul L. Csonka', 'T')
+	('Nilendra G. Deshpande', 'T')
+	('Miriam Deutsch', 'T')
+	('Russell J. Donnelly', 'T')
+	('R. Scott Fisher', 'T')
+	('Raymond E. Frey', 'T')
+	('Stephen Gregory', 'T')
+	('Roger Haydock', 'T')
+	('Stephen D. H. Hsu', 'T')
+	('James N. Imamura', 'T')
+	('Timothy Jenkins', 'T')
+	('Stephen D. Kevan', 'T')
+	('Graham Kribs', 'T')
+	('Dean W. Livelybrooks', 'T')
+	('Stephanie Majewski', 'T')
+	('Brian W. Matthews', 'T')
+	('Benjamin McMorran', 'T')
+	('Stanley J. Micklavzina', 'T')
+	('Jens Nockel', 'T')
+	('Raghuveer Parthasarathy', 'T')
+	('Michael G. Raymer', 'T')
+	('Stephen J. Remington', 'T')
+	('James M. Schombert', 'T')
+	('Davison E. Soper', 'T')
+	('Daniel Steck', 'T')
+	('David M. Strom', 'T')
+	('Richard P. Taylor', 'T')
+	('John J. Toner', 'T')
+	('Eric Torrence', 'T')
+	('Steven J. van Enk', 'T')
+	('Hailin Wang', 'T')
+	('Robert Schofield', 'P')
+	('Nikolai Sinev', 'P')
+	('Frank Vignola', 'P')
+	('Bernd Crasemann', 'P')
+	('Marvin D. Girardeau', 'P')
+	('Rudolph C. Hwa', 'P')
+	('Harlan Lefevre', 'P')
+	('Joel W. McClure Jr.', 'P')
+	('David K. McDaniels', 'P')
+	('John T. Moseley', 'P')
+	('Jack C. Overley', 'P')
+	('Kwangjai Park', 'P')
+	('George W. Rayfield', 'P')
+	('David R. Sokoloff', 'P')
+	('Robert L. Zimmerman', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Political Science:
+	('Deborah Baumgold', 'T')
+	('Gerald Berk', 'T')
+	('Anita Chari', 'T')
+	('Jane K. Cramer', 'T')
+	('Dennis C. Galvan', 'T')
+	('Alison Gash', 'T')
+	('Burke Hendrix', 'T')
+	('Daniel HoSang', 'T')
+	('Karrie Koesel', 'T')
+	('Joseph E. Lowndes', 'T')
+	('Ronald B. Mitchell', 'T')
+	('Mikhail Myagkov', 'T')
+	('Craig Parsons', 'T')
+	('Lars Skalnes', 'T')
+	('Priscilla Southwell', 'T')
+	('David Steinberg', 'T')
+	('Daniel Tichenor', 'T')
+	('Tuong Vu', 'T')
+	('Priscilla Yamin', 'T')
+	('William H. Baugh', 'P')
+	('Daniel Goldrich', 'P')
+	('Arthur M. Hanhardt Jr.', 'P')
+	('Richard Kraus', 'P')
+	('Jerry F. Medler', 'P')
+	('John M. Orbell', 'P')
+	('Richard P. Suttmeier', 'P')
+	('M. George Zaninovich', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Stuart Chinn', 'P')
+	('Gordon Lafer', 'P')
 Psychology:
+	('Jennifer Ablow', 'T')
+	('Nicholas Allen', 'T')
+	('Holly Arrow', 'T')
+	('Edward Awh', 'T')
+	('Dare A. Baldwin', 'T')
+	('Elliot Berkman', 'T')
+	('Paul Dassonville', 'T')
+	('Kimberly Andrews Espy', 'T')
+	('Philip A. Fisher', 'T')
+	('Jennifer J. Freyd', 'T')
+	('Gordon C. Nagayama Hall', 'T')
+	('Sara D. Hodges', 'T')
+	('Clifford Kentros', 'T')
+	('Heidemarie K. Laurent', 'T')
+	('Robert Mauro', 'T')
+	('Ulrich Mayr', 'T')
+	('Jeffrey Measelle', 'T')
+	('Pranjal Mehta', 'T')
+	('Louis J. Moses', 'T')
+	('Helen Neville', 'T')
+	('Jennifer Pfeifer', 'T')
+	('Gerard Saucier', 'T')
+	('Margaret E. Sereno', 'T')
+	('Azim Shariff', 'T')
+	('Paul Slovic', 'T')
+	('Sanjay Srivastava', 'T')
+	('Marjorie Taylor', 'T')
+	('Don M. Tucker', 'T')
+	('Nash Unsworth', 'T')
+	('Edward Vogel', 'T')
+	('Michael Wehr', 'T')
+	('Lewis R. Goldberg', 'P')
+	('Barbara Gordon-Lickey', 'P')
+	('Marvin Gordon-Lickey', 'P')
+	('Douglas L. Hintzman', 'P')
+	('Ray Hyman', 'P')
+	('Carolin Keutzer', 'P')
+	('Daniel P. Kimble', 'P')
+	('Peter M. Lewinsohn', 'P')
+	('Edward Lichtenstein', 'P')
+	('Richard A. Littman', 'P')
+	('Richard Marrocco', 'P')
+	('Michael I. Posner', 'P')
+	('Mary K. Rothbart', 'P')
+	('Myron Rothbart', 'P')
+	('Norman D. Sundberg', 'P')
+	('Robert L. Weiss', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Religious Studies:
+	('Judith R. Baskin', 'P')
+	('Frederick Colby', 'P')
+	('Daniel K. Falk', 'P')
+	('Deborah A. Green', 'P')
+	('David Hollenberg', 'P')
+	('Stephen J. Shoemaker', 'P')
+	('Mark T. Unno', 'P')
+	('Hee-Jin Kim', 'P')
+	('J. T. Sanders', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
+	('Andrew E. Goble', 'P')
+	('Charles H. Lachman', 'P')
+	('Elizabeth Reis', 'P')
+	('Akiko Walley', 'P')
+	('Anita M. Weiss', 'P')
+	('Daniel N. Wojcik', 'P')
 Romance Languages:
+	('Alexandre Albert-Galtier', 'T')
+	('Barbara K. Altmann', 'T')
+	('Olga M. Avalos', 'T')
+	('C. Brian Barnett', 'T')
+	('Mayra Bottaro', 'T')
+	('Nadia Ceccacci', 'T')
+	('Amy Costales', 'T')
+	('Lillian Darwin Lopez', 'T')
+	('Simone Da Silva', 'T')
+	('Robert L. Davis', 'T')
+	('Laurie deGonzalez', 'T')
+	('Juanita Devereaux', 'T')
+	('André Djiffack', 'T')
+	('Paula Ellister', 'T')
+	('Cecilia Enjuto Rangel', 'T')
+	('Hilary Fisher', 'T')
+	('Pedro García-Caro', 'T')
+	('Leonardo García-Pabón', 'T')
+	('Amalia Gladhart', 'T')
+	('Evlyn Gould', 'T')
+	('Gina Herrmann', 'T')
+	('Nathalie Hester', 'T')
+	('Claudia Holguin', 'T')
+	('Harinder Kaur Khalsa', 'T')
+	('Mónica Lara', 'T')
+	('Kelley León Howarth', 'T')
+	('Massimo Lollini', 'T')
+	('Karen McPherson', 'T')
+	('Shelley Merello', 'T')
+	('Leah Middlebrook', 'T')
+	('Bryan J. Moore', 'T')
+	('Fabienne Moore', 'T')
+	('Rosario Murcia', 'T')
+	('Amanda W. Powell', 'T')
+	('F. Regina Psaki', 'T')
+	('Heather Quarles', 'T')
+	('Sergio Rigoletto', 'T')
+	('Andrew Rothgery', 'T')
+	('David Wacks', 'T')
+	('Nathan Whalen', 'T')
+	('Melanie Williams', 'T')
+	('Gloria Zabala', 'T')
+	('Alex Zunterstein', 'T')
+	('Randi M. Brox', 'P')
+	('Françoise G. Calin', 'P')
+	('David J. Curland', 'P')
+	('Richard H. Desroches', 'P')
+	('Juan A. Epple', 'P')
+	('Sylvia Giustina', 'P')
+	('Elisabeth A. Marlow', 'P')
+	('Barbara D. May', 'P')
+	('Steven Rendall', 'P')
+	('Wolfgang F. Sohlich', 'P')
+	('Luis Verano', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Russian, East European, and Eurasian Studies:
+	('Katya E. Hokanson', 'T')
+	('Yelaina Kripkov', 'T')
+	('Julia Nemirovskaya', 'T')
+	('Jenifer Presto', 'T')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'T')
+	('Heghine Hakobyan', 'P')
+	('Julie Hessler', 'P')
+	('R. Alan Kimball', 'P')
+	('Karrie Koesel', 'P')
+	('Susanna Soojung Lim', 'P')
+	('Mikhail Myagkov', 'P')
+	('Stephen J. Shoemaker', 'P')
+	('Carol T. Silverman', 'P')
+	('Caleb Southworth', 'P')
+	('Cynthia M. Vakareliyska', 'P')
+	('Richard Morris', 'P')
+	('Tamara Morris', 'P')
+	('Nathan Rosen', 'P')
+	('Esther Jacobson-Tepfer', 'P')
+	('Ronald Wixman', 'P')
+	('John E. Bonine', 'P')
+	('Lisa Wolverton', 'P')
 Scandinavian Studies:
+	('Roger Adkins', 'P')
+	('James W. Earl', 'P')
+	('Jon M. Erlandson', 'P')
+	('D. Gantt Gurley', 'P')
+	('Sergio Koreisha', 'P')
+	('Sonja Rasmussen', 'P')
+	('Michael G. Raymer', 'P')
+	('Lars Skalnes', 'P')
+	('Michael Stern', 'P')
+	('Richard A. Sundt', 'P')
+	('Bruce Harwood Tabb', 'P')
+	('Roxi Thoren', 'P')
+	('Glenda Fravel Utsey', 'P')
 Sociology:
+	('Michael B. Aguilera', 'T')
+	('Scott Coltrane', 'T')
+	('Michael C. Dreiling', 'T')
+	('James R. Elliott', 'T')
+	('John B. Foster', 'T')
+	('Aaron O. Gullickson', 'T')
+	('Patricia A. Gwartney', 'T')
+	('Jill A. Harrison', 'T')
+	('Jocelyn Hollander', 'T')
+	('Ryan Light', 'T')
+	('Gregory McLauchlan', 'T')
+	('Kari Norgaard', 'T')
+	('Matthew Norton', 'T')
+	('Eileen M. Otis', 'T')
+	('Cheri "C.J." Pascoe', 'T')
+	('Elaine Replogle', 'T')
+	('Ellen K. Scott', 'T')
+	('Jiannbin Lee Shiao', 'T')
+	('Caleb Southworth', 'T')
+	('Jessica M. Vasquez', 'T')
+	('Richard York', 'T')
+	('Joan R. Acker', 'P')
+	('Steven Deutsch', 'P')
+	('Marion Sherman Goldman', 'P')
+	('Benton Johnson', 'P')
+	('Kenneth B. Liberman', 'P')
+	('David Milton', 'P')
+	("Robert M. O'Brien", 'P')
+	('Donald R. Van Houten', 'P')
+	('The date in parentheses at the end of each entry is the first year on the University of Oregon faculty.', 'P')
 Southeast Asian Studies:
+	N
+	O
+	N
+	E
 Statistics:
+	N
+	O
+	N
+	E
 Theater Arts:
 Women's and Gender Studies:

@@ -1,8 +1,10 @@
 import os
 import sys
+import time
 import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
+
 
 ''' Change bool as info is needed
 DEBUGING==========================================================================================================================================================='''
@@ -17,6 +19,8 @@ verbose = False
 # Interative function to open link and pull name data
 def Scrape_FacinDept(department_link):
     # Make a request for the department link
+    # slow time to ensure connection
+    time.sleep(5)
     department_response = requests.get(department_link)
     # Debug message after making the request
     if debug_Fac:
@@ -38,24 +42,30 @@ def Scrape_FacinDept(department_link):
         # connect no longer needed data is now local
         department_response.close()
         if faculty_container:
-            # Check for the <h2> tag with text "Faculty" since pages add other data that I was pulling
-            h2_tag = faculty_container.find('h2', text="Faculty")
-            if h2_tag:
-                # Find all <p> tags that follow the <h2> tag
-                faculty_paragraphs = h2_tag.find_all_next('p', {'class': ['facultylist', None]})
-            else:
-                faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
+            # Check for the <h3> tag with text "Faculty" since pages add other data that I was pulling form the container facultylist
 
-            # Exclude paragraphs that contain specific elements
-            filtered_faculty_paragraphs = [p for p in faculty_paragraphs if not p.find('em')]
+            filtered_faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
 
             # Initialize a list to store faculty names
             faculty_names = []
 
+            # Initialize the faculty type as 'P' by default
+            faculty_type = 'P'
+
             # Iterate over each <p> tag within faculty_container
             for faculty_paragraph in filtered_faculty_paragraphs:
+                #seperate all values not need form scrap
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
-                faculty_names.append(faculty_name)
+
+                #Check if the previous <h3> header contains "Faculty"
+                previous_h3 = faculty_paragraph.find_previous('h3')
+                if previous_h3 and ('Faculty' or 'None' in previous_h3.text):
+                    faculty_type = 'P'
+                else:
+                    faculty_type = 'T'
+                if verbose:
+                    print(f" H3 Headerer above: {previous_h3} and Type = {faculty_type} ")
+                faculty_names.append((faculty_name, faculty_type))
 
             # Debug message for faculty names
             if debug_Fac:
@@ -69,7 +79,8 @@ def Scrape_FacinDept(department_link):
         else:
             if debug_Fac:
                 print(f"No faculty information found for {department_link} closing connection.")
-            return None
+            data = "NONE"
+            return data
 
     else:
         if debug_Fac:

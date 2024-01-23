@@ -10,7 +10,9 @@ from collections import namedtuple
 DEBUGING==========================================================================================================================================================='''
 debug_main = True
 #debug function
-debug_Fac = True
+debug_Fac = False
+#debug sort
+debug_sort = False
 #more info if needed
 verbose = False
 '''============================================================================================================================================================'''
@@ -20,7 +22,7 @@ verbose = False
 def Scrape_FacinDept(department_link):
     # Make a request for the department link
     # slow time to ensure connection
-    time.sleep(5)
+    time.sleep(15)
     department_response = requests.get(department_link)
     # Debug message after making the request
     if debug_Fac:
@@ -77,7 +79,16 @@ def Scrape_FacinDept(department_link):
                     print(faculty_name)
 
             # Return the faculty names as a list close connection)
-            return faculty_names
+            # Sort the names alphabetically
+            sorted_names = sorted(faculty_names, key=lambda x: (x[0].split()[-1], x[0].split()[0], x[0]))
+
+            # Debug message for sorted faculty names and types
+            if debug_sort:
+                print(f"Faculty Names and Types SORTED for {department_link}:")
+                formatted_string = '\n'.join([f"{name} ({faculty_type})" for name, faculty_type in sorted_names])
+                print(formatted_string)
+
+            return sorted_names
 
         else:
             if debug_Fac:

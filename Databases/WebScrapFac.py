@@ -1,17 +1,19 @@
 import os
 import sys
+import time
 import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
 import time
 
+
 ''' Change bool as info is needed
 DEBUGING==========================================================================================================================================================='''
 debug_main = True
 #debug function
-debug_Fac = True
-#debug sorting function
-debug_sort = True
+debug_Fac = False
+#debug sort
+debug_sort = False
 #more info if needed
 verbose = False
 '''============================================================================================================================================================'''
@@ -22,6 +24,8 @@ def Scrape_FacinDept(department_link):
     #sleep added to prevent web denial
     time.sleep(2)
     # Make a request for the department link
+    # slow time to ensure connection
+    time.sleep(15)
     department_response = requests.get(department_link)
     # Debug message after making the request
     if debug_Fac:
@@ -43,16 +47,12 @@ def Scrape_FacinDept(department_link):
         # connect no longer needed data is now local
         department_response.close()
         if faculty_container:
-            # Check for the <h2> tag with text "Faculty" since pages add other data that I was pulling
-            h2_tag = faculty_container.find('h2', text="Faculty")
-            if h2_tag:
-                # Find all <p> tags that follow the <h2> tag
-                faculty_paragraphs = h2_tag.find_all_next('p', {'class': ['facultylist', None]})
-            else:
-                faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
+            # Check for the <h3> tag with text "Faculty" since pages add other data that I was pulling form the container facultylist
+
+            filtered_faculty_paragraphs = faculty_container.find_all('p', {'class': ['facultylist', None]})
 
             # Exclude paragraphs that contain specific elements
-            filtered_faculty_paragraphs = [p for p in faculty_paragraphs if not p.find('em')]
+            filtered_faculty_paragraphs = [p for p in filtered_faculty_paragraphs  if not p.find('em')]
 
             # Find any <h3> element to start marking temporary faculty
             participating_header = faculty_container.find('h3')
@@ -63,21 +63,23 @@ def Scrape_FacinDept(department_link):
             # Initialize a list to store faculty names and status
             faculty_names = []
 
+            # Initialize the faculty type as 'P' by default
+            faculty_type = 'P'
+
             # Iterate over each <p> tag within faculty_container
             for faculty_paragraph in filtered_faculty_paragraphs:
-                # Check if the current <p> tag is after any <h3> header
-                if is_temporary or (participating_header and faculty_paragraph.find_previous('h3')):
-                    is_temporary = True  # Mark subsequent faculty as temporary
-                    faculty_type = 'T'
-                else:
-                    faculty_type = 'P'
-                #strips and grabs the data
+                #seperate all values not need form scrap
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
+
+                #Check if the previous <h3> header contains "Faculty"
+                previous_h3 = faculty_paragraph.find_previous('h3')
+                if previous_h3 and ('Faculty' or 'None' in previous_h3.text):
+                    faculty_type = 'P'
+                else:
+                    faculty_type = 'T'
+                if verbose:
+                    print(f" H3 Headerer above: {previous_h3} and Type = {faculty_type} ")
                 faculty_names.append((faculty_name, faculty_type))
-
-            # reset for next wedsite
-            is_temporary = False
-
 
             # Debug message for faculty names
             if debug_Fac:
@@ -85,8 +87,17 @@ def Scrape_FacinDept(department_link):
                 for faculty_name, faculty_type in faculty_names:
                     print(f"{faculty_name} ({faculty_type})")
 
-            #sort the names aphabectically
-            sorted_names = sorted(faculty_names, key=lambda  x: (x[0].split()[-1], x[0].split()[0], x[0]))
+            # Return the faculty names as a list close connection)
+            # Sort the names alphabetically
+            sorted_names = sorted(faculty_names, key=lambda x: (x[0].split()[-1], x[0].split()[0], x[0]))
+
+            # Debug message for sorted faculty names and types
+            if debug_sort:
+                print(f"Faculty Names and Types SORTED for {department_link}:")
+                formatted_string = '\n'.join([f"{name} ({faculty_type})" for name, faculty_type in sorted_names])
+                print(formatted_string)
+
+            return sorted_names
 
             # Debug message for faculty name
             if debug_sort:
@@ -99,7 +110,8 @@ def Scrape_FacinDept(department_link):
         else:
             if debug_Fac:
                 print(f"No faculty information found for {department_link} closing connection.")
-            return None
+            data = "NONE"
+            return data
 
     else:
         if debug_Fac:

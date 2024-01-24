@@ -125,7 +125,7 @@ DeptFac = namedtuple('DeptFac', ['dept', 'fac'])
 # create an empty list to return the data tuples
 DeptFac_list = []
 
-url = 'https://web.archive.org/web/20140901091007/http://catalog.uoregon.edu/arts_sciences/'
+url = 'https://web.archive.org/web/20160922054717/http://catalog.uoregon.edu/arts_sciences/'
 # Debug message before making the request
 if debug_main:
     print(f"Connecting to: {url}")

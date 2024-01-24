@@ -40,7 +40,7 @@ TEMP_SUB = ['AFR African Studies', 'ANTH Anthropology',
             'REES Russian and East European Studies', 'REL Religious Studies', 'RL Romance Languages', 'SCAN Scandinavian',
             'SOC Sociology', 'TA Theater Arts', "WGS Women's and Gender Studies"]
 
-
+GRADE_OPT = ["A", "D/F"]
 
 
 # Create root Window for the GUI
@@ -79,7 +79,7 @@ def toggle():
         subjL.config(bg=submainbg)
         classL.config(bg=submainbg)
         courseL.config(bg=submainbg)
-        facultyL.config(bg=submainbg)
+        #facultyL.config(bg=submainbg)
         instructL.config(bg=submainbg)
         graphTypeL.config(bg=submainbg)
         PassTypeL.config(bg=submainbg)
@@ -102,7 +102,7 @@ def toggle():
         subjL.config(bg=darksubmainbg)
         classL.config(bg=darksubmainbg)
         courseL.config(bg=darksubmainbg)
-        facultyL.config(bg=darksubmainbg)
+        #facultyL.config(bg=darksubmainbg)
         instructL.config(bg=darksubmainbg)
         graphTypeL.config(bg=darksubmainbg)
         PassTypeL.config(bg=darksubmainbg)
@@ -176,18 +176,18 @@ classL.grid(row=3, column=1, ipadx=20, ipady=5)
 courseL= tk.Label(subMain, text="Course: ", bg=submainbg)
 courseL.grid(row=4, column=1, ipadx=20, ipady=5) 
 
-facultyL = tk.Label(subMain, text="Faculty: ", bg=submainbg)
-facultyL.grid(row=5, column=1, ipadx=20, ipady=5) 
+#facultyL = tk.Label(subMain, text="Faculty: ", bg=submainbg)
+#facultyL.grid(row=5, column=1, ipadx=20, ipady=5) 
 
 instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg)
-instructL.grid(row=6, column=1, ipadx=20, ipady=5) 
+instructL.grid(row=5, column=1, ipadx=20, ipady=5) 
 
 graphTypeL = tk.Label(subMain, text="Graph Type ", bg=submainbg)
-graphTypeL.grid(row=7, column=1, ipadx=20, ipady=5) 
+graphTypeL.grid(row=6, column=1, ipadx=20, ipady=5) 
 
 
 PassTypeL = tk.Label(subMain, text="EasyA/Pass ", bg=submainbg)
-PassTypeL.grid(row=8, column=1, ipadx=20, ipady=5) 
+PassTypeL.grid(row=7, column=1, ipadx=20, ipady=5) 
 
 
 
@@ -253,10 +253,10 @@ def sub_select2(event):
     sendSelected(selected)
 
 
-def sub_select3(event):
-    selected = subMenu3.get()
-    print(selected)
-    sendSelected(selected)
+#def sub_select3(event):
+#    selected = subMenu3.get()
+#    print(selected)
+#    sendSelected(selected)
 
 def sub_select4(event):
     selected = subMenu4.get()
@@ -307,7 +307,7 @@ def clearBox():
     subMenu0.set('')
     subMenu1.set('')
     subMenu2.set('')
-    subMenu3.set('')
+    #subMenu3.set('')
     subMenu4.set('')
     subMenu5.set('')
     subMenu6.set('')
@@ -329,24 +329,24 @@ subMenu2.bind("<<ComboboxSelected>>", sub_select2)
 subMenu2.grid(row=4, column=2, padx=10, pady=10)
 
 
-subMenu3 = ttk.Combobox(subMain, values=TEMP_OPT)
-subMenu3.bind("<<ComboboxSelected>>", sub_select3)
-subMenu3.grid(row=5, column=2, padx=10, pady=10)
+#subMenu3 = ttk.Combobox(subMain, values=TEMP_OPT)
+#subMenu3.bind("<<ComboboxSelected>>", sub_select3)
+#subMenu3.grid(row=5, column=2, padx=10, pady=10)
 
 
 subMenu4 = ttk.Combobox(subMain, values=TEMP_OPT)
 subMenu4.bind("<<ComboboxSelected>>", sub_select4)
-subMenu4.grid(row=6, column=2, padx=10, pady=10)
+subMenu4.grid(row=5, column=2, padx=10, pady=10)
 
 
 subMenu5 = ttk.Combobox(subMain, values=TEMP_OPT)
 subMenu5.bind("<<ComboboxSelected>>", sub_select5)
-subMenu5.grid(row=7, column=2, padx=10, pady=10)
+subMenu5.grid(row=6, column=2, padx=10, pady=10)
 
 
-subMenu6 = ttk.Combobox(subMain, values=TEMP_OPT)
-subMenu6.bind("<<ComboboxSelected>>", sub_select5)
-subMenu6.grid(row=8, column=2, padx=10, pady=10)
+subMenu6 = ttk.Combobox(subMain, values=GRADE_OPT)
+subMenu6.bind("<<ComboboxSelected>>", sub_select6)
+subMenu6.grid(row=7, column=2, padx=10, pady=10)
 
 
 # Function for submitBttn Button Action

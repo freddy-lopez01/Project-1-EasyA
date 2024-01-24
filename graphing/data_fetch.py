@@ -36,7 +36,6 @@ def fetch_data(user_selection: dict) -> Union[pd.DataFrame, str]:
             cur = connection.cursor()
             group_code = user_selection["class_details"]["group_code"]
             dataframe = pd.read_sql_query("SELECT * from course_data", connection)
-            print(dataframe)
             # single class 
             if graph_type == "single_class":
                 # call single_class_query
@@ -70,17 +69,19 @@ def single_class_query(group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame
     """
     
     try:
-        print(group_code)
         # checking if class_code column exists
+        # 
         if "group_code" not in dataframe.columns:
             raise ValueError("The class_code column doesn't exist in the DataFrame")
         logging.info(f"Filtering DataFrame for class code: {group_code}")
 
-        # filter dataframe to get class_code
+        # filter datafram to get rows with matching group_code
         filtered = dataframe.loc[dataframe["group_code"] == group_code]
         if filtered.empty:
             logging.warning(f"Class code: {group_code} not found")
-
+        else:
+            print("===== Filtered single class =====")
+            print(filtered)
         return filtered
 
     except ValueError as e:

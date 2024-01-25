@@ -4,7 +4,6 @@ import time
 import requests
 from bs4 import BeautifulSoup
 from collections import namedtuple
-import time
 
 
 ''' Change bool as info is needed
@@ -22,7 +21,6 @@ verbose = False
 # Interative function to open link and pull name data
 def Scrape_FacinDept(department_link):
     #sleep added to prevent web denial
-    time.sleep(2)
     # Make a request for the department link
     # slow time to ensure connection
     time.sleep(15)
@@ -87,7 +85,7 @@ def Scrape_FacinDept(department_link):
                 for faculty_name, faculty_type in faculty_names:
                     print(f"{faculty_name} ({faculty_type})")
 
-            # Return the faculty names as a list close connection)
+            # Return the faculty names as a list close connection
             # Sort the names alphabetically
             sorted_names = sorted(faculty_names, key=lambda x: (x[0].split()[-1], x[0].split()[0], x[0]))
 
@@ -97,13 +95,6 @@ def Scrape_FacinDept(department_link):
                 formatted_string = '\n'.join([f"{name} ({faculty_type})" for name, faculty_type in sorted_names])
                 print(formatted_string)
 
-            return sorted_names
-
-            # Debug message for faculty name
-            if debug_sort:
-                print(f"Faculty Names and Types SORTED for {department_link}:")
-                formatted_string = '\n'.join([f"{name} ({faculty_type})" for name, faculty_type in sorted_names])
-                print(formatted_string)
             return sorted_names
 
 # THIS IS ERROR CHECKING _____________________________________________________________________________________________________________________________
@@ -124,8 +115,13 @@ def Scrape_FacinDept(department_link):
 DeptFac = namedtuple('DeptFac', ['dept', 'fac'])
 # create an empty list to return the data tuples
 DeptFac_list = []
+# directory for update and write files
+data_directory = "DataFiles"
 
-url = 'https://web.archive.org/web/20160922054717/http://catalog.uoregon.edu/arts_sciences/'
+# url = 'https://web.archive.org/web/20160922054717/http://catalog.uoregon.edu/arts_sciences/'
+fileURL_path = os.path.join(data_directory, "url.txt")
+with open(fileURL_path, 'r') as file:
+    url = file.read().strip()
 # Debug message before making the request
 if debug_main:
     print(f"Connecting to: {url}")

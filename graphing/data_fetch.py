@@ -37,8 +37,6 @@ class DataFetcher:
             if self.connection:
                 self.connection.close()
                 
-
-
     def close_connection(self) -> None:
         """
         Closes the SQL database connection.
@@ -49,34 +47,49 @@ class DataFetcher:
             self.connection.close()
             logging.info("---SQL database connection closed---")
 
-
     def fetch_data(self) -> Union[pd.DataFrame, str]:
         """
         Fetches data from the database based on the user's selection.
         """
-        # make connection with DB 
-        # get user input
-        # if user input == single class
-            # call filter_single_class
-        # elif user_input == single_dept
-            # call filter_single_dept
-        # elif user_input == class_level_dept 
-            # call filter_class_level_dept
         try:
+            # connect to SQL database and get graph_type
             self.connect_to_database()
+            
+            query = "SELECT * FROM course_data"
+            dataframe = pd.read_sql_query(query, self.connection)
+
             graph_type = self.user_selection["graph_type"]
             print(f"---graph type: {graph_type}---")
+            # if user selects graph_type: single_class 
+            if graph_type == "single_class":
+                class_code = self.user_selection["class_details"]["group_code"]
+                print(f"class_code selected: {class_code}")
+                filtered = self.filter_single_class(class_code, dataframe)
+                return filtered
 
         except sqlite3.Error as e:
             logging.error(e)
             return f"An error occurred: {e}"
+        finally:
+            self.close_connection()
 
 
-    def filter_single_class(self, class_code: str) -> pd.DataFrame:
+    def filter_single_class(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
         Filters the DataFrame for rows matching a single class code.
         """
-        pass
+        try:
+            logging.info(f"Filtering DataFrame for group_code: {group_code}")
+            filtered = dataframe.loc[dataframe["group_code"] == group_code]
+            logging.info("--- Filtered single_class---")
+            print(filtered)
+            return filtered
+
+        except Exception as e:
+            logging.error(e)
+            # return empty DataFrame if there's an error
+            return pd.DataFrame()
+
 
     def filter_single_dept(self, department: str) -> pd.DataFrame:
         """

@@ -2,8 +2,11 @@ import os
 import sys
 import time
 import requests
+import random
 from bs4 import BeautifulSoup
 from collections import namedtuple
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 
 ''' Change bool as info is needed
@@ -18,13 +21,27 @@ verbose = False
 '''============================================================================================================================================================'''
 
 
+# Function to create a session with retry mechanism format form stackoverflow
+def create_session():
+    session = requests.Session()
+    retries = Retry(total=10, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504])
+    adapter = HTTPAdapter(max_retries=retries)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    return session
+
 # Interative function to open link and pull name data
-def Scrape_FacinDept(department_link):
+def Scrape_FacinDept(department_link, session):
     #sleep added to prevent web denial
     # Make a request for the department link
     # slow time to ensure connection
-    time.sleep(15)
-    department_response = requests.get(department_link)
+    time.sleep(random.uniform(0,1))
+    try:
+        department_response = session.get(department_link)
+    except requests.exceptions.RequestException as e:
+        # Handle connection error
+        print(f"Connection error for {department_link}: {e}")
+        return None
     # Debug message after making the request
     if debug_Fac:
         print(f"Status Code for {department_link}: {department_response.status_code}")
@@ -109,8 +126,8 @@ def Scrape_FacinDept(department_link):
             print(f"Failed to retrieve data for {department_link} closing connection. Status Code:", department_response.status_code)
         return None
 
+'''MAIN----------------------------MAIN-------------------------------------------------------------- MAIN--------------------------MAIN'''
 
-#def scrape_DeptFac_data():
 # Define a namedtuple to store department and faculty data for future use
 DeptFac = namedtuple('DeptFac', ['dept', 'fac'])
 # create an empty list to return the data tuples
@@ -127,6 +144,7 @@ if debug_main:
     print(f"Connecting to: {url}")
 
 try:
+    session = create_session()
     response = requests.get(url)
 except requests.exceptions.RequestException as e:
     # Handle connection error
@@ -163,18 +181,31 @@ if response.status_code == 200:
 
     if department_elements:
         #Iterate over each <a> tag in the department_elements
+        #track progress info
+        total_departments = len(department_elements)
+        current_department = 0
         for department_element in department_elements:
+            # Increase the current_department count
+            current_department += 1
             #Retrieve the text content of the current <a> tag and append it to the departments list
             department_name = department_element.text
             # Retrieve the value of the href attribute of the current <a> tag
             department_link =  "https://web.archive.org/" + department_element.get('href')
             # try to Call the function to scrape additional data for each department link broken up for clarity
             try:
-                faculty_names = Scrape_FacinDept(department_link)
+                faculty_names = Scrape_FacinDept(department_link, session)
             except requests.exceptions.RequestException as e:
                 # Handle connection error
                 print(f"Connection error for {department_link}: {e}")
                 faculty_names = None
+            finally:
+                # Close the session to release resources
+                if 'session' in locals():
+                    session.close()
+
+            # Print progress
+            progress = (current_department / total_departments) * 100
+            print(f"Progress: {progress:.2f}%")
 
             # Do something with the returned data, for example, store it in a list
             if faculty_names:
@@ -187,8 +218,7 @@ if response.status_code == 200:
             #debug indiviual data types Saved if need
             if verbose:
                 print("you may need to toubleshoot each data type look to line 116")
-                #department_links.append(department_link)
-                #department_names.append(department_name)
+                department_links.append(department_link)
 
 
         #debug formating data
@@ -224,5 +254,6 @@ if response.status_code == 200:
 else:
     if debug_main:
         print("Failed to retrieve the webpage. Status Code:", response.status_code)
+
 
 #note conecton is ened after data is local

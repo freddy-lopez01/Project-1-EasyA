@@ -24,7 +24,6 @@ class DataFetcher:
         self.connection = None 
         self.cursor = None
 
-
     def connect_to_database(self) -> None:
         """
         Establishes a connection to the SQL database and logs success or error.
@@ -57,6 +56,8 @@ class DataFetcher:
             query = "SELECT * FROM course_data"
             dataframe = pd.read_sql_query(query, self.connection)
             
+            valid_class_levels = ["100", "200", "300", "400", "500", "600"]
+
             # store user selections
             graph_type = self.user_selection.get("graph_type", None)
             single_class = self.user_selection.get("class_code", None)
@@ -107,17 +108,34 @@ class DataFetcher:
                     # TODO: filter regular faculty
                     pass
                 elif instructor_type == "All Instructors":
-                    # filter all instructors
-                    pass
+                    all_instructors = self.get_instructor(department, dataframe)
                 if grade_type == "Percent Ds/Fs":
                     percent_DF = self.calc_percent_DF(filtered_department)
                 elif grade_type == "Percent As":
                     percent_DF = self.calc_percent_a(filtered_department)
-
                 if show_class_count:
                     class_count = self.instructor_class_count(filtered_department)
-
-
+            elif graph_type == "class_level_dept":
+                filtered_department = self.filter_single_dept(department, dataframe)
+                if class_level and class_level in valid_class_levels:
+                    # convert class_level to integer for comparison
+                    class_level_int = int(class_level)
+                    # filter based on the numeric part of group_code corresponding to the user's selection
+                    filtered_department = filtered_department[
+                        filtered_department['group_code'].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
+                logging.info(f"Filtered class level {class_level} department: \n{filtered_department}")
+                if instructor_type == "Regular Faculty":
+                    # TODO: filter all regular faculty
+                    pass
+                elif instructor_type == "All Instructors":
+                    # TODO: filter all instructors
+                    all_instructors = self.get_instructor(department, dataframe)
+                if grade_type == "Percent Ds/Fs":
+                    percent_DF = self.calc_percent_DF(filtered_department)
+                elif grade_type == "Percent As":
+                    percent_As = self.calc_percent_a(filtered_department)
+                if show_class_count:
+                    class_count = self.instructor_class_count(filtered_department)
 
         except sqlite3.Error as e:
             logging.error(e)
@@ -220,6 +238,7 @@ class DataFetcher:
                 total_DF = dataframe["dprec"].sum() + dataframe["fprec"].sum()
                 percent_DF = (total_DF / total_grades) * 100
                 logging.info(f"Percent Ds/Fs: {percent_DF}%")
+
                 return percent_DF
             else:
                 logging.info("No grades data found to calculate percentages")
@@ -281,6 +300,7 @@ class DataFetcher:
             class_count_df.columns = ['instructor', 'class_count']
             class_count_df = class_count_df.rename(columns={"index": "instructor"})
             logging.info(f"Class count by instructor: \n{class_count_df}")
+            
             return class_count_df
 
         except Exception as e:
@@ -290,12 +310,12 @@ class DataFetcher:
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "department",  # options: single_class, single_dept, class_level_dept
-    "class_code": "CIS415",  # relevant if graph type is single_class; specific class code (e.g., CS 422)
+    "graph_type": "single_class",  # options: single_class, single_dept, class_level_dept
+    "class_code": "BA101",  # relevant if graph type is single_class; specific class code (e.g., CS 422)
     "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-    "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+    "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
     "instructor_type": "All Instructors",  # other option: "Faculty"
-    "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+    "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
     "class_count": True  # whether to show the number of classes taught by each instructor
 }
 

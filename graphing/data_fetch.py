@@ -19,6 +19,7 @@ class DataFetcher:
         Initializes the DataFetcher with user's selection and database path.
 
         Parameters:
+        
         - user_selection (dict): The user's selection criteria.
         - database_path (str): The path to the SQLite database.
         """
@@ -105,6 +106,7 @@ class DataFetcher:
                 elif grade_type == "Percent As":
                     # calculate As
                     self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
+                    logging.info(f"Percent As: \n{self.percent_grade}")
                 if show_class_count:
                     """
                     This section takes the class count of each instructor and merges it 
@@ -115,28 +117,25 @@ class DataFetcher:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     logging.info(f"MERGED \n {self.instructor_data}")
 
-                # this part gets the last name of instructor
-                filtered_single_class.loc[:, "instructor"] = filtered_single_class["instructor"].str.split(", ", expand=True)[0].str.strip()
-                self.main_data = filtered_single_class
-                logging.info(f"\n{self.main_data}")
 
             # department only
             elif graph_type == "department" and department:
                 filtered_department = self.filter_single_dept(department, dataframe)
-                logging.info(filtered_department)
                 if instructor_type == "Regular Faculty":
                     # TODO: filter regular faculty
                     pass
                 elif instructor_type == "All Instructors":
                     self.instructor_data = self.get_instructor_class(filtered_department)
+                    logging.info(f"FILTERED INSTRUCTOR: {self.instructor_data}")
                 if grade_type == "Percent Ds/Fs":
-                    self.percent_grade = self.calc_percent_DsFs_instructor(filtered_department)
-                    logging.info(f"PERCENT GRADE: \n{self.percent_grade}")
+                    self.percent_grade = self.calc_percent_DsFs_class(filtered_department)
+                    logging.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
-                    self.percent_grade = self.calc_percent_a_instructor(filtered_department)
+                    self.percent_grade = self.calc_percent_a_class(filtered_department)
+                    logging.info(f"PERCENT As: \n {self.percent_grade}")
 
                 if show_class_count:
-                    class_count = self.instructor_class_count(filtered_department)
+                    pass
 
             # all classes of a particular level within department
             elif graph_type == "class_level_dept":
@@ -155,11 +154,11 @@ class DataFetcher:
                     # TODO: filter all instructors
                     all_instructors = self.get_instructor(department, dataframe)
                 if grade_type == "Percent Ds/Fs":
-                    percent_DF = self.calc_percent_DF(filtered_department)
+                    self.percent_grade = self.calc_percent_DF(filtered_department)
                 elif grade_type == "Percent As":
-                    percent_As = self.calc_percent_a(filtered_department)
+                    self.percent_grade = self.calc_percent_a(filtered_department)
                 if show_class_count:
-                        class_count = self.instructor_class_count(filtered_department)
+                        self.class_count = self.instructor_class_count(filtered_department)
 
         except sqlite3.Error as e:
             logging.error(e)
@@ -271,12 +270,64 @@ class DataFetcher:
             logging.error(f"Error occurred during calculation: {e}")
 
 
+    def calc_percent_a_class(self, class_grades: pd.DataFrame) -> pd.DataFrame:
+        """
+        Calculates percentages of As given by each class
+        """
+        try:
+            # get total grades and divide number of As given by total grades
+            class_grades = class_grades.copy()
+            class_grades.loc[:, "total_grades"] = (
+                class_grades.loc[:, "aprec"] +
+                class_grades.loc[:, "bprec"] +
+                class_grades.loc[:, "cprec"] +
+                class_grades.loc[:, "dprec"] +
+                class_grades.loc[:, "fprec"]
+            )
+            class_grades.loc[:, "Percent As"] = (
+                (class_grades.loc[:, "aprec"] / class_grades.loc[:, "total_grades"]) * 100
+            )
+            return class_grades
+
+        except Exception as e:
+            logging.error(f"Error occurred during calculation: {e}")
+            return pd.DataFrame()
+
+
+    def calc_percent_DsFs_class(self, class_grades: pd.DataFrame) -> pd.DataFrame:
+        """
+        Calculates percentages of Ds/Fs given by each class
+        """
+        try:
+            # get total grades and divide number of As given by total grades
+
+            class_grades.loc[:, "total_grades"] = (
+                class_grades.loc[:, "aprec"] +
+                class_grades.loc[:, "bprec"] +
+                class_grades.loc[:, "cprec"] +
+                class_grades.loc[:, "dprec"] +
+                class_grades.loc[:, "fprec"]
+            )
+            class_grades.loc[:, "Percent Ds/Fs"] = (
+                ((class_grades.loc[:, "dprec"] + class_grades.loc[:, "fprec"]) / class_grades.loc[:, "total_grades"]) * 100
+            )
+            return class_grades
+
+        except Exception as e:
+            logging.error(f"Error occurred during calculation: {e}")
+            return pd.DataFrame()
+
+
+
+
+
+
     def calc_percent_a_instructor(self, instructor_grades: pd.DataFrame) -> pd.DataFrame:
         """
         Calculates Percentages of As given by each professor
         """
         try:
-            # sum total number of grades given by professor
+            # sum total number of A grades given by each professor
             instructor_grades["total_grades"] = (
                 instructor_grades["aprec"] +
                 instructor_grades["bprec"] +
@@ -403,12 +454,12 @@ class DataFetcher:
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "single_class",  # options: single_class, department, class_level_dept
-    "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    "graph_type": "department",  # options: single_class, department, class_level_dept
+    "class_code": "CIS420",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    "instructor_type": "All Instructors",  # other option: "Faculty"
-    "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
+
+    "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
     #"grade_type": "Percent Ds/Fs", # true/false
     "class_count": True  # whether to show the number of classes taught by each instructor
 }

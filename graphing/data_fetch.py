@@ -3,6 +3,8 @@ import pandas as pd
 import logging
 import re
 
+from pandas.core.reshape.merge import extract_array
+
 # setting up logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
@@ -10,6 +12,8 @@ logger = logging.getLogger(__name__)
 FORMAT = "[%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s"
 logging.basicConfig(format=FORMAT)
 logger.setLevel(logging.DEBUG)
+
+
 class DataFetcher:
     def __init__(self, user_selection: dict, database_path: str):
         """
@@ -20,6 +24,9 @@ class DataFetcher:
         - database_path (str): The path to the SQLite database.
         """
         self.user_selection = user_selection
+        self.main_data = pd.DataFrame()
+        self.class_count = pd.DataFrame()
+        self.percent_grade = 0.0
         self.database_path = database_path
         self.connection = None 
         self.cursor = None
@@ -46,7 +53,7 @@ class DataFetcher:
         if self.connection:
             self.connection.close()
 
-    def fetch_data(self) -> pd.DataFrame:
+    def fetch_data(self) -> None:
         """
         Fetches data from the database based on the user's selection.
         """
@@ -55,7 +62,6 @@ class DataFetcher:
             self.connect_to_database()
             query = "SELECT * FROM course_data"
             dataframe = pd.read_sql_query(query, self.connection)
-            
             valid_class_levels = ["100", "200", "300", "400", "500", "600"]
 
             # store user selections
@@ -82,26 +88,32 @@ class DataFetcher:
             logging.info(f"show_class_count: {show_class_count}")
 
             # main logic for processing user selection
+            # single class
             if graph_type == "single_class" and single_class:
                 filtered_single_class = self.filter_single_class(single_class, dataframe)
                 if instructor_type == "Regular Faculty":
                     # TODO: filter faculty
                     pass
-                else:
+                elif instructor_type == "All Instructors":
                     # filter all instructors
-                    all_instructors = self.get_instructor(single_class, dataframe)
+                    filter_instructor = self.get_instructor(single_class, dataframe)
+
                 if grade_type == "Percent Ds/Fs":
                     # calculate Ds/Fs
-                    percent_DF = self.calc_percent_DF(filtered_single_class)
-                    
+                    percent_grade = self.calc_percent_DF(filtered_single_class)
                 elif grade_type == "Percent As":
                     # calculate As
-                    percent_As = self.calc_percent_a(filtered_single_class)
-                    logging.info(f"The percentage of 'A' grades for {single_class} is: {percent_As}%")
+                    percent_grade = self.calc_percent_a(filtered_single_class)
+                    logging.info(f"The percentage of 'A' grades for {single_class} is: {percent_grade}%")
 
                 if show_class_count:
                     class_count = self.instructor_class_count(filtered_single_class)
+                
+                # this part gets the last name of instructor
+                filtered_single_class.loc[:, "instructor"] = filtered_single_class["instructor"].str.split(", ", expand=True)[0].str.strip()
+                logging.info(filtered_single_class)
 
+            # department only
             elif graph_type == "department" and department:
                 filtered_department = self.filter_single_dept(department, dataframe)
                 if instructor_type == "Regular Faculty":
@@ -109,12 +121,16 @@ class DataFetcher:
                     pass
                 elif instructor_type == "All Instructors":
                     all_instructors = self.get_instructor(department, dataframe)
+
                 if grade_type == "Percent Ds/Fs":
                     percent_DF = self.calc_percent_DF(filtered_department)
                 elif grade_type == "Percent As":
                     percent_DF = self.calc_percent_a(filtered_department)
+
                 if show_class_count:
                     class_count = self.instructor_class_count(filtered_department)
+
+            # all classes of a particular level within department
             elif graph_type == "class_level_dept":
                 filtered_department = self.filter_single_dept(department, dataframe)
                 if class_level and class_level in valid_class_levels:
@@ -122,8 +138,8 @@ class DataFetcher:
                     class_level_int = int(class_level)
                     # filter based on the numeric part of group_code corresponding to the user's selection
                     filtered_department = filtered_department[
-                        filtered_department['group_code'].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
-                logging.info(f"Filtered class level {class_level} department: \n{filtered_department}")
+                        filtered_department["group_code"].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
+                    logging.info(f"Filtered class level {class_level} department: \n{filtered_department}")
                 if instructor_type == "Regular Faculty":
                     # TODO: filter all regular faculty
                     pass
@@ -135,7 +151,7 @@ class DataFetcher:
                 elif grade_type == "Percent As":
                     percent_As = self.calc_percent_a(filtered_department)
                 if show_class_count:
-                    class_count = self.instructor_class_count(filtered_department)
+                        class_count = self.instructor_class_count(filtered_department)
 
         except sqlite3.Error as e:
             logging.error(e)
@@ -143,6 +159,18 @@ class DataFetcher:
         finally:
             if self.connection:
                 self.close_connection()
+
+    def group_data(self, dataframe: pd.DataFrame, graph_type: str) -> pd.DataFrame| None:
+        """
+        Groups the data into a single DataFrame that's used for graphing
+        """
+        try:
+            pass
+
+        except sqlite3.Error as e:
+            logging.error(e)
+            return pd.DataFrame()
+
 
     def get_instructor(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -203,23 +231,22 @@ class DataFetcher:
             pattern = f"[A-Za-z]+{class_level}\\b"  # \b is a word boundary in regex to ensure '400' is at the end
             print(f"Using pattern: {pattern}")
             # filter DataFrame based on the pattern
-            filtered = dataframe[dataframe['group_code'].str.contains(pattern, regex=True, na=False)]
+            filtered = dataframe[dataframe["group_code"].str.contains(pattern, regex=True, na=False)]
             return filtered
 
         except Exception as e:
             logging.error(f"An error occurred while filtering: {e}")
             return pd.DataFrame()
 
-    def calc_percent_a(self, dataframe: pd.DataFrame) -> float:
+    def calc_percent_a(self, dataframe: pd.DataFrame) -> float | None:
         """
         Calculate percentages of As by class, department, or class of particular level within department.
         """
         try:
-            total_grades = dataframe[['aprec', 'bprec', 'cprec', 'dprec', 'fprec']].sum().sum()
+            total_grades = dataframe[["aprec", "bprec", "cprec", "dprec", "fprec"]].sum().sum()
             if total_grades > 0:
-                total_as = dataframe['aprec'].sum()
+                total_as = dataframe["aprec"].sum()
                 percent_as = (total_as / total_grades) * 100
-                logging.info(f"Percent As: {percent_as}%")
                 return percent_as
             else:
                 logging.info("No grades data found to calculate percentages")
@@ -227,8 +254,7 @@ class DataFetcher:
         except Exception as e:
             logging.error(f"Error occurred during calculation: {e}")
 
-
-    def calc_percent_DF(self, dataframe:pd.DataFrame) -> float:
+    def calc_percent_DF(self, dataframe:pd.DataFrame) -> float | None:
         """
         Calculate percentages of As by class, department, or class of particular level within department.
         """
@@ -247,7 +273,7 @@ class DataFetcher:
             logging.error(f"Error occurred during calculation: {e}")
 
 
-    def get_instructor_class(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
+    def get_instructor_class(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame | None:
         """
         Fetches instructor's name with their corresponding classes.
         """
@@ -281,7 +307,7 @@ class DataFetcher:
             self.close_connection()
         return pd.DataFrame()
 
-    def compare_instructor_type(self) -> pd.DataFrame:
+    def compare_instructor_type(self) -> pd.DataFrame | None:
         """
         Split data into two DataFrames, one for "All Instructors" and one for "Regular Faculty", and calculate percentage of As for each.
         """
@@ -297,25 +323,25 @@ class DataFetcher:
             class_count_series = dataframe.groupby("instructor").size()
             # convert Pandas series to DataFrame
             class_count_df = class_count_series.reset_index()
-            class_count_df.columns = ['instructor', 'class_count']
+            class_count_df.columns = ["instructor", "class_count"] 
             class_count_df = class_count_df.rename(columns={"index": "instructor"})
             logging.info(f"Class count by instructor: \n{class_count_df}")
-            
             return class_count_df
 
         except Exception as e:
             logging.error(f"Error occured in class_count(): {e}")
-            
-
+ 
+ 
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "single_class",  # options: single_class, single_dept, class_level_dept
-    "class_code": "BA101",  # relevant if graph type is single_class; specific class code (e.g., CS 422)
-    "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-    "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+    "graph_type": "single_class",  # options: single_class, department, class_level_dept
+    "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+    "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
     "instructor_type": "All Instructors",  # other option: "Faculty"
-    "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
+    #"grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+    "grade_type": "Percent Ds/Fs", # true/false
     "class_count": True  # whether to show the number of classes taught by each instructor
 }
 
@@ -330,6 +356,5 @@ if __name__ == "__main__":
     #print(unique_dept_codes)
     #s1 = pd.Series(['CIS330', 'AAOT', 'CIT330', 'CIS111'])
     #print(s1.str.contains("CIS330"))
-
 
 

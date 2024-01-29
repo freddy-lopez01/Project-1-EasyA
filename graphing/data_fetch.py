@@ -1,5 +1,4 @@
 import sqlite3
-from sys import exception
 import pandas as pd
 import logging
 import re
@@ -135,8 +134,10 @@ class DataFetcher:
                     logging.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
                     self.percent_grade = self.calc_percent_a_class(self.instructor_data)
-                    logging.info(f"PERCENT As: \n {self.percent_grade}")
-
+                    logging.info(f"PERCENT As: \n{self.percent_grade}")
+                
+                self.instructor_data = self.instructor_data.merge(self.percent_grade, on="instructor")
+                logging.info(f"NEWWW \n{self.instructor_data}")
                 if show_class_count:
                     # get class data and class count and merge the two DataFrames together
                     self.class_count = self.instructor_class_count(filtered_department)
@@ -323,10 +324,6 @@ class DataFetcher:
         except Exception as e:
             logging.error(f"Error occurred during calculation: {e}")
             return pd.DataFrame()
-
-
-
-
 
 
     def calc_percent_a_instructor(self, instructor_grades: pd.DataFrame) -> pd.DataFrame:

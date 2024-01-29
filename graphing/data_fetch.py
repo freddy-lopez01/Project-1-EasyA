@@ -1,4 +1,5 @@
 import sqlite3
+from sys import exception
 import pandas as pd
 import logging
 import re
@@ -113,30 +114,36 @@ class DataFetcher:
                     with the DataFrame that contains Percent As given by each instructor 
                     """
                     self.class_count = self.instructor_class_count(filtered_single_class)
+
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
+
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     logging.info(f"MERGED \n {self.instructor_data}")
-
 
             # department only
             elif graph_type == "department" and department:
                 filtered_department = self.filter_single_dept(department, dataframe)
+                # getting class data and grouping the classes that show up more than once
+                #self.class_data = self.get_class_data(filtered_department)
                 if instructor_type == "Regular Faculty":
                     # TODO: filter regular faculty
                     pass
                 elif instructor_type == "All Instructors":
                     self.instructor_data = self.get_instructor_class(filtered_department)
-                    logging.info(f"FILTERED INSTRUCTOR: {self.instructor_data}")
                 if grade_type == "Percent Ds/Fs":
-                    self.percent_grade = self.calc_percent_DsFs_class(filtered_department)
+                    self.percent_grade = self.calc_percent_DsFs_class(self.instructor_data)
                     logging.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
-                    self.percent_grade = self.calc_percent_a_class(filtered_department)
+                    self.percent_grade = self.calc_percent_a_class(self.instructor_data)
                     logging.info(f"PERCENT As: \n {self.percent_grade}")
 
                 if show_class_count:
-                    pass
-
+                    # get class data and class count and merge the two DataFrames together
+                    self.class_count = self.instructor_class_count(filtered_department)
+                    self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
+                    self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
+                    logging.info(f"MERGED DATA: \n{self.instructor_data}")
+                    
             # all classes of a particular level within department
             elif graph_type == "class_level_dept":
                 filtered_department = self.filter_single_dept(department, dataframe)
@@ -158,7 +165,7 @@ class DataFetcher:
                 elif grade_type == "Percent As":
                     self.percent_grade = self.calc_percent_a(filtered_department)
                 if show_class_count:
-                        self.class_count = self.instructor_class_count(filtered_department)
+                    pass
 
         except sqlite3.Error as e:
             logging.error(e)
@@ -166,7 +173,6 @@ class DataFetcher:
         finally:
             if self.connection:
                 self.close_connection()
-
 
     def get_instructor(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -192,6 +198,7 @@ class DataFetcher:
         """
         Filters the DataFrame for rows matching a single class code.
         """
+
         try:
             logging.info(f"Filtering DataFrame for single class: {group_code}")
             filtered_class = dataframe.loc[dataframe["group_code"] == group_code]
@@ -286,7 +293,7 @@ class DataFetcher:
             )
             class_grades.loc[:, "Percent As"] = (
                 (class_grades.loc[:, "aprec"] / class_grades.loc[:, "total_grades"]) * 100
-            )
+            ).round(2)
             return class_grades
 
         except Exception as e:
@@ -310,7 +317,7 @@ class DataFetcher:
             )
             class_grades.loc[:, "Percent Ds/Fs"] = (
                 ((class_grades.loc[:, "dprec"] + class_grades.loc[:, "fprec"]) / class_grades.loc[:, "total_grades"]) * 100
-            )
+            ).round(2)
             return class_grades
 
         except Exception as e:
@@ -338,7 +345,7 @@ class DataFetcher:
             # calculate percent As given by professor
             instructor_grades["Percent As"] = (
                 (instructor_grades["aprec"] / instructor_grades["total_grades"]) * 100
-            )
+            ).round(2)
             return instructor_grades
         
         except Exception as e:
@@ -363,7 +370,7 @@ class DataFetcher:
             # calculate percent Ds/Fs given by professor
             instructor_grades["Percent Ds/Fs"] = (
                 ((instructor_grades["dprec"] + instructor_grades["fprec"]) / instructor_grades["total_grades"]) * 100
-            )
+            ).round(2)
             return instructor_grades
 
         except Exception as e:
@@ -433,6 +440,21 @@ class DataFetcher:
         return pd.DataFrame()
 
 
+    def get_class_count(self, dataframe: pd.DataFrame) -> pd.DataFrame | None:
+        """
+        Calculates the number of recurring classes and stores them into a new DataFrame
+        """
+        try:
+            class_count_series = dataframe.groupby("group_code").size()
+            class_count_df = class_count_series.reset_index()
+            class_count_df.columns = ["group_code", "class_count"]
+            class_count_df = class_count_df.rename(columns={"index": "instructor"})
+            return class_count_df
+
+        except Exception as e:
+            logging.error(f"Error occurred while getting class count: {e}")
+
+
     def instructor_class_count(self, dataframe: pd.DataFrame) -> pd.DataFrame | None:
         """
         Add count of classes taught by each instructor into DataFrame if user selects this option.
@@ -450,7 +472,6 @@ class DataFetcher:
         except Exception as e:
             logging.error(f"Error occured in class_count(): {e}")
  
- 
 
 # a dictionary containing user selection
 user_selection = {
@@ -458,9 +479,8 @@ user_selection = {
     "class_code": "CIS420",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-
-    "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
-    #"grade_type": "Percent Ds/Fs", # true/false
+    #"grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+    "grade_type": "Percent As", # true/false
     "class_count": True  # whether to show the number of classes taught by each instructor
 }
 

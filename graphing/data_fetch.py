@@ -148,6 +148,7 @@ class DataFetcher:
             # all classes of a particular level within department
             elif graph_type == "class_level_dept":
                 filtered_department = self.filter_single_dept(department, dataframe)
+
                 if class_level and class_level in valid_class_levels:
                     # convert class_level to integer for comparison
                     class_level_int = int(class_level)
@@ -159,22 +160,27 @@ class DataFetcher:
                     # TODO: filter all regular faculty
                     pass
                 elif instructor_type == "All Instructors":
-                    # TODO: filter all instructors
-                    all_instructors = self.get_instructor(department, dataframe)
+                    self.instructor_data = self.get_instructor_class(filtered_department)
+
                 if grade_type == "Percent Ds/Fs":
-                    self.percent_grade = self.calc_percent_DF(filtered_department)
+                    self.percent_grade = self.calc_percent_DsFs_instructor(self.instructor_data)
                 elif grade_type == "Percent As":
-                    self.percent_grade = self.calc_percent_a(filtered_department)
+                    self.percent_grade = self.calc_percent_a_class(self.instructor_data)
+                    #self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
+                    logging.info(f"PERCENT As \n{self.percent_grade}")
+
                 if show_class_count:
-                    pass
+                    self.class_count = self.instructor_class_count(filtered_department)
+                    self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
+                    logging.info(f"Merged instructor class count to dataframe \n{self.instructor_data}")
 
         except sqlite3.Error as e:
             logging.error(e)
             return pd.DataFrame()
         finally:
             if self.connection:
-                self.close_connection()
 
+                self.close_connection()
     def get_instructor(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
         Filters list for instructors
@@ -218,7 +224,7 @@ class DataFetcher:
         logging.info("Filtering DataFrame for single department")
         try:
             filtered_department = dataframe.loc[dataframe["group_code"].str.contains(department, case=False, na=False)]
-            logging.info(f"---Filtered department---\n {filtered_department}")
+            #logging.info(f"---Filtered department---\n {filtered_department}")
             return filtered_department
 
         except Exception as e:
@@ -242,41 +248,8 @@ class DataFetcher:
             logging.error(f"An error occurred while filtering: {e}")
             return pd.DataFrame()
 
-    def calc_percent_a(self, dataframe: pd.DataFrame) -> pd.DataFrame:
-        """
-        Calculate percentages of As by class, department, or class of particular level within department.
-        """
-        try:
-            total_grades = dataframe[["aprec", "bprec", "cprec", "dprec", "fprec"]].sum().sum()
-            if total_grades > 0:
-                total_as = dataframe["aprec"].sum()
-                percent_as = (total_as / total_grades) * 100
-                return percent_as
-            else:
-                logging.info("No grades data found to calculate percentages")
-
-        except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
-            return pd.DataFrame()
 
 
-    def calc_percent_DF(self, dataframe:pd.DataFrame) -> float | None:
-        """
-        Calculate percentages of As by class, department, or class of particular level within department.
-        """
-        try:
-            total_grades = dataframe[["aprec", "bprec", "cprec", "dprec", "fprec"]].sum().sum()
-            if total_grades > 0:
-                total_DF = dataframe["dprec"].sum() + dataframe["fprec"].sum()
-                percent_DF = (total_DF / total_grades) * 100
-                logging.info(f"Percent Ds/Fs: {percent_DF}%")
-
-                return percent_DF
-            else:
-                logging.info("No grades data found to calculate percentages")
-        
-        except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
 
 
     def calc_percent_a_class(self, class_grades: pd.DataFrame) -> pd.DataFrame:
@@ -477,9 +450,9 @@ user_selection = {
     "graph_type": "department",  # options: single_class, department, class_level_dept
     "class_code": "CIS420",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-    "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    #"grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
-    "grade_type": "Percent As", # true/false
+    "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+    "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
+    #"grade_type": "Percent As", # true/false
     "class_count": True  # whether to show the number of classes taught by each instructor
 }
 

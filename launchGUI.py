@@ -288,22 +288,6 @@ varSelect = StringVar(subMain)
 #varSelect.set(TEMP_OPT[0])
 
 def clearBox():
-    """menuNum = Num
-    if menuNum == 0:
-        subMenu0.set('')
-    elif memuNum == 1:
-        subMenu1.set('')
-    elif memuNum == 2:
-        subMenu2.set('')
-    elif memuNum == 3:
-        subMenu3.set('')
-    elif memuNum == 5:
-        subMenu4.set('')
-    elif memuNum == 6:
-        subMenu5.set('')
-    elif memuNum == 7:
-        subMenu6.set('')
-    else:"""
     subMenu0.set('')
     subMenu1.set('')
     subMenu2.set('')

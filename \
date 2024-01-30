@@ -6,31 +6,21 @@ from PIL import ImageTk, Image
 import array
 import webbrowser
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
-import matplotlib.pyplot as plt 
-
-
-#
-# Global variables
-#
-color_Mode = True #This represents whether the user chooses the UI to be in light or dark mode. If true light mode, false for darkmode 
-classCountSelection = False #Represents if the user wishes to have Class count on or off. False for off, True for on 
-is_data = False 
-box_state = False
-selectedDic = {}
-selectedList = []
-gradeSel = "A"
-naturalONLY = True
-xaxis = False
-
-
-
+from matplotlib.backend.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 
 # Color pallete used in GUI
+
+color_Mode = True
+classCountSelection = False
+is_data = False
+
+box_state = False
+
 logobg = "#eaddcf"
 navbg = "#e3f6f5"
 sideBarbg = "#"
 #submainbg = "#3f3f46"
+
 submainbg = "#fef6e4"
 darksubmainbg = "#282828"
 darkslabbg = "#787878"
@@ -41,54 +31,37 @@ darklogobg="#242424"
 #               Most recent user selection will dictate database query
 #               
 
+#Temporary Lists to test dropdown box selections
+
 
 #
 # Connecting to the database in order to create dynamic dropdown options
 #
-courseOPT = []
-conn = sqlite3.connect('assets/CompleteDatabase.sqlite')
-cursor = conn.cursor()
-cursor.execute("""SELECT name FROM sqlite_master WHERE type='table';""")
-data = cursor.fetchall()
-print(data)
+
+#conn = sqlite3.connect('assets/FacDatabase.sqlite')
+#cursor = conn.cursor()
+#cursor.execute('SELECT * FROM table')
+#data = cursor.fetchall()
 
 
-cursor.execute("""SELECT dept_name from 'FacultyByDepartment';""")
-data = cursor.fetchall()
-for sub in data:
-    courseName = sub[0]
-    if courseName not in courseOPT:
-        courseOPT.append(courseName)
-    else:
-        continue
-groupLS = []
-cursor.execute("""SELECT group_code from 'FacultyByDepartment';""")
-Ccode = cursor.fetchall()
-for sub in Ccode:
-    code = ""
-    counter = 0
-    courseCode = sub[0]
-    #print(f"courseCode:{courseCode}")
-    if courseCode != None: 
-        for char in courseCode:
-            if char.isdigit():
-                break
-            else:
-                code += char
-    if code not in groupLS and (code != ''):
-        groupLS.append(code)
-    else:
-        continue
-print(groupLS)
 
 
-# Lists used by combobox
 
-NATURAL_SCIENCE = ['BI Biology', 'CH Chemistry and Biochemistry', 'CIS Computer and Information Science', 'ERTH Earth Sciences', 'General Science Program', 'HPHY Human Physiology', 'MATH Mathematics', 'Neuroscience', 'PHYS Physics', 'PSY Psychology']
 
-TEMP_OPT = ["100", "200", "300", "400", "500", "600", "All Courses"]
-TEMP_SUB = ['BI Biology', 'CH Chemistry',
-            'CIS Computer and Information Science',
+
+
+
+
+
+
+
+
+
+TEMP_OPT = ["100", "200", "300", "400", "500", "All Courses"]
+TEMP_SUB = ['AFR African Studies', 'ANTH Anthropology',
+            'ASIA Asian Studies', 'BI Biology', 'CH Chemistry',
+            'CINE Cinema Studies', 'CIS Computer and Information Science',
+            'CIT Computer Information Technology', 'CLAS Classics', 'COLT Comparative Literature',
             'CRWR Creative Writing', 'EALL East Asian Languages and Literatures', 'EC Economics',
             'ENG English', 'ENVS Environmental Studies', 'ES Ethnic Studies', 'EURO European Studies',
             'FLR Folklore', 'GEOG Geography', 'GEOL Geological Sciences', 'GER German', 'HIST History',
@@ -99,94 +72,68 @@ TEMP_SUB = ['BI Biology', 'CH Chemistry',
             'SOC Sociology', 'TA Theater Arts', "WGS Women's and Gender Studies"]
 
 GRADE_OPT = ["A", "D/F"]
-FACULTY_OPT = ["All Instructors", "Regular Faculty"]
+FACULTY_OPT = ["Permanent", "Temporary", "All"]
 
+selectedDic = {}
+selectedList = []
+gradeSel = "A"
+#    subMain.tkraise()
 
-
-"""
-ResWindow function that displays user selections and the graph that was generated. 
-"""
-
-def ResWindow(mode=0):
-    global color_Mode
+def ResWindow():
+    # clear(subMain)
     resbg = ""
     windH = root.winfo_height()
-    if color_Mode == True:
-        resbg = submainbg
+    if color_Mode == False:
+        resbg = darksubmainbg
     else:
-        resbg = darkslabbg
-
+        resbg = submainbg
     resFrame = tk.Frame(main, bg=resbg)
-    selectFrame = tk.Frame(resFrame, bg=resbg)
-    header = tk.Label(selectFrame, text="Selections Made:", font='Helvetica 10 bold',bg=resbg)
 
+    fig = Figure(figsize=(5,5), dpi=100)
 
-    for i in range(3):
-        resFrame.rowconfigure(1, weight=1)
-
-    resFrame.rowconfigure(1, weight=1)
-
-    def displaySelect():
-        header.grid(row=0, column=0, padx=15, pady=10)
-        cnt = 2
-        for key, value in selectedDic.items():
-            ent = Entry(selectFrame, width=10)
-            ent.grid(row=cnt, column=0, padx=10, pady=10)
-            ent.insert(END, key)
-            ent1 = Entry(selectFrame, width=10)
-            ent1.grid(row=cnt, column=1, padx=10, pady=10)
-            if key == "Subject":
-                tmp = []
-                val = selectedDic[key]
-                tmp = val.split(" ")
-                value = tmp[0]
-
-            if key == "ClassCount":
-                if value == True:
-                    value = "On"
-                else:
-                    value = "Off"
-            if key == "xaxisCourse":
-                if value == 1:
-                    value = "Courses"
-                else:
-                    value = "Instructors"
-            ent1.insert(END, value)
-            cnt += 1
-
-
-    ###
-    fig = Figure(figsize=(5,5), dpi=65)
     #dummy test plot 
     y = [1**2 for i in range(101)]
+
     plot1 = fig.add_subplot(111)
+
     plot1.plot(y)
-    canvas = FigureCanvasTkAgg(fig, master=resFrame) 
+
+    canvas = FigureCanvasTkAgg(fig, master=main)
     canvas.draw()
-    canvas.get_tk_widget().grid(row=0, column=0)
-    ###
+    canvas.get_tk_widget().grid(row=1, column=1)
 
-    displaySelect()
-    selectFrame.grid(row=0, column=2)
+    toolbar = NavigationToolbar2Tk(canvas, window)
+
+    toolbar.update()
+
+    canvas.get_tk_widget().grid(row=1, column=2)
+
+
+
+
+
     resFrame.place(height=windH, width=700)
-    backButton = tk.Button(resFrame, text="New Query", command=lambda: [resFrame.destroy(), clearBox(), canvas.get_tk_widget().destroy()])
+    test = tk.Label(resFrame, text="solid")
+    backButton = tk.Button(resFrame, text="New Query", command=lambda: [resFrame.destroy(), clearBox()])
     main.add(resFrame)
-    backButton.grid(row=1, column=0, sticky='w', padx=20, pady=20)
+    test.grid(row=0, column=0)
+    backButton.grid(row=1, column=0)
 
 
 
-"""
-Window Class used in order to create warning popup window
-"""
+
+
+
+
+
+
+
 class Win:
     def popup(self, alertM=""):
         tk.Tk().withdraw()
         name = messagebox.showinfo(title="Warning", message=alertM)
-
-
-        
 def submitQuery():
-    if (var1.get() == 0) and (var2.get() == 0) and (len(selectedDic) == 0):
+    if (var1.get() == 0) and (var2.get() == 0) and (len(selectedList) == 0):
         win = Win()
         win.popup("Must Select Subject and EasyA/Pass Field in order to submit")
         return 0
@@ -194,12 +141,10 @@ def submitQuery():
         win = Win()
         win.popup("Must Select either A or D/F")
     else:
-        global xaxis
         selectedList.append(gradeSel)
         selectedDic["GradeSel"] = gradeSel
         selectedDic["ClassCount"] = classCountSelection
-        selectedDic["xaxisCourse"] = xaxis
-        #print(f"Submitting complete query: {selectedList}")
+        print(f"Submitting complete query: {selectedList}")
         print(f"Submitting complete query: {selectedDic}")
         ResWindow()
         #resWindow.tkraise()
@@ -213,25 +158,15 @@ def openWeb(link):
     webbrowser.open_new(link)
 
 def clearBox():
-    global classCountSelection
-    global NaturalONLY
-    global xaxis
-
     subMenu0.set('')
     subMenu1.set('')
     subMenu2.set('')
     # subMenu3.set('')
-    subMenu4.set('All Instructors')
+    subMenu4.set('')
     #subMenu5.set('')
-    NaturalScience.deselect()
-    subMenu0.config(values=groupLS)
-    ClassCount.deselect()
-    classCountSelection = False
     PassTypeL0.deselect()
     PassTypeL1.deselect()
     selectedDic.clear()
-    Xaxis.deselect()
-    xaxis = False
     box_state = False
     menuState='disabled'
     subMenu1.config(state=menuState)
@@ -254,7 +189,6 @@ def toggle():
         change_theme()
         subMain.config(bg=submainbg)
         #subjL.config(bg=submainbg)
-        NaturalScience.config(bg=submainbg)
         subjL.config(bg=submainbg)
         classL.config(bg=submainbg)
         courseL.config(bg=submainbg)
@@ -274,21 +208,17 @@ def toggle():
         toggleLab.config(bg=logobg)
         toggleB.config(bg=logobg)
         logo_widget.config(bg=logobg)
-        Xaxis.config(bg=submainbg)
         color_Mode = True
-        #if ResWindow:
-        #    ResWindow(mode=1)
-        #    print("light mode")
         print(f"Global ColorMode: {color_Mode}\n")
 
     else:
         toggleB.config(image=onjpg)
         change_theme() 
-        NaturalScience.config(bg=darksubmainbg)
         subMain.config(bg=darksubmainbg)
         subjL.config(bg=darksubmainbg)
         classL.config(bg=darksubmainbg)
         courseL.config(bg=darksubmainbg)
+        #facultyL.config(bg=darksubmainbg)
         instructL.config(bg=darksubmainbg)
         ClassCount.config(bg=darksubmainbg)
         PassTypeL.config(bg=darksubmainbg)
@@ -304,15 +234,10 @@ def toggle():
         toggleLab.config(bg=darklogobg)
         toggleB.config(bg=darklogobg)
         logo_widget.config(bg=darklogobg)
-        Xaxis.config(bg=darksubmainbg)
         color_Mode = False
-        #if ResWindow:
-        #    ResWindow(mode=1)
-        #    print("dark mode")
         print(f"Global ColorMode: {color_Mode}\n")
 
 def closeGUI():
-    conn.close()
     root.destroy()
     exit()
 
@@ -320,11 +245,6 @@ def sendSelected(data):
     selectedList.append(data)
     print(f"New array: {selectedList}")
 menuState = 'disabled'
-
-"""
-sub_select{integer}(event) are responsible for tracking user selection for each combobox or checkbox that allows the user to select an option. These functions 
-called by the "command" parameter within said tk.checkbox or tk.combobox
-"""
 
 def sub_select0(event):
     selected = subMenu0.get()
@@ -360,7 +280,6 @@ def sub_select4(event):
 
 def sub_select6():
     selected = ''
-    global gradeSel
     if (var1.get() == 1) and (var2.get() == 1):
         print("error: cannot choose both options in same query")
         win = Win()
@@ -379,12 +298,11 @@ def sub_select6():
         PassTypeL0.deselect()
         PassTypeL1.deselect()
         return 0
-    print(f"seleted in subselect6: {selected}")
+    print(selected)
     gradeSel = selected
 
 def sub_select7():
     selected = ''
-    global classCountSelection
     if classCount.get() == 1:
         classCountSelection = True
         print(classCountSelection)
@@ -393,25 +311,6 @@ def sub_select7():
         classCountSelection = False
         print(classCountSelection)
 
-def sub_select8():
-    global naturalONLY
-    if NaturalS.get() == 1:
-        naturalONLY = True
-        subMenu0.config(values=NATURAL_SCIENCE)
-        print(f"NaturalS: {naturalONLY}")
-    else:
-        naturalONLY = False
-        subMenu0.config(values=groupLS)
-        print(f"NaturalS: {naturalONLY}")
-
-def sub_select9():
-    global xaxis
-    if xaxisToggle.get() == 1:
-        xaxis = True
-        print(f"X-axis: {xaxis}")
-    else:
-        xaxis = False
-        print(f"X-axis: {xaxis}")
 
 
 # Create root Window for the GUI
@@ -421,7 +320,7 @@ root.tk.call("source", "assets/Azure-ttk-theme-main/azure.tcl")
 root.tk.call("set_theme", "light")
 root.title("Easy A")
 root.eval("tk::PlaceWindow . center")
-root.geometry("900x850")
+root.geometry("800x850")
 #root.configure(bg=rootbg)
 
 
@@ -471,35 +370,23 @@ main.grid(row=1, column=0, sticky="nsew")
 
 
 NavBar = tk.Frame(main, bg=navbg, width=70)
+
 subMain = tk.Frame(root, bg=submainbg, width=200)
 # resFrame = tk.Frame(main, bg=submainbg)
-
-"""
-All tk.IntVar() variables used to track user checkbox selection  
-"""
 var1 = tk.IntVar()
 var2 = tk.IntVar()
 classCount = tk.IntVar()
-NaturalS = tk.IntVar()
-xaxisToggle = tk.IntVar()
 
-"""
-All of the Initialization of tkinter Labels, Buttons, Checkboxes, and images displayed. These are then called by firstsubMainPage() function in order to
-actually place the objects on the screen for the user to see anf interact 
-"""
-NaturalScience = Checkbutton(subMain, text="Natural Sciences Only", bg=submainbg, variable=NaturalS, onvalue=1, offvalue=0, command=sub_select8)
 subjL = tk.Label(subMain, text="Subject: ", bg=submainbg)
 classL = tk.Label(subMain, text="Course Level: ", bg=submainbg)
 courseL= tk.Label(subMain, text="Course Name: ", bg=submainbg)
 instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg)
 #graphTypeL = tk.Label(subMain, text="Graph Type: ", bg=submainbg)
 ClassCount = tk.Checkbutton(subMain, text="Class Count", bg=submainbg, variable=classCount, onvalue=1, offvalue=0, command=sub_select7)
-Xaxis = tk.Checkbutton(subMain, text="Label courses on x-axis", bg=submainbg, variable=xaxisToggle, onvalue=1, offvalue=0, command=sub_select9)
 PassTypeL = tk.Label(subMain, text="EasyA/Pass: ", bg=submainbg)
 PassTypeL0 = tk.Checkbutton(subMain, text="A", bg=submainbg, variable=var1, onvalue=1, offvalue=0, command=sub_select6)
 PassTypeL1 = tk.Checkbutton(subMain, text="D/F", bg=submainbg, variable=var2, onvalue=1, offvalue=0, command=sub_select6)
 
-# Placeing custom logo on the screen 
 logoImgv2 = Image.open("assets/EasyA.png")
 logoS2 = logoImgv2.resize((90, 35))
 #logo = ImageTk.PhotoImage(file="assets/EasyA.png")
@@ -508,8 +395,9 @@ logo_widget2 = tk.Label(subMain, image=logo2, bg=submainbg)
 
 
 varSelect = StringVar(subMain)
-# Creating the Comboboxes for dropdown selection 
-subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=groupLS)
+
+
+subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=TEMP_SUB)
 subMenu0.bind("<<ComboboxSelected>>", sub_select0)
 subMenu1 = ttk.Combobox(subMain, values=TEMP_OPT, state=menuState)
 subMenu1.bind("<<ComboboxSelected>>", sub_select1)
@@ -538,46 +426,55 @@ sExitbuttn = ttk.Button(NavBar, text="Quit EasyA", command=closeGUI)
 
 
 def firstsubMainPage():
-    # This funciton contains all of the positioning of the tkinter objects displayed on the the GUI
-    # For this specific GUI, I chose to use the .grid() method to accuratly place objects on the screen. 
+    # Contrary to the name subMain, this window will hold the bulk of the interation that the user will have with the GUI
 
-    NaturalScience.grid(row=2, column=1, ipadx=20, ipady=5)
-   
-    subjL.grid(row=3, column=1, ipadx=20, ipady=5)
+    # subjL = tk.Label(subMain, text="Subject: ", bg=submainbg)
+    subjL.grid(row=2, column=1, ipadx=20, ipady=5)
 
-    classL.grid(row=4, column=1, ipadx=20, ipady=5)  
+    # classL = tk.Label(subMain, text="Course Level: ", bg=submainbg)
+    classL.grid(row=3, column=1, ipadx=20, ipady=5)  
 
-    courseL.grid(row=5, column=1, ipadx=20, ipady=5) 
+    # courseL= tk.Label(subMain, text="Course: ", bg=submainbg)
+    courseL.grid(row=4, column=1, ipadx=20, ipady=5) 
 
-    instructL.grid(row=6, column=1, ipadx=20, ipady=5) 
 
-    ClassCount.grid(row=8, column=1, ipadx=20, ipady=5)
+    # instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg)
+    instructL.grid(row=5, column=1, ipadx=20, ipady=5) 
 
-    Xaxis.grid(row=8, column=2, ipadx=20, ipady=5)
+    # graphTypeL = tk.Label(subMain, text="Graph Type ", bg=submainbg)
+    ClassCount.grid(row=7, column=1, ipadx=20, ipady=5)
 
-    PassTypeL.grid(row=7, column=1, ipadx=0, ipady=5) 
+
+    
+    #PassTypeL0
+    #PassTypeL = tk.Label(subMain, text="EasyA/Pass ", bg=submainbg)
+    PassTypeL.grid(row=6, column=1, ipadx=0, ipady=5) 
+
+
+
+
 
     logo_widget2.grid(row=1, column=1, padx=30, pady=20, sticky="nsew")
 
-    subMenu0.grid(row=3, column=2, padx=10, pady=10)
+    subMenu0.grid(row=2, column=2, padx=10, pady=10)
 
-    subMenu1.grid(row=4, column=2, padx=10, pady=10)
 
-    subMenu2.grid(row=5, column=2, padx=10, pady=10)
+    subMenu1.grid(row=3, column=2, padx=10, pady=10)
 
-    subMenu4.grid(row=6, column=2, padx=10, pady=10)
-    subMenu4.set('All Instructors')
+    subMenu2.grid(row=4, column=2, padx=10, pady=10)
 
-    PassTypeL0.grid(row=7, column=2, padx=0, pady=10)
-    PassTypeL1.grid(row=7, column=3, padx=0, pady=10)
+    subMenu4.grid(row=5, column=2, padx=10, pady=10)
 
-    canvas.grid(row=11, column=2, padx=10, pady=10)
+    PassTypeL0.grid(row=6, column=2, padx=0, pady=10)
+    PassTypeL1.grid(row=6, column=3, padx=0, pady=10)
 
-    submitBttn.grid(row=12, column=2, padx=10, pady=10) 
+    canvas.grid(row=10, column=2, padx=10, pady=10)
 
-    canvas1.grid(row=11, column=1, padx=10, pady=10)
+    submitBttn.grid(row=11, column=2, padx=10, pady=10) 
 
-    clearBttn.grid(row=12, column=1, padx=10, pady=10)
+    canvas1.grid(row=10, column=1, padx=10, pady=10)
+
+    clearBttn.grid(row=11, column=1, padx=10, pady=10)
 
     main.add(NavBar)
     main.add(subMain)

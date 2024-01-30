@@ -1,5 +1,8 @@
 import sqlite3
 
+'''
+this was to debug an issue that truned out to be a feature
+'''
 def compare_databases(db1_path, db2_path):
     # Connect to the databases
     conn1 = sqlite3.connect(db1_path)

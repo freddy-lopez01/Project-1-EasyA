@@ -8,6 +8,11 @@ import webbrowser
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 import matplotlib.pyplot as plt 
+#from graphing/data_fetch import DataFetcher
+
+
+
+
 
 
 #
@@ -22,6 +27,8 @@ selectedList = []
 gradeSel = "A"
 naturalONLY = True
 xaxis = False
+currSubject = ""
+currCourseLvl = ""
 
 
 
@@ -82,6 +89,54 @@ for sub in Ccode:
 print(groupLS)
 
 
+
+courselvlList = []
+# Function to populate courses dropdown 
+
+path = "../DataBases/GradeDatabase.sqlite"
+def coursePopulate(Subject, CourseLvl): 
+    global courselvlList
+    courselvlList.clear()
+    #fetcher = DataFetcher(CourseLvl, path)
+    conn2 = sqlite3.connect('./Databases/GradeDatabase.sqlite')
+    cursor2 = conn2.cursor()
+    cursor2.execute("""SELECT group_code from 'course_data';""")
+
+    # cursor2.execute("""SELECT name FROM sqlite_master WHERE type='table';""")
+    data2 = cursor2.fetchall()
+    print(data2)
+    codeTemplate = str(Subject)+str(CourseLvl[0])
+    print(codeTemplate)
+    for sub in data2:
+        code = sub[0]
+        if codeTemplate in code:
+            if code not in courselvlList:
+                print(f"sub: {code}")
+                courselvlList.append(code)
+            else:
+                continue
+        else:
+            continue
+
+    if (len(courselvlList) == 0) and (CourseLvl == "All Courses"):
+        courselvlList.append("All "+Subject+" courses selected")
+    elif (len(courselvlList) == 0):
+        courselvlList.append("No Corresponding Classes")
+    print(f"courselvlList: {courselvlList}")
+    # subMenu1.config(values=courselvlList)
+
+
+
+# print(courselvlList)
+
+# coursePopulate('CIS', '400')
+print(courselvlList)
+        
+
+
+
+
+
 # Lists used by combobox
 
 NATURAL_SCIENCE = ['BI Biology', 'CH Chemistry and Biochemistry', 'CIS Computer and Information Science', 'ERTH Earth Sciences', 'General Science Program', 'HPHY Human Physiology', 'MATH Mathematics', 'Neuroscience', 'PHYS Physics', 'PSY Psychology']
@@ -100,6 +155,8 @@ TEMP_SUB = ['BI Biology', 'CH Chemistry',
 
 GRADE_OPT = ["A", "D/F"]
 FACULTY_OPT = ["All Instructors", "Regular Faculty"]
+
+GRAPH_TYPE = ["single_class", "department", "class_level_dept"]
 
 
 
@@ -195,10 +252,14 @@ def submitQuery():
         win.popup("Must Select either A or D/F")
     else:
         global xaxis
+        global color_Mode
         selectedList.append(gradeSel)
-        selectedDic["GradeSel"] = gradeSel
-        selectedDic["ClassCount"] = classCountSelection
-        selectedDic["xaxisCourse"] = xaxis
+        if "Instructor" not in selectedDic:
+            selectedDic["Instructor"] = "All Instructors"
+        selectedDic["grade_type"] = gradeSel
+        selectedDic["class_count"] = classCountSelection
+        selectedDic["xaxis_course"] = xaxis
+        selectedDic["light_mode"] = color_Mode
         #print(f"Submitting complete query: {selectedList}")
         print(f"Submitting complete query: {selectedDic}")
         ResWindow()
@@ -216,16 +277,18 @@ def clearBox():
     global classCountSelection
     global NaturalONLY
     global xaxis
+    global courselvlList
 
     subMenu0.set('')
     subMenu1.set('')
     subMenu2.set('')
     # subMenu3.set('')
     subMenu4.set('All Instructors')
-    #subMenu5.set('')
+    subMenu5.set('')
     NaturalScience.deselect()
     subMenu0.config(values=groupLS)
     ClassCount.deselect()
+    courselvlList.clear()
     classCountSelection = False
     PassTypeL0.deselect()
     PassTypeL1.deselect()
@@ -237,7 +300,7 @@ def clearBox():
     subMenu1.config(state=menuState)
     subMenu2.config(state=menuState)
     subMenu4.config(state=menuState)
-    #subMenu5.config(state=menuState)
+    subMenu5.config(state=menuState)
 
 
 def change_theme():
@@ -258,7 +321,7 @@ def toggle():
         subjL.config(bg=submainbg)
         classL.config(bg=submainbg)
         courseL.config(bg=submainbg)
-        #facultyL.config(bg=submainbg)
+        graphTypeL.config(bg=submainbg)
         instructL.config(bg=submainbg)
         ClassCount.config(bg=submainbg)
         PassTypeL.config(bg=submainbg)
@@ -291,6 +354,7 @@ def toggle():
         courseL.config(bg=darksubmainbg)
         instructL.config(bg=darksubmainbg)
         ClassCount.config(bg=darksubmainbg)
+        graphTypeL.config(bg=darksubmainbg)
         PassTypeL.config(bg=darksubmainbg)
         PassTypeL0.config(bg=darksubmainbg)
         PassTypeL1.config(bg=darksubmainbg)
@@ -327,6 +391,7 @@ called by the "command" parameter within said tk.checkbox or tk.combobox
 """
 
 def sub_select0(event):
+    global currSubject
     selected = subMenu0.get()
     code = selected.split(" ")
     print(code[0])
@@ -337,13 +402,21 @@ def sub_select0(event):
     subMenu1.config(state=menuState)
     subMenu2.config(state=menuState)
     subMenu4.config(state=menuState)
+    subMenu5.config(state=menuState)
+    currSubject = code[0]
 
 
 def sub_select1(event):
+    global currCourseLvl
+    global currSubject
     selected = subMenu1.get()
     print(selected)
     sendSelected(selected)
     selectedDic["CourseLevel"] = selected
+    currCourseLvl = selected
+    coursePopulate(currSubject, currCourseLvl)
+    subMenu2.config(values=courselvlList)
+    subMenu2.set('')
 
 def sub_select2(event):
     selected = subMenu2.get()
@@ -357,6 +430,12 @@ def sub_select4(event):
     sendSelected(selected)
     selectedDic["Instructor"] = selected
 
+def sub_select5(event):
+    selected = subMenu5.get()
+    print(selected)
+    sendSelected(selected)
+    selectedDic["graph_type"] = selected
+
 
 def sub_select6():
     selected = ''
@@ -369,9 +448,9 @@ def sub_select6():
         PassTypeL1.deselect()
         return 0
     elif (var2.get() == 0) and (var1.get() == 1):
-        selected = 'A'
+        selected = 'Percent As'
     elif (var2.get() == 1) and (var1.get() == 0):
-        selected = 'D/F'
+        selected = ' Percent Ds/Fs'
     else:
         print("error: Must select either A or D/F to submit query")
         win = Win()
@@ -492,7 +571,7 @@ subjL = tk.Label(subMain, text="Subject: ", bg=submainbg)
 classL = tk.Label(subMain, text="Course Level: ", bg=submainbg)
 courseL= tk.Label(subMain, text="Course Name: ", bg=submainbg)
 instructL = tk.Label(subMain, text="Instructor: ", bg=submainbg)
-#graphTypeL = tk.Label(subMain, text="Graph Type: ", bg=submainbg)
+graphTypeL = tk.Label(subMain, text="Graph Type: ", bg=submainbg)
 ClassCount = tk.Checkbutton(subMain, text="Class Count", bg=submainbg, variable=classCount, onvalue=1, offvalue=0, command=sub_select7)
 Xaxis = tk.Checkbutton(subMain, text="Label courses on x-axis", bg=submainbg, variable=xaxisToggle, onvalue=1, offvalue=0, command=sub_select9)
 PassTypeL = tk.Label(subMain, text="EasyA/Pass: ", bg=submainbg)
@@ -513,12 +592,12 @@ subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=groupLS)
 subMenu0.bind("<<ComboboxSelected>>", sub_select0)
 subMenu1 = ttk.Combobox(subMain, values=TEMP_OPT, state=menuState)
 subMenu1.bind("<<ComboboxSelected>>", sub_select1)
-subMenu2 = ttk.Combobox(subMain, values=TEMP_SUB, state=menuState)
+subMenu2 = ttk.Combobox(subMain, values=courselvlList, state=menuState)
 subMenu2.bind("<<ComboboxSelected>>", sub_select2)
 subMenu4 = ttk.Combobox(subMain, values=FACULTY_OPT, state=menuState)
 subMenu4.bind("<<ComboboxSelected>>", sub_select4)
-#subMenu5 = ttk.Combobox(subMain, values=TEMP_OPT, state=menuState)
-#subMenu5.bind("<<ComboboxSelected>>", sub_select5)
+subMenu5 = ttk.Combobox(subMain, values=GRAPH_TYPE, state=menuState)
+subMenu5.bind("<<ComboboxSelected>>", sub_select5)
 #subMenu6 = ttk.Combobox(subMain, values=GRADE_OPT)
 #subMenu6.bind("<<ComboboxSelected>>", sub_select6)
 
@@ -530,7 +609,7 @@ canvas1 = Canvas(subMain, width=100, height=10)
 clearBttn = ttk.Button(subMain, text="Reset All", command=clearBox)
 # nextBttn = ttk.Button(subMain, text="Next Page", command=ResWindow)
 
-slab1 = tk.Label(NavBar, text="About", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
+slab1 = tk.Label(NavBar, text="About", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8, bold))
 slab2 = tk.Label(NavBar, text="GitHub", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 sExitbuttn = ttk.Button(NavBar, text="Quit EasyA", command=closeGUI)
@@ -551,11 +630,13 @@ def firstsubMainPage():
 
     instructL.grid(row=6, column=1, ipadx=20, ipady=5) 
 
-    ClassCount.grid(row=8, column=1, ipadx=20, ipady=5)
+    graphTypeL.grid(row=7, column=1, ipadx=20, ipady=5) 
 
-    Xaxis.grid(row=8, column=2, ipadx=20, ipady=5)
+    ClassCount.grid(row=9, column=1, ipadx=20, ipady=5)
 
-    PassTypeL.grid(row=7, column=1, ipadx=0, ipady=5) 
+    Xaxis.grid(row=9, column=2, ipadx=20, ipady=5)
+
+    PassTypeL.grid(row=8, column=1, ipadx=0, ipady=5) 
 
     logo_widget2.grid(row=1, column=1, padx=30, pady=20, sticky="nsew")
 
@@ -568,8 +649,10 @@ def firstsubMainPage():
     subMenu4.grid(row=6, column=2, padx=10, pady=10)
     subMenu4.set('All Instructors')
 
-    PassTypeL0.grid(row=7, column=2, padx=0, pady=10)
-    PassTypeL1.grid(row=7, column=3, padx=0, pady=10)
+    subMenu5.grid(row=7, column=2, padx=10, pady=10)
+
+    PassTypeL0.grid(row=8, column=2, padx=0, pady=10)
+    PassTypeL1.grid(row=8, column=3, padx=0, pady=10)
 
     canvas.grid(row=11, column=2, padx=10, pady=10)
 

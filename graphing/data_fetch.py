@@ -83,16 +83,19 @@ class DataFetcher:
             show_class_count = self.user_selection.get("class_count", False)
 
             # for debugging purposes
+            """
             logging.info(f"Single class: {single_class}")
             logging.info(f"Department: {department}")
             logging.info(f"Class level department: {class_level}")
             logging.info(f"instructor type: {instructor_type}")
             logging.info(f"grade type: {grade_type}")
             logging.info(f"show_class_count: {show_class_count}")
+            """
 
             # main logic for processing user selection
             if graph_type == "single_class" and single_class:
                 filtered_single_class = self.filter_single_class(single_class, dataframe)
+                logging.info(f"FILTERED SINGLE CLASS: \n{filtered_single_class}")
                 if instructor_type == "Regular Faculty":
                     # TODO: filter faculty
                     pass
@@ -117,6 +120,10 @@ class DataFetcher:
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     logging.info(f"MERGED \n {self.instructor_data}")
+                else:
+                    self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
+
+
 
             # department only
             elif graph_type == "department" and department:
@@ -173,14 +180,16 @@ class DataFetcher:
                     self.class_count = self.instructor_class_count(filtered_department)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     logging.info(f"Merged instructor class count to dataframe \n{self.instructor_data}")
+                else:
+                    self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
 
         except sqlite3.Error as e:
             logging.error(e)
             return pd.DataFrame()
         finally:
             if self.connection:
-
                 self.close_connection()
+
     def get_instructor(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
         Filters list for instructors
@@ -390,17 +399,15 @@ class DataFetcher:
             self.close_connection()
 
              
-    def get_unique_department_codes(self) -> pd.DataFrame:
+    def get_unique_department_codes(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
         For debugging purposes
         """
         try:
-            self.connect_to_database()
-            query = "SELECT group_code FROM course_data"
-            dataframe = pd.read_sql_query(query, self.connection)
             # extract only the alphabetical prefix from 'group_code' using regex
             dataframe['dept_code'] = dataframe['group_code'].str.extract(r'([A-Za-z]+)')
             unique_dept_codes = dataframe['dept_code'].unique()
+            logging.info(f"Unique Department Codes: {unique_dept_codes}")
             return pd.DataFrame(unique_dept_codes)
 
         except sqlite3.Error as e:
@@ -447,13 +454,16 @@ class DataFetcher:
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "department",  # options: single_class, department, class_level_dept
-    "class_code": "CIS420",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    "graph_type": "single_class",  # options: single_class, department, class_level_dept
+    "class_code": "ERTH201",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+    "instructor": "", # All instructors or Regular Faculty
     "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
-    #"grade_type": "Percent As", # true/false
-    "class_count": True  # whether to show the number of classes taught by each instructor
+    #"grade_type": "Percent As",
+    "class_count": True,  # whether to show the number of classes taught by each instructor
+    "xaxis_course": True,
+
 }
 
 

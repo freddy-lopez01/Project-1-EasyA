@@ -4,7 +4,12 @@ import re
 import time
 import WebScrapFac
 
-'''---------------------------------------------------------------'''
+'''
+Production Note:
+imports Scrapper and updates the database into one complete data base.
+'''
+
+'''DEBUG---------------------------------------------------------------'''
 #debug aids
 debug =True
 start_time = time.time()
@@ -34,7 +39,7 @@ def populate_database(parsed_data):
         grade_conn.close()
         return
 
-    # Create a table of data FacultyByDepartment
+    # Create a table of data FacultyByDepartment with all data collected
     fac_cursor.execute('''
             CREATE TABLE IF NOT EXISTS FacultyByDepartment (
                 instructor TEXT,
@@ -158,7 +163,7 @@ def main():
 
 
     elif user_input.lower() == 'n':
-        # Open the file and parse the data
+        # Open the file stored form last webscrape and parse the data
         with open(initData_file, 'r') as file:
             data = file.readlines()
 

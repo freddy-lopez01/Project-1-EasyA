@@ -33,7 +33,8 @@ cursor.execute('''
     )
 ''')
 
-# Insert data into the table iteratively over each course
+# Insert data into the table iteratively over each course takes all data in the same order as in grade_data_only.js
+# format pulled form sqlite documentation of interations
 for group_code, courses in groups_data.items():
     for course in courses:
         cursor.execute('''

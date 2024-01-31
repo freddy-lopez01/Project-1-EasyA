@@ -262,18 +262,18 @@ class Win:
         name = messagebox.showinfo(title="Warning", message=alertM)
 
 
-selectedDic = {
-        "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
-        "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
-        # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-        "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-        "instructor_type": "All Instructors",  # other option: "Faculty"
-        "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
-        #"grade_type": "Percent Ds/Fs", # true/false
-        "class_count": False,  # whether to show the number of classes taught by each instructor
-        "xaxis_course": False, # displays courses instead of instructor
-        "light_mode": False # True = light mode, False = dark mode
-        }
+# selectedDic = {
+#         "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+#         "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+#         # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+#         "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+#         "instructor_type": "All Instructors",  # other option: "Faculty"
+#         "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+#         #"grade_type": "Percent Ds/Fs", # true/false
+#         "class_count": False,  # whether to show the number of classes taught by each instructor
+#         "xaxis_course": False, # displays courses instead of instructor
+#         "light_mode": False # True = light mode, False = dark mode
+#         }
 
 
 def submitQuery():
@@ -484,7 +484,7 @@ def sub_select6():
     elif (var2.get() == 0) and (var1.get() == 1):
         selected = 'Percent As'
     elif (var2.get() == 1) and (var1.get() == 0):
-        selected = ' Percent Ds/Fs'
+        selected = 'Percent Ds/Fs'
     else:
         print("error: Must select either A or D/F to submit query")
         win = Win()

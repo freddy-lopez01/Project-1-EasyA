@@ -35,7 +35,7 @@ class DataFetcher:
         self.cursor = None
 
 
-    def reset_state(self) -> None:
+    def reset_state(self, user_selection: dict) -> None:
         """
         Resets state of DataFetcher
         """
@@ -49,7 +49,7 @@ class DataFetcher:
         self.connection = None 
         self.cursor = None
 
-        logging.info("DataFetcher state has been reset")
+        logger.info("DataFetcher state has been reset")
 
 
     def connect_to_database(self) -> None:
@@ -60,9 +60,9 @@ class DataFetcher:
             # establish connection to SQL database
             self.connection = sqlite3.connect(self.database_path)
             self.cursor = self.connection.cursor()
-            logging.info("---Successfully connected to SQL database---")
+            logger.info("---Successfully connected to SQL database---")
         except sqlite3.Error as e:
-            logging.error(f"---Error occured while connecting to database: {e}---")
+            logger.exception(f"---Error occured while connecting to database---")
             # ensures connection is closed
             if self.connection:
                 self.connection.close()
@@ -113,7 +113,7 @@ class DataFetcher:
             # main logic for processing user selection
             if graph_type == "single_class" and single_class:
                 filtered_single_class = self.filter_single_class(single_class, dataframe)
-                logging.info(f"FILTERED SINGLE CLASS: \n{filtered_single_class}")
+                logger.info(f"FILTERED SINGLE CLASS: \n{filtered_single_class}")
                 if instructor_type == "Regular Faculty":
                     # TODO: filter faculty
                     pass
@@ -123,11 +123,11 @@ class DataFetcher:
                 if grade_type == "Percent Ds/Fs":
                     # calculate Ds/Fs
                     self.percent_grade = self.calc_percent_DsFs_instructor(self.instructor_data)
-                    logging.info(f"Percent Grade Ds/Fs: \n{self.percent_grade}")
+                    logger.info(f"Percent Grade Ds/Fs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
                     # calculate As
                     self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
-                    logging.info(f"Percent As: \n{self.percent_grade}")
+                    logger.info(f"Percent As: \n{self.percent_grade}")
                 # if toggle class count for single class graph
                 if show_class_count:
                     """
@@ -137,7 +137,7 @@ class DataFetcher:
                     self.class_count = self.instructor_class_count(filtered_single_class)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
-                    logging.info(f"MERGED \n {self.instructor_data}")
+                    logger.info(f"MERGED \n {self.instructor_data}")
                 else:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
 
@@ -145,6 +145,7 @@ class DataFetcher:
             # department only
             elif graph_type == "department" and department:
                 filtered_department = self.filter_single_dept(department, dataframe)
+                logger.info(f"FILTERED_DEPT \n{filtered_department}")
                 if instructor_type == "Regular Faculty":
                     # TODO: filter regular faculty
                     pass
@@ -152,10 +153,10 @@ class DataFetcher:
                     self.instructor_data = self.get_instructor_class(filtered_department)
                 if grade_type == "Percent Ds/Fs":
                     self.percent_grade = self.calc_percent_DsFs_class(self.instructor_data)
-                    logging.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
+                    logger.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
                     self.percent_grade = self.calc_percent_a_class(self.instructor_data)
-                    logging.info(f"PERCENT As: \n{self.percent_grade}")
+                    logger.info(f"PERCENT As: \n{self.percent_grade}")
 
                 # if toggle class count for department graph
                 if show_class_count:
@@ -163,7 +164,7 @@ class DataFetcher:
                     self.class_count = self.instructor_class_count(filtered_department)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
-                    logging.info(f"MERGED DATA: \n{self.instructor_data}")
+                    logger.info(f"MERGED DATA: \n{self.instructor_data}")
                 else:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     
@@ -177,7 +178,7 @@ class DataFetcher:
                     # filter based on the numeric part of group_code corresponding to the user's selection
                     filtered_department = filtered_department[
                         filtered_department["group_code"].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
-                    logging.info(f"Filtered class level {class_level} department: \n{filtered_department}")
+                    logger.info(f"Filtered class level {class_level} department: \n{filtered_department}")
                 if instructor_type == "Regular Faculty":
                     # TODO: filter all regular faculty
                     pass
@@ -189,19 +190,19 @@ class DataFetcher:
                 elif grade_type == "Percent As":
                     self.percent_grade = self.calc_percent_a_class(self.instructor_data)
                     #self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
-                    logging.info(f"PERCENT As \n{self.percent_grade}")
+                    logger.info(f"PERCENT As \n{self.percent_grade}")
 
                 if show_class_count:
                     self.class_count = self.instructor_class_count(filtered_department)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
-                    logging.info(f"Merged instructor class count to dataframe \n{self.instructor_data}")
+                    logger.info(f"Merged instructor class count to dataframe \n{self.instructor_data}")
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                 else:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
-
-        except sqlite3.Error as e:
-            logging.error(e)
-            return pd.DataFrame()
+                
+                logger.debug("User selection: %s", self.user_selection)
+        except Exception as e:
+            logger.exception("Exception occurred during data fetch")
         finally:
             if self.connection:
                 self.close_connection()
@@ -212,16 +213,16 @@ class DataFetcher:
         """
         try:
             if dataframe.empty:
-                logging.info("DataFrame is empty. No instructors to extract.")
+                logger.info("DataFrame is empty. No instructors to extract.")
                 return pd.DataFrame()
             # Filter the DataFrame for the given class code and get unique instructors
             instructors = dataframe[dataframe["group_code"] == group_code]["instructor"].unique()
             instructors_df = pd.DataFrame(instructors, columns=["instructor"])
-            logging.info(f"Instructors extracted: \n{instructors_df}")
+            logger.info(f"Instructors extracted: \n{instructors_df}")
             return instructors_df
 
-        except sqlite3.Error as e:
-            logging.error(e)
+        except Exception as e:
+            logger.exception("Exception occurred during get_instructor")
             return pd.DataFrame()
         finally:
             self.close_connection()
@@ -232,13 +233,13 @@ class DataFetcher:
         """
 
         try:
-            logging.info(f"Filtering DataFrame for single class: {group_code}")
+            logger.info(f"Filtering DataFrame for single class: {group_code}")
             filtered_class = dataframe.loc[dataframe["group_code"] == group_code]
-            logging.info(f"--- Filtered single_class--- \n {filtered_class}")
+            logger.info(f"--- Filtered single_class--- \n {filtered_class}")
             return filtered_class
 
         except Exception as e:
-            logging.error(e)
+            logger.exception("Exception occurred while filtering single class")
             # return empty DataFrame if there's an error
             return pd.DataFrame()
 
@@ -246,14 +247,14 @@ class DataFetcher:
         """
         Filters the DataFrame for rows matching a single department.
         """
-        logging.info("Filtering DataFrame for single department")
+        logger.info(f"Filtering DataFrame for single department: \n {department}")
         try:
             filtered_department = dataframe.loc[dataframe["group_code"].str.contains(department, case=False, na=False)]
             #logging.info(f"---Filtered department---\n {filtered_department}")
             return filtered_department
 
         except Exception as e:
-            logging.error(e)
+            logger.exception("Exception occurred while filtering single department")
             return pd.DataFrame()
 
     def filter_class_level_dept(self, department: str, class_level: str, dataframe: pd.DataFrame) -> pd.DataFrame:
@@ -261,7 +262,7 @@ class DataFetcher:
         Filters the DataFrame for rows matching a department and a specific class level (e.g., 400).
         """
         try:
-            logging.info(f"Attempting to filter for {department} department, level {class_level} classes")
+            loggin.info(f"Attempting to filter for {department} department, level {class_level} classes")
             # assuming the class level (e.g., '400') is at the end of the 'group_code' after department code
             pattern = f"[A-Za-z]+{class_level}\\b"  # \b is a word boundary in regex to ensure '400' is at the end
             print(f"Using pattern: {pattern}")
@@ -270,7 +271,7 @@ class DataFetcher:
             return filtered
 
         except Exception as e:
-            logging.error(f"An error occurred while filtering: {e}")
+            logger.exception("Exception occurred during filtering class level dept")
             return pd.DataFrame()
 
 
@@ -293,7 +294,7 @@ class DataFetcher:
             return class_grades
 
         except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
+            logger.exception("Exception occurred while calculating percent As for classes")
             return pd.DataFrame()
 
 
@@ -317,7 +318,7 @@ class DataFetcher:
             return class_grades
 
         except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
+            logger.exception("Error occurred while calculating percent Ds/Fs for classes")
             return pd.DataFrame()
 
 
@@ -341,7 +342,7 @@ class DataFetcher:
             return instructor_grades
         
         except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
+            logger.exception("Exception occurred while calculating percent As given by instructors")
             # if error occurs, just return empty dataframe
             return pd.DataFrame()
 
@@ -365,7 +366,7 @@ class DataFetcher:
             return instructor_grades
 
         except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
+            logger.exception("Exception occurred while calculating percent Ds/Fs given by instructors")
             # if error occurs, return empty dataframe
             return pd.DataFrame()
 
@@ -382,11 +383,11 @@ class DataFetcher:
                 "dprec": "sum",
                 "fprec": "sum"
             }).reset_index()
-            logging.info(f"Class data: \n{class_data}")
+            logger.info(f"Class data: \n{class_data}")
             return class_data
 
         except Exception as e:
-            logging.error(f"Error occurred during calculation: {e}")
+            logger.exception("Exception occurred while filtering class data")
 
     def get_instructor_class(self, dataframe: pd.DataFrame) -> pd.DataFrame | None:
         """
@@ -401,11 +402,11 @@ class DataFetcher:
                 "dprec": "sum",
                 "fprec": "sum"
             }).reset_index()
-            logging.info(f"Instructor data: \n{instructor_data}")
+            logger.info(f"Instructor data: \n{instructor_data}")
             return instructor_data
 
-        except sqlite3.Error as e:
-            logging.error(f"get_instructor_class(): {e}")
+        except Exception as e:
+            logger.exception("Exception occurred during filtering instructor classes")
             return pd.DataFrame()
         finally:
             self.close_connection()
@@ -419,11 +420,11 @@ class DataFetcher:
             # extract only the alphabetical prefix from 'group_code' using regex
             dataframe['dept_code'] = dataframe['group_code'].str.extract(r'([A-Za-z]+)')
             unique_dept_codes = dataframe['dept_code'].unique()
-            logging.info(f"Unique Department Codes: {unique_dept_codes}")
+            logger.info(f"Unique Department Codes: {unique_dept_codes}")
             return pd.DataFrame(unique_dept_codes)
 
-        except sqlite3.Error as e:
-            logging.error(e)
+        except Exception as e:
+            logger.exception("Exception occurred while filtering unique department codes")
         finally:
             self.close_connection()
         return pd.DataFrame()
@@ -441,7 +442,7 @@ class DataFetcher:
             return class_count_df
 
         except Exception as e:
-            logging.error(f"Error occurred while getting class count: {e}")
+            logger.exception("Exception occurred during filtering of class counts")
             return pd.DataFrame()
 
 
@@ -456,17 +457,17 @@ class DataFetcher:
             class_count_df = class_count_series.reset_index()
             class_count_df.columns = ["instructor", "class_count"] 
             class_count_df = class_count_df.rename(columns={"index": "instructor"})
-            logging.info(f"Class count by instructor: \n{class_count_df}")
+            logger.info(f"Class count by instructor: \n{class_count_df}")
             return class_count_df
 
         except Exception as e:
-            logging.error(f"Error occured in class_count(): {e}")
+            logger.exception("Error occurred while filtering instructor class count")
             return pd.DataFrame()
  
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+    "graph_type": "department",  # options: single_class, department, class_level_dept
     "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
@@ -480,8 +481,7 @@ user_selection = {
 
 
 if __name__ == "__main__":
-    dest = "./Databases/GradeDatabase.sqlite"
+    dest = "../Databases/GradeDatabase.sqlite"
 
     fetch = DataFetcher(user_selection, dest)
     dataframe = fetch.fetch_data()
-

@@ -8,7 +8,7 @@ import webbrowser
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 import matplotlib.pyplot as plt 
-#from graphing/data_fetch import DataFetcher
+import graphing.graph_gen as graph
 
 
 
@@ -22,7 +22,18 @@ color_Mode = True #This represents whether the user chooses the UI to be in ligh
 classCountSelection = False #Represents if the user wishes to have Class count on or off. False for off, True for on 
 is_data = False 
 box_state = False
-selectedDic = {}
+selectedDic = {
+        "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+        "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+        # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+        "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+        "instructor_type": "All Instructors",  # other option: "Faculty"
+        "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+        #"grade_type": "Percent Ds/Fs", # true/false
+        "class_count": False,  # whether to show the number of classes taught by each instructor
+        "xaxis_course": False, # displays courses instead of instructor
+        "light_mode": False # True = light mode, False = dark mode
+        }
 selectedList = []
 gradeSel = "A"
 naturalONLY = True
@@ -213,14 +224,17 @@ def ResWindow(mode=0):
 
 
     ###
-    fig = Figure(figsize=(5,5), dpi=65)
-    #dummy test plot 
-    y = [1**2 for i in range(101)]
-    plot1 = fig.add_subplot(111)
-    plot1.plot(y)
-    canvas = FigureCanvasTkAgg(fig, master=resFrame) 
-    canvas.draw()
-    canvas.get_tk_widget().grid(row=0, column=0)
+    # fig = Figure(figsize=(5,5), dpi=65)
+    # #dummy test plot 
+    # y = [1**2 for i in range(101)]
+    # plot1 = fig.add_subplot(111)
+    # plot1.plot(y)
+    graph.main(selectedDic)
+
+    # ax.plot()
+    # canvas.draw()
+    # canvas = FigureCanvasTkAgg(fig, master=resFrame) 
+    # canvas.get_tk_widget().grid(row=0, column=0)
     ###
 
     displaySelect()
@@ -241,7 +255,20 @@ class Win:
         name = messagebox.showinfo(title="Warning", message=alertM)
 
 
-        
+selectedDic = {
+        "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+        "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+        # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+        "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+        "instructor_type": "All Instructors",  # other option: "Faculty"
+        "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+        #"grade_type": "Percent Ds/Fs", # true/false
+        "class_count": False,  # whether to show the number of classes taught by each instructor
+        "xaxis_course": False, # displays courses instead of instructor
+        "light_mode": False # True = light mode, False = dark mode
+        }
+
+
 def submitQuery():
     if (var1.get() == 0) and (var2.get() == 0) and (len(selectedDic) == 0):
         win = Win()
@@ -254,8 +281,8 @@ def submitQuery():
         global xaxis
         global color_Mode
         selectedList.append(gradeSel)
-        if "Instructor" not in selectedDic:
-            selectedDic["Instructor"] = "All Instructors"
+        if "instructor_type" not in selectedDic:
+            selectedDic["instructor_type"] = "All Instructors"
         selectedDic["grade_type"] = gradeSel
         selectedDic["class_count"] = classCountSelection
         selectedDic["xaxis_course"] = xaxis
@@ -412,7 +439,7 @@ def sub_select1(event):
     selected = subMenu1.get()
     print(selected)
     sendSelected(selected)
-    selectedDic["CourseLevel"] = selected
+    selectedDic["class_level"] = selected
     currCourseLvl = selected
     coursePopulate(currSubject, currCourseLvl)
     subMenu2.config(values=courselvlList)
@@ -422,13 +449,13 @@ def sub_select2(event):
     selected = subMenu2.get()
     print(selected)
     sendSelected(selected)
-    selectedDic["CourseName"] = selected
+    selectedDic["class_code"] = selected
 
 def sub_select4(event):
     selected = subMenu4.get()
     print(selected)
     sendSelected(selected)
-    selectedDic["Instructor"] = selected
+    selectedDic["instructor_type"] = selected
 
 def sub_select5(event):
     selected = subMenu5.get()
@@ -609,7 +636,7 @@ canvas1 = Canvas(subMain, width=100, height=10)
 clearBttn = ttk.Button(subMain, text="Reset All", command=clearBox)
 # nextBttn = ttk.Button(subMain, text="Next Page", command=ResWindow)
 
-slab1 = tk.Label(NavBar, text="About", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8, bold))
+slab1 = tk.Label(NavBar, text="About", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 slab2 = tk.Label(NavBar, text="GitHub", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 slab3 = tk.Label(NavBar, text="Data Source", bg=navbg, cursor="hand2", font=("Adobe Caslon Pro", 8))
 sExitbuttn = ttk.Button(NavBar, text="Quit EasyA", command=closeGUI)

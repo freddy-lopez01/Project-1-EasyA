@@ -166,7 +166,6 @@ TEMP_SUB = ['BI Biology', 'CH Chemistry',
 
 GRADE_OPT = ["A", "D/F"]
 FACULTY_OPT = ["All Instructors", "Regular Faculty"]
-
 GRAPH_TYPE = ["single_class", "department", "class_level_dept"]
 
 
@@ -222,6 +221,8 @@ def ResWindow(mode=0):
             ent1.insert(END, value)
             cnt += 1
 
+        graph.main(selectedDic)
+
 
     ###
     # fig = Figure(figsize=(5,5), dpi=65)
@@ -229,7 +230,15 @@ def ResWindow(mode=0):
     # y = [1**2 for i in range(101)]
     # plot1 = fig.add_subplot(111)
     # plot1.plot(y)
-    graph.main(selectedDic)
+    print("before displaySelect")
+    # selectFrame.grid(row=0, column=2)
+    displaySelect()
+    selectFrame.grid(row=0, column=2)
+    resFrame.place(height=windH, width=700)
+    print("after displaySelect")
+
+    # selectFrame.grid(row=0, column=2)
+    # graph.main(selectedDic)
 
     # ax.plot()
     # canvas.draw()
@@ -237,10 +246,8 @@ def ResWindow(mode=0):
     # canvas.get_tk_widget().grid(row=0, column=0)
     ###
 
-    displaySelect()
-    selectFrame.grid(row=0, column=2)
-    resFrame.place(height=windH, width=700)
-    backButton = tk.Button(resFrame, text="New Query", command=lambda: [resFrame.destroy(), clearBox(), canvas.get_tk_widget().destroy()])
+    # resFrame.place(height=windH, width=700)
+    backButton = tk.Button(resFrame, text="New Query", command=lambda: [resFrame.destroy(), clearBox()])
     main.add(resFrame)
     backButton.grid(row=1, column=0, sticky='w', padx=20, pady=20)
 

@@ -34,6 +34,24 @@ class DataFetcher:
         self.connection = None 
         self.cursor = None
 
+
+    def reset_state(self) -> None:
+        """
+        Resets state of DataFetcher
+        """
+        self.user_selection = user_selection
+        self.main_data = pd.DataFrame()
+        self.class_count = pd.DataFrame()
+        self.instructors = pd.DataFrame()
+        self.class_data = pd.DataFrame()
+        self.instructor_data = pd.DataFrame()
+        self.percent_grade = pd.DataFrame()
+        self.connection = None 
+        self.cursor = None
+
+        logging.info("DataFetcher state has been reset")
+
+
     def connect_to_database(self) -> None:
         """
         Establishes a connection to the SQL database and logs success or error.
@@ -124,12 +142,9 @@ class DataFetcher:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
 
 
-
             # department only
             elif graph_type == "department" and department:
                 filtered_department = self.filter_single_dept(department, dataframe)
-                # getting class data and grouping the classes that show up more than once
-                #self.class_data = self.get_class_data(filtered_department)
                 if instructor_type == "Regular Faculty":
                     # TODO: filter regular faculty
                     pass
@@ -180,6 +195,7 @@ class DataFetcher:
                     self.class_count = self.instructor_class_count(filtered_department)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     logging.info(f"Merged instructor class count to dataframe \n{self.instructor_data}")
+                    self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                 else:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
 
@@ -258,9 +274,6 @@ class DataFetcher:
             return pd.DataFrame()
 
 
-
-
-
     def calc_percent_a_class(self, class_grades: pd.DataFrame) -> pd.DataFrame:
         """
         Calculates percentages of As given by each class
@@ -276,7 +289,7 @@ class DataFetcher:
             )
             class_grades.loc[:, "Percent As"] = (
                 (class_grades.loc[:, "aprec"] / class_grades.loc[:, "total_grades"]) * 100
-            ).round(2)
+            ).round()
             return class_grades
 
         except Exception as e:
@@ -300,7 +313,7 @@ class DataFetcher:
             )
             class_grades.loc[:, "Percent Ds/Fs"] = (
                 ((class_grades.loc[:, "dprec"] + class_grades.loc[:, "fprec"]) / class_grades.loc[:, "total_grades"]) * 100
-            ).round(2)
+            ).round()
             return class_grades
 
         except Exception as e:
@@ -324,14 +337,13 @@ class DataFetcher:
             # calculate percent As given by professor
             instructor_grades["Percent As"] = (
                 (instructor_grades["aprec"] / instructor_grades["total_grades"]) * 100
-            ).round(2)
+            ).round()
             return instructor_grades
         
         except Exception as e:
             logging.error(f"Error occurred during calculation: {e}")
             # if error occurs, just return empty dataframe
             return pd.DataFrame()
-
 
     def calc_percent_DsFs_instructor(self, instructor_grades: pd.DataFrame) -> pd.DataFrame:
         """
@@ -349,7 +361,7 @@ class DataFetcher:
             # calculate percent Ds/Fs given by professor
             instructor_grades["Percent Ds/Fs"] = (
                 ((instructor_grades["dprec"] + instructor_grades["fprec"]) / instructor_grades["total_grades"]) * 100
-            ).round(2)
+            ).round()
             return instructor_grades
 
         except Exception as e:
@@ -454,8 +466,8 @@ class DataFetcher:
 
 # a dictionary containing user selection
 user_selection = {
-    "graph_type": "single_class",  # options: single_class, department, class_level_dept
-    "class_code": "ERTH201",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+    "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
     "instructor": "", # All instructors or Regular Faculty
@@ -468,7 +480,7 @@ user_selection = {
 
 
 if __name__ == "__main__":
-    dest = "../Databases/GradeDatabase.sqlite"
+    dest = "./Databases/GradeDatabase.sqlite"
 
     fetch = DataFetcher(user_selection, dest)
     dataframe = fetch.fetch_data()

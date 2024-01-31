@@ -14,34 +14,35 @@ def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
     - class_code (str): The class code to be displayed in the title.
     """
 
-    # determine number of unique instructors
     num_instructors = len(dataframe["instructor"].unique())
-    # set the width based on the number of instructors
-    width = max(10, num_instructors * 0.5) 
+    width = max(10, num_instructors * 0.5)
     height = 8
 
-    # create a figure with the new dimensions
-    plt.figure(figsize=(width, height), constrained_layout=True)
-    # plot percent grades based on instructor
-    ax = dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], legend=False, width=0.15)
+    # create figure and axes
+    fig, ax = plt.subplots(figsize=(width, height), constrained_layout=True)
+
+    # plotting graph
+    dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], ax=ax, legend=False, width=0.15)
     ax.set_ylim(0, 100)
     plt.title(f"Distribution of {user_selection['grade_type']} for {user_selection['class_code']}")
     plt.ylabel(f"{user_selection['grade_type']} (%)")
     plt.xlabel("Instructors")
-    # display number of classes taught by each instructor if toggled
-    # update tick labels with class count if flag is True
+
+    # display numbers and set tick labels
     if user_selection["class_count"] is True:
-        for index, row in dataframe.iterrows():
-            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
         tick_labels = [f"{row['instructor']} ({row['class_count']})" for index, row in dataframe.iterrows()]
-        ax.set_xticklabels(tick_labels, rotation=40, ha='right')
-    else:
         for index, row in dataframe.iterrows():
             ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
-        ax.set_xticklabels(dataframe['instructor'], rotation=40, ha='right') 
-    plt.tight_layout()
+    else:
+        tick_labels = dataframe["instructor"]
+        for index, row in dataframe.iterrows():
+            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
+
+    ax.set_xticklabels(tick_labels, rotation=40, ha='right')
+
+    # show and close figure
     plt.show()
-    plt.close()
+    plt.close(fig)
 
 def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
     """
@@ -49,72 +50,81 @@ def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> No
     """
     # determine number of unique instructors
     num_instructors = len(dataframe["instructor"].unique())
-    # set the width based on the number of instructors
     width = max(10, num_instructors * 0.5) 
     height = 8
 
     # create a figure with the new dimensions
-    plt.figure(figsize=(width, height), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(width, height), constrained_layout=True)
     
-    ax = dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], legend=False, width=0.2)
+    # plotting graph
+    dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], ax=ax, legend=False, width=0.2)
     ax.set_ylim(0, 100)
     plt.title(f"Distribution of {user_selection['grade_type']} for ")
     plt.ylabel(f"{user_selection['grade_type']} (%)")
     plt.xlabel("Group Codes")
+
+    # display numbers and tick labels
     if user_selection["class_count"] is True:
-        for index, row in dataframe.iterrows():
-            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
         tick_labels = [f"{row['instructor']} ({row['class_count']})" for index, row in dataframe.iterrows()]
-        ax.set_xticklabels(tick_labels, rotation=40, ha='right')
-    else:
         for index, row in dataframe.iterrows():
             ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
-        ax.set_xticklabels(dataframe['instructor'], rotation=40, ha='right') 
-    plt.tight_layout()
+    else:
+        tick_labels = dataframe["instructor"]
+        for index, row in dataframe.iterrows():
+            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
+
+    ax.set_xticklabels(tick_labels, rotation=40, ha='right')
     plt.show()
-    plt.close()
+    plt.close(fig)
 
 def class_level_dept_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
     """
     Generates a single bar graph for all classes of a particular level within a department
     """
+
     num_instructors = len(dataframe["instructor"].unique())
     width = max(10, num_instructors * 0.5)
     height = 8
-    plt.figure(figsize=(width, height), constrained_layout=True)
-    ax = dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], legend=False, width=0.2)
+    fig, ax = plt.subplots(figsize=(width, height), constrained_layout=True)
+
+    # plotting graph
+    ax = dataframe.plot(kind="bar", x="instructor", y=user_selection["grade_type"], ax=ax, legend=False, width=0.2)
     ax.set_ylim(0, 100)
-    plt.title(f"Distribution of {user_selection['grade_type']} for ")
+    plt.title(f"Distribution of {user_selection['grade_type']} for {user_selection['graph_type']}")
     plt.ylabel(f"{user_selection['grade_type']} (%)")
+
     if user_selection["class_count"]:
-        plt.xlabel("Group Codes")
-    if user_selection["class_count"] is True:
-        for index, row in dataframe.iterrows():
-            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
-        tick_labels = [f"{row['instructor']} ({row['class_count']})" for index, row in dataframe.iterrows()]
-        ax.set_xticklabels(tick_labels, rotation=40, ha='right')
+        plt.xlabel("Instructors (class count)")
     else:
+        plt.xlabel("Instructors")
+
+    if user_selection["class_count"] is True:
+        tick_labels = [f"{row['instructor']} ({row['class_count']})" for index, row in dataframe.iterrows()]
         for index, row in dataframe.iterrows():
             ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
-        ax.set_xticklabels(dataframe['instructor'], rotation=40, ha='right') 
-    plt.tight_layout()
+    else:
+        tick_labels = (dataframe["instructor"])
+        for index, row in dataframe.iterrows():
+            ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
+    ax.set_xticklabels(tick_labels, rotation=40, ha='right')
     plt.show()
-    plt.close()
+    plt.close(fig)
+
+#def main(user_selection: dict):
 
 def main():
 
     # a dictionary containing user selection
     user_selection = {
         "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
-        "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
-        # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+        "class_code": "CIS415",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
         "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
         "instructor_type": "All Instructors",  # other option: "Faculty"
         "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
         #"grade_type": "Percent Ds/Fs", # true/false
-        "class_count": False,  # whether to show the number of classes taught by each instructor
+        "class_count": True,  # whether to show the number of classes taught by each instructor
         "xaxis_course": False, # displays courses instead of instructor
-        "light_mode": False # True = light mode, False = dark mode
+        "light_mode": True # True = light mode, False = dark mode
     }
 
     db_path = "../Databases/GradeDatabase.sqlite"

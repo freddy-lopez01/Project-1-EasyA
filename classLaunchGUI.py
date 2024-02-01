@@ -22,18 +22,19 @@ color_Mode = True #This represents whether the user chooses the UI to be in ligh
 classCountSelection = False #Represents if the user wishes to have Class count on or off. False for off, True for on 
 is_data = False 
 box_state = False
-selectedDic = {
-        "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
-        "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
-        # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-        "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-        "instructor_type": "All Instructors",  # other option: "Faculty"
-        "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
-        #"grade_type": "Percent Ds/Fs", # true/false
-        "class_count": False,  # whether to show the number of classes taught by each instructor
-        "xaxis_course": False, # displays courses instead of instructor
-        "light_mode": False # True = light mode, False = dark mode
-        }
+selectedDic = {}
+# selectedDic = {
+#         "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+#         "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+#         # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+#         "class_level": "200",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+#         "instructor_type": "All Instructors",  # other option: "Faculty"
+#         "grade_type": "Percent As",  # other option: "Percent Ds/Fs"
+#         #"grade_type": "Percent Ds/Fs", # true/false
+#         "class_count": False,  # whether to show the number of classes taught by each instructor
+#         "xaxis_course": False, # displays courses instead of instructor
+#         "light_mode": False # True = light mode, False = dark mode
+#         }
 selectedList = []
 gradeSel = "A"
 naturalONLY = True
@@ -99,8 +100,6 @@ for sub in Ccode:
         continue
 print(groupLS)
 
-
-
 courselvlList = []
 # Function to populate courses dropdown 
 
@@ -115,14 +114,14 @@ def coursePopulate(Subject, CourseLvl):
 
     # cursor2.execute("""SELECT name FROM sqlite_master WHERE type='table';""")
     data2 = cursor2.fetchall()
-    print(data2)
+    #print(data2)
     codeTemplate = str(Subject)+str(CourseLvl[0])
     print(codeTemplate)
     for sub in data2:
         code = sub[0]
         if codeTemplate in code:
             if code not in courselvlList:
-                print(f"sub: {code}")
+                #print(f"sub: {code}")
                 courselvlList.append(code)
             else:
                 continue
@@ -175,6 +174,7 @@ ResWindow function that displays user selections and the graph that was generate
 """
 
 def ResWindow(mode=0):
+    global selectedDic
     global color_Mode
     resbg = ""
     windH = root.winfo_height()
@@ -220,9 +220,8 @@ def ResWindow(mode=0):
                     value = "Instructors"
             ent1.insert(END, value)
             cnt += 1
-
         graph.main(selectedDic)
-
+        
 
     ###
     # fig = Figure(figsize=(5,5), dpi=65)
@@ -235,7 +234,9 @@ def ResWindow(mode=0):
     displaySelect()
     selectFrame.grid(row=0, column=2)
     resFrame.place(height=windH, width=700)
+    # graph.main(selectedDic)
     print("after displaySelect")
+
 
     # selectFrame.grid(row=0, column=2)
     # graph.main(selectedDic)
@@ -308,6 +309,7 @@ def openWeb(link):
     webbrowser.open_new(link)
 
 def clearBox():
+    global selectedDic
     global classCountSelection
     global NaturalONLY
     global xaxis
@@ -335,6 +337,9 @@ def clearBox():
     subMenu2.config(state=menuState)
     subMenu4.config(state=menuState)
     subMenu5.config(state=menuState)
+    print("===================USER RESET DIC=======================\n")
+    selectedDic.clear()
+    print(f"SelectedDic: {selectedDic}\n")
 
 
 def change_theme():
@@ -415,8 +420,9 @@ def closeGUI():
     exit()
 
 def sendSelected(data):
-    selectedList.append(data)
-    print(f"New array: {selectedList}")
+    # selectedList.append(data)
+    # print(f"New array: {selectedList}")
+    pass
 menuState = 'disabled'
 
 """
@@ -430,7 +436,7 @@ def sub_select0(event):
     code = selected.split(" ")
     print(code[0])
     sendSelected(code[0])
-    selectedDic["Subject"] = selected
+    selectedDic["Subject"] = code[0]
     box_state = True
     menuState = 'enabled'
     subMenu1.config(state=menuState)

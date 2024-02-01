@@ -50,7 +50,7 @@ def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
     ax.set_xticklabels(tick_labels, rotation=40, ha='right')
 
     # show and close figure
-    plt.show()
+    return plt.show()
     #plt.close(fig)
 
 def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
@@ -85,7 +85,7 @@ def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> No
                 ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
 
         ax.set_xticklabels(tick_labels, rotation=40, ha='right')
-        plt.show()
+        return plt.show()
         #plt.close(fig)
     except Exception as e:
         logger.error(f"single_department_graph()========================{e}===========================")
@@ -122,7 +122,7 @@ def class_level_dept_graph(user_selection: dict, dataframe: pd.DataFrame) -> Non
             for index, row in dataframe.iterrows():
                 ax.text(index, row[user_selection["grade_type"]] + 1, f"{row[user_selection['grade_type']]}%", ha='center')
         ax.set_xticklabels(tick_labels, rotation=40, ha='right')
-        plt.show()
+        return plt.show()
         #plt.close(fig) 
         
     except Exception as e:
@@ -158,10 +158,13 @@ def main(user_selection: dict):
     
     if user_selection["graph_type"] == "single_class":
         single_class_graph(user_selection, instructor_data)
+        return 
     elif user_selection["graph_type"] == "department":
         single_department_graph(user_selection, instructor_data)
+        return 
     elif user_selection["graph_type"] == "class_level_dept":
         class_level_dept_graph(user_selection, instructor_data)
+        return
 
 if __name__ == "__main__":
     main()

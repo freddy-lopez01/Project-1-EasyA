@@ -86,9 +86,14 @@ class DataFetcher:
             valid_class_levels = ["100", "200", "300", "400", "500", "600"]
 
             # store user selections
+            subject = self.user_selection.get("Subject", None)
+            print(f"======================={subject}")
             graph_type = self.user_selection.get("graph_type", None)
+            print(f"======================={graph_type}")
             single_class = self.user_selection.get("class_code", None)
+            print(f"======================={single_class}")
             department_code = self.user_selection.get("class_code", None)
+            print(f"=======================: Department Code: {department_code}")
             # strip numbers from department_code
             department = None
             if department_code:
@@ -170,7 +175,7 @@ class DataFetcher:
                     
             # all classes of a particular level within department
             elif graph_type == "class_level_dept":
-                filtered_department = self.filter_single_dept(department, dataframe)
+                filtered_department = self.filter_class_level_dept(subject, class_level, dataframe)
 
                 if class_level and class_level in valid_class_levels:
                     # convert class_level to integer for comparison
@@ -249,6 +254,7 @@ class DataFetcher:
         """
         logger.info(f"Filtering DataFrame for single department: \n {department}")
         try:
+            logging.info(f"=====================================DATAFRAME==============================:\n {department}")
             filtered_department = dataframe.loc[dataframe["group_code"].str.contains(department, case=False, na=False)]
             #logging.info(f"---Filtered department---\n {filtered_department}")
             return filtered_department
@@ -261,8 +267,10 @@ class DataFetcher:
         """
         Filters the DataFrame for rows matching a department and a specific class level (e.g., 400).
         """
+        # logger.info(f"Filtering DataFrame for single department: \n {department}")
         try:
-            loggin.info(f"Attempting to filter for {department} department, level {class_level} classes")
+            # logger.info(f"Filtering DataFrame for single department: \n {department}")
+            logger.info(f"Attempting to filter for {department} department, level {class_level} classes")
             # assuming the class level (e.g., '400') is at the end of the 'group_code' after department code
             pattern = f"[A-Za-z]+{class_level}\\b"  # \b is a word boundary in regex to ensure '400' is at the end
             print(f"Using pattern: {pattern}")
@@ -466,18 +474,18 @@ class DataFetcher:
  
 
 # a dictionary containing user selection
-user_selection = {
-    "graph_type": "department",  # options: single_class, department, class_level_dept
-    "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
-    # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-    "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    "instructor": "", # All instructors or Regular Faculty
-    "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
-    #"grade_type": "Percent As",
-    "class_count": True,  # whether to show the number of classes taught by each instructor
-    "xaxis_course": True,
+# user_selection = {
+#     "graph_type": "department",  # options: single_class, department, class_level_dept
+#     "class_code": "CIS330",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+#     # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
+#     "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+#     "instructor": "", # All instructors or Regular Faculty
+#     "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
+#     #"grade_type": "Percent As",
+#     "class_count": True,  # whether to show the number of classes taught by each instructor
+#     "xaxis_course": True,
 
-}
+# }
 
 
 if __name__ == "__main__":

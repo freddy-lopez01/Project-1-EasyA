@@ -194,6 +194,7 @@ def ResWindow(mode=0):
     resFrame.rowconfigure(1, weight=1)
 
     def displaySelect():
+        global selectedDic
         header.grid(row=0, column=0, padx=15, pady=10)
         cnt = 2
         for key, value in selectedDic.items():
@@ -221,6 +222,8 @@ def ResWindow(mode=0):
             ent1.insert(END, value)
             cnt += 1
         graph.main(selectedDic)
+        selectedDic.clear()
+
         
 
     ###

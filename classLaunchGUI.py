@@ -435,6 +435,7 @@ called by the "command" parameter within said tk.checkbox or tk.combobox
 
 def sub_select0(event):
     global currSubject
+    global selectedDic
     selected = subMenu0.get()
     code = selected.split(" ")
     print(code[0])
@@ -447,37 +448,49 @@ def sub_select0(event):
     subMenu4.config(state=menuState)
     subMenu5.config(state=menuState)
     currSubject = code[0]
+    print(selectedDic)
 
 
 def sub_select1(event):
     global currCourseLvl
     global currSubject
+    global selectedDic
     selected = subMenu1.get()
+    if selected == "All Courses":
+        selectedDic['class_level'] = selectedDic['Subject']
+    else:
+        selectedDic["class_level"] = selected
     print(selected)
-    sendSelected(selected)
-    selectedDic["class_level"] = selected
     currCourseLvl = selected
     coursePopulate(currSubject, currCourseLvl)
     subMenu2.config(values=courselvlList)
     subMenu2.set('')
+    print(selectedDic)
 
 def sub_select2(event):
     selected = subMenu2.get()
     print(selected)
+    if "selected" in str(selected): 
+        selectedDic["class_code"] = selectedDic['Subject']
+    else:
+        selectedDic["class_code"] = selected
     sendSelected(selected)
-    selectedDic["class_code"] = selected
+    #selectedDic["class_code"] = selected
+    print(selectedDic)
 
 def sub_select4(event):
     selected = subMenu4.get()
     print(selected)
     sendSelected(selected)
     selectedDic["instructor_type"] = selected
+    print(selectedDic)
 
 def sub_select5(event):
     selected = subMenu5.get()
     print(selected)
     sendSelected(selected)
     selectedDic["graph_type"] = selected
+    print(selectedDic)
 
 
 def sub_select6():
@@ -503,6 +516,7 @@ def sub_select6():
         return 0
     print(f"seleted in subselect6: {selected}")
     gradeSel = selected
+    print(selectedDic)
 
 def sub_select7():
     selected = ''
@@ -514,17 +528,19 @@ def sub_select7():
     else: 
         classCountSelection = False
         print(classCountSelection)
+    print(selectedDic)
 
 def sub_select8():
     global naturalONLY
     if NaturalS.get() == 1:
         naturalONLY = True
-        subMenu0.config(values=NATURAL_SCIENCE)
+        subMenu0.config(values=groupLS)
         print(f"NaturalS: {naturalONLY}")
     else:
         naturalONLY = False
-        subMenu0.config(values=groupLS)
+        subMenu0.config(values=NATURAL_SCIENCE)
         print(f"NaturalS: {naturalONLY}")
+    print(selectedDic)
 
 def sub_select9():
     global xaxis
@@ -534,6 +550,7 @@ def sub_select9():
     else:
         xaxis = False
         print(f"X-axis: {xaxis}")
+    print(selectedDic)
 
 
 # Create root Window for the GUI
@@ -609,7 +626,7 @@ xaxisToggle = tk.IntVar()
 All of the Initialization of tkinter Labels, Buttons, Checkboxes, and images displayed. These are then called by firstsubMainPage() function in order to
 actually place the objects on the screen for the user to see anf interact 
 """
-NaturalScience = Checkbutton(subMain, text="Natural Sciences Only", bg=submainbg, variable=NaturalS, onvalue=1, offvalue=0, command=sub_select8)
+NaturalScience = Checkbutton(subMain, text="Include all courses", bg=submainbg, variable=NaturalS, onvalue=1, offvalue=0, command=sub_select8)
 subjL = tk.Label(subMain, text="Subject: ", bg=submainbg)
 classL = tk.Label(subMain, text="Course Level: ", bg=submainbg)
 courseL= tk.Label(subMain, text="Course Name: ", bg=submainbg)
@@ -631,7 +648,7 @@ logo_widget2 = tk.Label(subMain, image=logo2, bg=submainbg)
 
 varSelect = StringVar(subMain)
 # Creating the Comboboxes for dropdown selection 
-subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=groupLS)
+subMenu0 = ttk.Combobox(subMain, textvariable=varSelect, values=NATURAL_SCIENCE)
 subMenu0.bind("<<ComboboxSelected>>", sub_select0)
 subMenu1 = ttk.Combobox(subMain, values=TEMP_OPT, state=menuState)
 subMenu1.bind("<<ComboboxSelected>>", sub_select1)

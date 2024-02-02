@@ -39,6 +39,9 @@ def populate_database(parsed_data):
         grade_conn.close()
         return
 
+    # Clear existing data
+    fac_cursor.execute('DELETE FROM FacultyByDepartment')
+
     # Create a table of data FacultyByDepartment with all data collected
     fac_cursor.execute('''
             CREATE TABLE IF NOT EXISTS FacultyByDepartment (
@@ -77,8 +80,14 @@ def populate_database(parsed_data):
         for faculty in faculty_list:
             faculty_name = faculty[0]
             fac_type = faculty[1]
+            # Split faculty name into first and last name
+            split_name = faculty_name.split()
+            last_name = split_name[-1]
+            first_name = ' '.join(split_name[:-1])
             # Check if the faculty member exists in the FacultyByDepartment table
-            fac_cursor.execute('SELECT * FROM FacultyByDepartment WHERE instructor = ?', (faculty_name,))
+            fac_cursor.execute(
+                'SELECT * FROM FacultyByDepartment WHERE LOWER(instructor) LIKE ? AND LOWER(instructor) LIKE ?',
+                (f'%{last_name.lower()}, {first_name.lower()}%', f'%{first_name.lower()}%'))
             matching_faculty = fac_cursor.fetchall()
             if not matching_faculty:
                 # If faculty not found, insert new record
@@ -86,8 +95,10 @@ def populate_database(parsed_data):
                                    (faculty_name, dept_name, fac_type))
             else:
                 # If faculty found, update dept_name and fac_type
-                fac_cursor.execute('UPDATE FacultyByDepartment SET dept_name = ?, fac_type = ? WHERE instructor = ?',
-                                   (dept_name, fac_type, faculty_name))
+                for row in matching_faculty:
+                    fac_cursor.execute(
+                        'UPDATE FacultyByDepartment SET dept_name = ?, fac_type = ? WHERE instructor = ?',
+                        (dept_name, fac_type, row[0]))
 
     # Commit the changes and close the connections
     fac_conn.commit()

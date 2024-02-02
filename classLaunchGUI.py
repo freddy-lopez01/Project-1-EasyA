@@ -297,6 +297,7 @@ def submitQuery():
         selectedDic["grade_type"] = gradeSel
         selectedDic["class_count"] = classCountSelection
         selectedDic["xaxis_course"] = xaxis
+        print(f"final color_mode: {color_Mode}")
         selectedDic["light_mode"] = color_Mode
         #print(f"Submitting complete query: {selectedList}")
         print(f"Submitting complete query: {selectedDic}")
@@ -325,7 +326,7 @@ def clearBox():
     subMenu4.set('All Instructors')
     subMenu5.set('')
     NaturalScience.deselect()
-    subMenu0.config(values=groupLS)
+    subMenu0.config(values=NATURAL_SCIENCE)
     ClassCount.deselect()
     courselvlList.clear()
     classCountSelection = False
@@ -458,8 +459,17 @@ def sub_select1(event):
     selected = subMenu1.get()
     if selected == "All Courses":
         selectedDic['class_level'] = selectedDic['Subject']
+        temp = selectedDic['Subject']
+        subMenu2.set(str(temp))
+        subMenu5.set("department")
+        selectedDic["class_code"] = selectedDic['Subject']
+        selectedDic['graph_type'] = "department"
     else:
         selectedDic["class_level"] = selected
+
+        selectedDic["class_code"] = selectedDic['Subject']
+        subMenu5.set("class_level_dept")
+        selectedDic['graph_type'] = "class_level_dept"
     print(selected)
     currCourseLvl = selected
     coursePopulate(currSubject, currCourseLvl)
@@ -468,14 +478,18 @@ def sub_select1(event):
     print(selectedDic)
 
 def sub_select2(event):
+    global selectedDic
     selected = subMenu2.get()
     print(selected)
     if "selected" in str(selected): 
         selectedDic["class_code"] = selectedDic['Subject']
+        subMenu5.set("department")
+        selectedDic["graph_type"] = "department"
     else:
         selectedDic["class_code"] = selected
-    sendSelected(selected)
-    #selectedDic["class_code"] = selected
+        selectedDic["graph_type"] = "single_class"
+        subMenu5.set("single_class")
+
     print(selectedDic)
 
 def sub_select4(event):
@@ -533,11 +547,11 @@ def sub_select7():
 def sub_select8():
     global naturalONLY
     if NaturalS.get() == 1:
-        naturalONLY = True
+        naturalONLY = False 
         subMenu0.config(values=groupLS)
         print(f"NaturalS: {naturalONLY}")
     else:
-        naturalONLY = False
+        naturalONLY = True 
         subMenu0.config(values=NATURAL_SCIENCE)
         print(f"NaturalS: {naturalONLY}")
     print(selectedDic)

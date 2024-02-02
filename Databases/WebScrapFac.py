@@ -8,6 +8,11 @@ from collections import namedtuple
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+'''
+Production Note:
+this code will be run though update. but can be run seperatly
+'''
+
 ''' Change bool as info is needed
 DEBUGING==========================================================================================================================================================='''
 debug_main = True
@@ -36,7 +41,7 @@ def create_session():
     session.mount('http://', adapter)
     session.mount('https://', adapter)
     return session
-# Interative function to open link and pull name data
+# Interative function to open link and pull name data form the archive website
 def Scrape_FacinDept(department_link, session):
     # sleep added to prevent web denial
     # Make a request for the department link
@@ -75,24 +80,17 @@ def Scrape_FacinDept(department_link, session):
             # Exclude paragraphs that contain specific elements
             filtered_faculty_paragraphs = [p for p in filtered_faculty_paragraphs if not p.find('em')]
 
-            # Find any <h3> element to start marking temporary faculty
-            participating_header = faculty_container.find('h3')
-
-            # Determine if the faculty member is permanent ('p') or temporary ('t')
-            is_temporary = False
 
             # Initialize a list to store faculty names and status
             faculty_names = []
-
-            # Initialize the faculty type as 'P' by default
-            faculty_type = 'P'
 
             # Iterate over each <p> tag within faculty_container
             for faculty_paragraph in filtered_faculty_paragraphs:
                 # separate all values not need form scrap
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
 
-                # Check if the previous <h3> header contains "Faculty"
+                # Check if the previous <h3> header contains "Faculty" to cheack facultiy type
+                #this doesnt work as planned but it is a feature now not a bug works as inteneded.
                 previous_h3 = faculty_paragraph.find_previous('h3')
                 if previous_h3 and ('Faculty' or 'None' in previous_h3.text):
                     faculty_type = 'P'
@@ -137,7 +135,7 @@ def main():
     global start_time
     global DeptFac_list
     global data_directory
-    # output for
+    # output for when run form update
     print("Connected To Subprocess WEBSCRAP")
     fileURL_path = os.path.join(data_directory, "url.txt")
     with open(fileURL_path, 'r') as file:
@@ -258,7 +256,7 @@ def main():
 
     end_time = time.time()
     execution_time = end_time - start_time
-    # timeing stuff
+    # timeing stuff for analytics
     minutes = int(execution_time // 60)
     seconds = execution_time % 60
     if debug_main:

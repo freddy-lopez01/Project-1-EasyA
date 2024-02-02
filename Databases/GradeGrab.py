@@ -1,7 +1,12 @@
 import sqlite3
 import json
 
-
+'''
+Production Note:
+This is a start up script and must be done only once at the beginning. 
+User should know howto format file if they want to change the database
+This only overwrites the data if the user wanted to append it should have been in the design docuemntation 
+'''
 # Read data from the reduced JavaScript file that form: https://emeraldmediagroup.github.io/grade-data/gradedata.js
 # loads data form file into emd_data_js
 with open('gradedata-only.js', 'r') as file:
@@ -33,7 +38,8 @@ cursor.execute('''
     )
 ''')
 
-# Insert data into the table iteratively over each course
+# Insert data into the table iteratively over each course takes all data in the same order as in grade_data_only.js
+# format pulled form sqlite documentation of interations
 for group_code, courses in groups_data.items():
     for course in courses:
         cursor.execute('''

@@ -1,3 +1,8 @@
+#this file prompts the user for issues and logs the input into a file
+#simple if else to help user if the database becomes corrupted are neeeds to be reset.
+#logs info for logistics for later
+#ran by itself.
+
 def log_input(message, file):
     with open(file, 'a') as log_file:
         log_file.write(message + '\n')

@@ -184,14 +184,12 @@ class DataFetcher:
             elif graph_type == "class_level_dept":
                 logging.info(f"-----Dataframe before filtering-----: \n{dataframe}")
                 filtered_department = self.filter_class_level_dept(subject, class_level, dataframe)
+                logging.info(f"FILTERED CLASS_LEVEL DEPT\n {filtered_department}")
                 if instructor_type == "Regular Faculty":
                     self.instructor_data = self.get_faculty(filtered_department)
                     self.instructor_data = self.merge_instructors(self.instructor_data)
                     logging.info(f"-----Filtered DataFrame for 'Regular Faculty'-----\n{self.instructor_data}")
                 elif instructor_type == "All Instructors":
-                    logging.info(f"----BEFORE FILTERING ALL INSTRUCTORS on filtered_department----\n{filtered_department}")
-
-                    logging.info(f"----BEFORE FILTERING ALL INSTRUCTORS on self.instructor_data----\n{self.instructor_data}")
                     self.instructor_data = self.get_department_instructor(filtered_department)
                     logging.info(f"-----Filtered DataFrame for 'All Instructors'-----\n{self.instructor_data}")
                 if grade_type == "Percent Ds/Fs":
@@ -200,7 +198,6 @@ class DataFetcher:
                 elif grade_type == "Percent As":
                     self.percent_grade = self.calc_percent_a_class(self.instructor_data)
                     logger.info(f"-----Filtered DataFrame with percent As----- \n{self.percent_grade}")
-
                 if show_class_count:
                     self.class_count = self.instructor_class_count(filtered_department)
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
@@ -295,7 +292,7 @@ class DataFetcher:
         """
         try:
             filtered_dept = self.filter_single_dept(subject, dataframe)
-            logging.info(f"----Filtered Department-----: \n {filtered_dept}")
+            #logging.info(f"----Filtered Department-----: \n {filtered_dept}")
 
             # Calculate the class level range based on the provided class_level
             class_level_int = int(class_level)
@@ -310,7 +307,8 @@ class DataFetcher:
                 filtered_dept["group_code"].str.match(regex_pattern) & 
                 class_level_series.between(class_level_range_start, class_level_range_end)
             ]
-            logging.info(f"-----Filtered Class Level: \n{filtered_department}")
+            #logging.info(f"-----Filtered Class Level: \n{filtered_department}")
+            return filtered_department
 
         except Exception as e:
             logger.exception("Exception occurred during filtering class level dept")
@@ -462,6 +460,7 @@ class DataFetcher:
         """
         Aggregates instructor data across all classes within a department.
         """
+        #logging.info(f"DATAFRAME BEFORE GROUPING INSTRUCTOR DEPARTMENT \n{dataframe}")
         try:
             instructor_data = dataframe.groupby("instructor").agg({
                 "aprec": "sum",

@@ -171,20 +171,20 @@ def main(user_selection: dict):
     """
     # a dictionary containing user selectioN
     user_selection = {
-    "graph_type": "single_class",  # options: single_class, department, class_level_dept
+    "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
     "Subject": "CIS",
     "class_code": "CIS315",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
         # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    "instructor": "All Instructors", # All instructors or Regular Faculty
-        #"instructor": "Regular Faculty",
+    "instructor_type": "All Instructors", # All instructors or Regular Faculty
+        #"instructor_type": "Regular Faculty",
         #"grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
     "grade_type": "Percent As",
     "class_count": True,  # whether to show the number of classes taught by each instructor
     "light_mode": False,
     "xaxis_course": True,
     }
-"""
+    """
     db_path = "./Databases/CompleteDatabase.sqlite"
     fetcher = DataFetcher(user_selection, db_path)
     fetcher.fetch_data()

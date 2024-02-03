@@ -323,7 +323,6 @@ class DataFetcher:
         Calculates Percentages of As given by each professor
         """
         try:
-            instructor_grades = instructor_grades.copy()
             # sum total number of A grades given by each professor
             instructor_grades["total_grades"] = (
                 instructor_grades["aprec"] +
@@ -484,7 +483,7 @@ user_selection = {
     "class_code": "CIS210",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
      # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    "instructor": "Regular Faculty", # All instructors or Regular Faculty
+    "instructor": "All Instructors", # All instructors or Regular Faculty
     "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
     #"grade_type": "Percent As",
     "class_count": True,  # whether to show the number of classes taught by each instructor

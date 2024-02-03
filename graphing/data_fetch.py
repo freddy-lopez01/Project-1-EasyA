@@ -60,6 +60,7 @@ class DataFetcher:
         """
         Fetches data from the database based on the user's selection.
         """
+
         try:
             # connect to SQL database and get graph_type
             self.connect_to_database()
@@ -89,6 +90,7 @@ class DataFetcher:
                 if match:
                     department = match.group(1)
             class_level = self.user_selection.get("class_level", None)
+            logging.info(f"Class_level: {class_level}")
             instructor_type = self.user_selection.get("instructor", None)
             grade_type = self.user_selection.get("grade_type",  True)
             show_class_count = self.user_selection.get("class_count", False)
@@ -108,9 +110,13 @@ class DataFetcher:
                 filtered_single_class = self.filter_single_class(single_class, dataframe)
                 if instructor_type == "Regular Faculty":
                     self.instructor_data = self.get_faculty(filtered_single_class)
+                    # merge data for recurring instructors
+                    self.instructor_data = self.merge_instructors(self.instructor_data)
                 elif instructor_type == "All Instructors":
                     # filter all instructors
                     self.instructor_data = self.get_instructor_class(filtered_single_class)
+
+                logging.info(f"LOOK AT THIS: \n{self.instructor_data}")
                 if grade_type == "Percent Ds/Fs":
                     # calculate Ds/Fs
                     self.percent_grade = self.calc_percent_DsFs_instructor(self.instructor_data)
@@ -119,6 +125,7 @@ class DataFetcher:
                     # calculate As
                     self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
                     logger.info(f"-----Filtered with Percent As-----: \n{self.percent_grade}")
+
                 # if toggle class count for single class graph
                 if show_class_count:
                     """
@@ -140,24 +147,28 @@ class DataFetcher:
 
             # department only
             elif graph_type == "department" and department:
-                filtered_department = self.filter_single_dept(department, dataframe)
+                filtered_department = self.filter_single_dept(subject, dataframe)
                 logger.info(f"FILTERED_DEPT \n{filtered_department}")
                 if instructor_type == "Regular Faculty":
-                    filtered_faculty = self.get_faculty(filtered_department)
-                    self.instructor_data = self.get_instructor_class(filtered_faculty)
+                    self.instructor_data = self.get_faculty(filtered_department)
+                    self.instructor_data = self.merge_instructors(self.instructor_data)
                 elif instructor_type == "All Instructors":
-                    self.instructor_data = self.get_instructor_class(filtered_department)
+                    self.instructor_data = self.get_department_instructor(filtered_department)
+                    logging.info(f"INSTRUC DATAAAA: \n{self.instructor_data}")
+
+                
                 if grade_type == "Percent Ds/Fs":
-                    self.percent_grade = self.calc_percent_DsFs_class(self.instructor_data)
+                    self.percent_grade = self.calc_percent_DsFs_instructor(self.instructor_data)
                     logger.info(f"PERCENT GRADE DsFs: \n{self.percent_grade}")
                 elif grade_type == "Percent As":
-                    self.percent_grade = self.calc_percent_a_class(self.instructor_data)
+                    self.percent_grade = self.calc_percent_a_instructor(self.instructor_data)
                     logger.info(f"PERCENT As: \n{self.percent_grade}")
 
                 # if toggle class count for department graph
                 if show_class_count:
                     # get class data and class count and merge the two DataFrames together
                     self.class_count = self.instructor_class_count(filtered_department)
+                    self.instructor_data = self.percent_grade
                     self.instructor_data = self.instructor_data.merge(self.class_count, on="instructor")
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     logger.info(f"MERGED DATA: \n{self.instructor_data}")
@@ -165,20 +176,15 @@ class DataFetcher:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                     
             # all classes of a particular level within department
-            elif graph_type == "class_level_dept":
+            elif graph_type == "class_level_dept" and department:
+                logging.info(f"Dataframe: \n{dataframe}")
                 filtered_department = self.filter_class_level_dept(subject, class_level, dataframe)
-
-                if class_level and class_level in valid_class_levels:
-                    # convert class_level to integer for comparison
-                    class_level_int = int(class_level)
-                    # filter based on the numeric part of group_code corresponding to the user's selection
-                    filtered_department = filtered_department[
-                        filtered_department["group_code"].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
-                    logger.info(f"Filtered class level {class_level} department: \n{filtered_department}")
                 if instructor_type == "Regular Faculty":
                     self.instructor_data = self.get_faculty(filtered_department)
+                    self.instructor_data = self.merge_instructors(self.instructor_data)
                 elif instructor_type == "All Instructors":
                     self.instructor_data = self.get_instructor_class(filtered_department)
+
                 if grade_type == "Percent Ds/Fs":
                     self.percent_grade = self.calc_percent_DsFs_instructor(self.instructor_data)
                 elif grade_type == "Percent As":
@@ -194,11 +200,33 @@ class DataFetcher:
                 else:
                     self.instructor_data.loc[:, "instructor"] = self.instructor_data["instructor"].str.split(", ", expand=True)[0].str.strip()
                 logger.debug("User selection: %s", self.user_selection)
+
         except Exception as e:
             logger.exception("Exception occurred during data fetch")
         finally:
             if self.connection:
                 self.close_connection()
+
+
+    def merge_instructors(self, dataframe: pd.DataFrame) -> pd.DataFrame:
+        """
+        Merge recurring instructors
+        """
+        try:
+            instructor_data = dataframe.groupby("instructor").agg({
+                "aprec": "sum",
+                "bprec": "sum",
+                "cprec": "sum",
+                "dprec": "sum",
+                "fprec": "sum",
+                "fac_type": "first"
+            }).reset_index()
+            logger.info(f"Merged recurring instructors: \n{instructor_data}")
+            return instructor_data 
+
+        except Exception as e:
+            logger.exception(f"Exception occurred during merge_instructor")
+
 
     def get_instructor(self, group_code: str, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -241,6 +269,7 @@ class DataFetcher:
         Filters the DataFrame for rows matching a single department.
         """
         logger.info(f"Filtering DataFrame for single department: \n {department}")
+
         try:
             logging.info(f"=====================================DATAFRAME==============================:\n {department}")
             filtered_department = dataframe.loc[dataframe["group_code"].str.contains(department, case=False, na=False)]
@@ -251,20 +280,21 @@ class DataFetcher:
             logger.exception("Exception occurred while filtering single department")
             return pd.DataFrame()
 
-    def filter_class_level_dept(self, department: str, class_level: str, dataframe: pd.DataFrame) -> pd.DataFrame:
+    def filter_class_level_dept(self, subject: str, class_level: str, dataframe: pd.DataFrame) -> pd.DataFrame:
+
         """
         Filters the DataFrame for rows matching a department and a specific class level (e.g., 400).
         """
-        # logger.info(f"Filtering DataFrame for single department: \n {department}")
         try:
-            # logger.info(f"Filtering DataFrame for single department: \n {department}")
-            logger.info(f"Attempting to filter for {department} department, level {class_level} classes")
-            # assuming the class level (e.g., '400') is at the end of the 'group_code' after department code
-            pattern = f"[A-Za-z]+{class_level}\\b"  # \b is a word boundary in regex to ensure '400' is at the end
-            print(f"Using pattern: {pattern}")
-            # filter DataFrame based on the pattern
-            filtered = dataframe[dataframe["group_code"].str.contains(pattern, regex=True, na=False)]
-            return filtered
+            filtered_dept = self.filter_single_dept(subject, dataframe)
+            logging.info(f"----Filtered Department-----: \n {filtered_dept}")
+
+            class_level_int = int(class_level)
+            filtered_department = filtered_dept[filtered_dept["group_code"].str[3:].astype(int).between(class_level_int, class_level_int + 99)]
+            logging.info(f"-----Filtered Class Level: \n{filtered_department}")
+            # Filter using the regex pattern
+
+            return filtered_department
 
         except Exception as e:
             logger.exception("Exception occurred during filtering class level dept")
@@ -347,8 +377,8 @@ class DataFetcher:
         Calculates percentages of Ds/Fs given by each instructor
         """
         try:
-            instructor_grades = instructor_grades.copy()
             # sum total number of grades given by professor
+        
             instructor_grades["total_grades"] = (
                 instructor_grades["aprec"] +
                 instructor_grades["bprec"] +
@@ -410,6 +440,26 @@ class DataFetcher:
         finally:
             self.close_connection()
 
+    def get_department_instructor(self, dataframe: pd.DataFrame) -> pd.DataFrame | None:
+        """
+        Aggregates instructor data across all classes within a department.
+        """
+        try:
+            instructor_data = dataframe.groupby("instructor").agg({
+                "aprec": "sum",
+                "bprec": "sum",
+                "cprec": "sum",
+                "dprec": "sum",
+                "fprec": "sum"
+            }).reset_index()
+            logger.info(f"Aggregated department instructor data: \n{instructor_data}")
+            return instructor_data
+
+        except Exception as e:
+            logger.exception("Exception occurred during aggregating department instructor data")
+            return pd.DataFrame()
+        finally:
+            self.close_connection()
              
     def get_unique_department_codes(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -449,6 +499,7 @@ class DataFetcher:
         """
         Add count of classes taught by each instructor into DataFrame if user selects this option.
         """
+
         try:
             # get instructor column 
             class_count_series = dataframe.groupby("instructor").size()
@@ -476,23 +527,25 @@ class DataFetcher:
             logger.exception("Error occurred while getting faculty information")
             return pd.DataFrame()
 
+"""
 # a dictionary containing user selection
 user_selection = {
     "graph_type": "single_class",  # options: single_class, department, class_level_dept
     "Subject": "CIS",
-    "class_code": "CIS210",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    "class_code": "CIS415",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
      # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
     "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-    "instructor": "All Instructors", # All instructors or Regular Faculty
+    #"instructor": "All Instructors", # All instructors or Regular Faculty
+    "instructor": "Regular Faculty",
     "grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
     #"grade_type": "Percent As",
     "class_count": True,  # whether to show the number of classes taught by each instructor
     "xaxis_course": True,
  }
 
-
 if __name__ == "__main__":
-    #dest = "../Databases/GradeDatabase.sqlite"
     dest = "../Databases/CompleteDatabase.sqlite"
     fetch = DataFetcher(user_selection, dest)
     dataframe = fetch.fetch_data()
+"""
+

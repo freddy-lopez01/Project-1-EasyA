@@ -1,15 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import logging
-from data_fetch import DataFetcher
-#from graphing.data_fetch import DataFetcher
+#from data_fetch import DataFetcher
+from graphing.data_fetch import DataFetcher
 
 # setting up logging
-logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
-
-logger = logging.getLogger(__name__)
 FORMAT = "[%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s"
-logging.basicConfig(format=FORMAT)
+logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
@@ -19,6 +17,7 @@ def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
     - dataframe (pd.DataFrame): The dataframe containing instructor data.
     """
     logger.debug(f"DataFrame columns: {dataframe.columns}")
+    logger.info(f"DataFrame Columns Before graphing: \n{dataframe}")
     try:
         # dynamically adjust plot size based on the number of unique instructors or classes
         num_instructors = len(dataframe["instructor"].unique())
@@ -40,10 +39,10 @@ def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
         plt.ylabel(f"{user_selection['grade_type']} (%)")
 
         # display graph x-axis title based on user selection of "All Instructors" or "Regular Faculty"
-        if user_selection["class_count"] and user_selection["instructor"] == "Regular Faculty":
-            plt.xlabel(f"{user_selection['instructor']} (class count)")
-        elif user_selection["class_count"] and user_selection["instructor"] == "All Instructors":
-            plt.xlabel(f"{user_selection['instructor']} (class_count)")
+        if user_selection["class_count"] and user_selection["instructor_type"] == "Regular Faculty":
+            plt.xlabel(f"{user_selection['instructor_type']} (class count)")
+        elif user_selection["class_count"] and user_selection["instructor_type"] == "All Instructors":
+            plt.xlabel(f"{user_selection['instructor_type']} (class_count)")
         else:
             plt.xlabel("Instructors")
 
@@ -63,6 +62,7 @@ def single_class_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
         return plt.show()
         #plt.close(fig)
     except Exception as e:
+        logger.exception(f"Error generating graph: {e}")
         logger.error(f"========single_class_graph: {e}=======")
 
 def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> None:
@@ -93,10 +93,10 @@ def single_department_graph(user_selection: dict, dataframe: pd.DataFrame) -> No
         ax.set_ylim(0, 100)
 
         # display graph x-axis title based on user selection of "All Instructors" or "Regular Faculty"
-        if user_selection["class_count"] and user_selection["instructor"] == "Regular Faculty":
-            plt.xlabel(f"{user_selection['instructor']} (class count)")
-        elif user_selection["class_count"] and user_selection["instructor"] == "All Instructors":
-            plt.xlabel(f"{user_selection['instructor']} (class_count)")
+        if user_selection["class_count"] and user_selection["instructor_type"] == "Regular Faculty":
+            plt.xlabel(f"{user_selection['instructor_type']} (class count)")
+        elif user_selection["class_count"] and user_selection["instructor_type"] == "All Instructors":
+            plt.xlabel(f"{user_selection['instructor_type']} (class_count)")
         else:
             plt.xlabel("Instructors")
 
@@ -142,10 +142,10 @@ def class_level_dept_graph(user_selection: dict, dataframe: pd.DataFrame) -> Non
 
 
         # display graph x-axis title based on user selection of "All Instructors" or "Regular Faculty"
-        if user_selection["class_count"] and user_selection["instructor"] == "Regular Faculty":
-            plt.xlabel(f"{user_selection['instructor']} (class count)")
-        elif user_selection["class_count"] and user_selection["instructor"] == "All Instructors":
-            plt.xlabel(f"{user_selection['instructor']} (class_count)")
+        if user_selection["class_count"] and user_selection["instructor_type"] == "Regular Faculty":
+            plt.xlabel(f"{user_selection['instructor_type']} (class count)")
+        elif user_selection["class_count"] and user_selection["instructor_type"] == "All Instructors":
+            plt.xlabel(f"{user_selection['instructor_type']} (class_count)")
         else:
             plt.xlabel("Instructors")
 
@@ -166,25 +166,26 @@ def class_level_dept_graph(user_selection: dict, dataframe: pd.DataFrame) -> Non
     except Exception as e:
         logger.error(f"class_level_dept_graph()========================={e}=======================")
 
-    #def main(user_selection: dict):
-def main():
+def main(user_selection: dict):
+    #def main():
+    """
     # a dictionary containing user selectioN
     user_selection = {
-    "graph_type": "class_level_dept",  # options: single_class, department, class_level_dept
+    "graph_type": "single_class",  # options: single_class, department, class_level_dept
     "Subject": "CIS",
-    "class_code": "CIS415",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
+    "class_code": "CIS315",  # relevant if graph type is single_class; specific class code (e.g., CIS 422)
         # "department": "Computer Information Science",  # relevant for single_dept and class_level_dept
-    "class_level": "400",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
-        #"instructor": "All Instructors", # All instructors or Regular Faculty
-    "instructor": "Regular Faculty",
+    "class_level": "300",  # relevant if graph type is class_level_dept; specific class level (e.g., 100, 200)
+    "instructor": "All Instructors", # All instructors or Regular Faculty
+        #"instructor": "Regular Faculty",
         #"grade_type": "Percent Ds/Fs",  # other option: "Percent Ds/Fs"
     "grade_type": "Percent As",
     "class_count": True,  # whether to show the number of classes taught by each instructor
     "light_mode": False,
     "xaxis_course": True,
     }
-
-    db_path = "../Databases/CompleteDatabase.sqlite"
+"""
+    db_path = "./Databases/CompleteDatabase.sqlite"
     fetcher = DataFetcher(user_selection, db_path)
     fetcher.fetch_data()
 
@@ -205,5 +206,3 @@ def main():
         class_level_dept_graph(user_selection, instructor_data)
         return
 
-if __name__ == "__main__":
-    main()

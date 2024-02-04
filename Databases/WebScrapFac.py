@@ -9,8 +9,15 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 '''
-Production Note:
-this code will be run though update. but can be run seperatly
+Filename:WebScrapFac.py
+Author: Willard, Daniel
+Date Created: 16 JAN 2024
+Date Last Modified: 03 FEB 2024
+Description: this code will be run though update. but can be run seperatly. This code goes to the landing website and collects the links and departments for the uo
+then it iterates trough that names website and grabs all the faculty name on the website and stroes it in a tuple that is piped to a .txt file
+that then update reads form to update the database.
+see code comments for more info
+
 '''
 
 ''' Change bool as info is needed

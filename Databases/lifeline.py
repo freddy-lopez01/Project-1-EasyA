@@ -1,26 +1,37 @@
-#this file prompts the user for issues and logs the input into a file
-#simple if else to help user if the database becomes corrupted are neeeds to be reset.
-#logs info for logistics for later
-#ran by itself.
+'''
+Filename: lifeline.py
+Author: Willard, Daniel
+Date Created: 15 JAN 2024
+Date Last Modified: 03 FEB 2024
+Description: this file prompts the user for issues and logs the input into a file
+simple if else to help user if the database becomes corrupted are neeeds to be reset.
+logs info for logistics for later
+ran by itself.
+see code comments for more info
+'''
 
+
+#log file for responses read and write
 def log_input(message, file):
     with open(file, 'a') as log_file:
         log_file.write(message + '\n')
 
 def main():
+#intialization
     log_input("Script started.", "miseryReel.txt")
     user_name = input("Please enter your name: ")
     log_input(f"User name: {user_name}", "miseryReel.txt")
-
+#first question and response though if statments
     miffed_up = input("You must be here because you done miffed up? y/n: ")
     if miffed_up.lower() == 'y':
         reason = input("Please state the reason: ")
         log_input(f"Reason for miffed up: {reason}", "miseryReel.txt")
-
+#second question and respose though if statements
     rebase_db = input("Do you need to rebase the database? y/n: ")
     if rebase_db.lower() == 'y':
         year = input("Enter the year (14 or 16): ")
         if year == '14':
+            #reabased off file in system for database rebuild
             with open("FacData.txt", 'w') as fac_file:
                 with open("Facdata1415.txt", 'r') as data_file:
                     fac_file.write(data_file.read())
@@ -29,11 +40,13 @@ def main():
                 url_file.write("url14.txt")
             log_input("Overwrote url.txt with url14.txt", "miseryReel.txt")
         elif year == '16':
+            # reabased off file in system for database rebuild
             with open("FacData.txt", 'w') as fac_file:
                 with open("Facdata1516.txt", 'r') as data_file:
                     fac_file.write(data_file.read())
             log_input("Overwrote FacData.txt with Facdata1516.txt", "miseryReel.txt")
             with open("url.txt", 'w') as url_file:
+                #resets the url base file
                 url_file.write("url16.txt")
             log_input("Overwrote url.txt with url16.txt", "miseryReel.txt")
         else:

@@ -5,8 +5,13 @@ import time
 import WebScrapFac
 
 '''
-Production Note:
-imports Scrapper and updates the database into one complete data base.
+Filename:update.py
+Author: Willard, Daniel
+Date Created: 18 JAN 2024
+Date Last Modified: 03 FEB 2024
+Description: imports Scrapper and updates the database into one complete data base form the Gradegrab.py created database and the webscapped data or the initaialation file.
+ran by itself.
+see code comments for more info
 '''
 
 '''DEBUG---------------------------------------------------------------'''

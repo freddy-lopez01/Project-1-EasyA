@@ -2,10 +2,14 @@ import sqlite3
 import json
 
 '''
-Production Note:
-This is a start up script and must be done only once at the beginning. 
+Filename:GradeGrab.py
+Author: Willard, Daniel 
+Date Created: 15 JAN 2024
+Date Last Modified: 03 FEB 2024
+Description: This is a start up script and must be done only once at the beginning. 
 User should know howto format file if they want to change the database
 This only overwrites the data if the user wanted to append it should have been in the design docuemntation 
+see code comments for more info
 '''
 # Read data from the reduced JavaScript file that form: https://emeraldmediagroup.github.io/grade-data/gradedata.js
 # loads data form file into emd_data_js

@@ -1,5 +1,15 @@
 import sqlite3
 
+'''
+Filename:compareDB.py
+Author:Willard, Daniel 
+Date Created: 26 JAN 2024
+Date Last Modified: 03 FEB 2024
+Description: this code connects to a older version of our database check for testing and the new version and shows the diffferance in
+faculty type and Departments for de bug purposes
+see code comments for more info
+'''
+
 def compare_databases(db1_path, db2_path):
     # Connect to the databases
     conn1 = sqlite3.connect(db1_path)

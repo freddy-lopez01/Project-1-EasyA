@@ -146,7 +146,7 @@ print(courselvlList)
 # Lists used by combobox
 ############################################################################
 
-NATURAL_SCIENCE = ['BI Biology', 'CH Chemistry and Biochemistry', 'CIS Computer and Information Science', 'ERTH Earth Sciences', 'General Science Program', 'HPHY Human Physiology', 'MATH Mathematics', 'Neuroscience', 'PHYS Physics', 'PSY Psychology']
+NATURAL_SCIENCE = ['BI Biology', 'CH Chemistry and Biochemistry', 'CIS Computer and Information Science', 'ERTH Earth Sciences', 'HPHY Human Physiology', 'MATH Mathematics', 'PHYS Physics', 'PSY Psychology']
 
 TEMP_OPT = ["100", "200", "300", "400", "500", "600", "All Courses"]
 TEMP_SUB = ['BI Biology', 'CH Chemistry',
@@ -537,7 +537,7 @@ def sub_select2(event):
     selected = subMenu2.get()
     print(selected)
     if "selected" in str(selected): 
-        selectedDic["class_code"] = str(selectedDic['Subject']) + str(selectedDic["class_level"]
+        selectedDic["class_code"] = str(selectedDic['Subject']) + str(selectedDic["class_level"])
         subMenu5.set("class_level_dept")
         selectedDic["graph_type"] = "class_level_dept"
     else:
@@ -559,12 +559,12 @@ def sub_select4(event):
     selectedDic["instructor_type"] = selected
     print(selectedDic)
 
-#def sub_select5(event):
-#    selected = subMenu5.get()
-#    print(selected)
-#    sendSelected(selected)
-#    selectedDic["graph_type"] = selected
-#    print(selectedDic)
+def sub_select5(event):
+    selected = subMenu5.get()
+    print(selected)
+    sendSelected(selected)
+    selectedDic["graph_type"] = selected
+    print(selectedDic)
 
 
 def sub_select6():

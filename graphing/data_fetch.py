@@ -308,25 +308,30 @@ class DataFetcher:
         """
         try:
             filtered_dept = self.filter_single_dept(subject, dataframe)
-            #logging.info(f"----Filtered Department-----: \n {filtered_dept}")
+            logging.info(f"----Filtered Department-----: \n {filtered_dept}")
 
             # calculate class level range based on the provided class_level
             class_level_int = int(class_level)
             class_level_range_start = class_level_int // 100 * 100
-            logging.info(f"Clas level range start {class_level_range_start}")
             class_level_range_end = class_level_range_start + 99
-            
+            logging.info(f"Class level range: {class_level_range_start} to {class_level_range_end}")
+
             # using regex to match any number of letters followed by the class level range numbers
-            regex_pattern = f"^{subject}[0-9]{{{len(class_level)}}}$"
-            class_level_series = filtered_dept["group_code"].str.extract('(\d+)$')[0].astype(int)
-            filtered_department = filtered_dept[
-                filtered_dept["group_code"].str.match(regex_pattern) & 
-                class_level_series.between(class_level_range_start, class_level_range_end)]
+            regex_pattern = f"^{subject}\d{{{len(class_level)}}}[A-Za-z]*$"
+            #regex_pattern = f"^{subject}[0-9]{{{len(class_level)}}}$"
+            class_level_series = filtered_dept["group_code"].str.extract(f'({regex_pattern})')[0]
+            #class_level_series = filtered_dept["group_code"].str.extract('(\d+)$')[0].astype(int)
+            class_level_series = class_level_series.str.extract('(\d+)')[0].dropna().astype(int)
+
+            filtered_department = filtered_dept[class_level_series.between(class_level_range_start, class_level_range_end)]
+            #filtered_department = filtered_dept[
+            #   filtered_dept["group_code"].str.match(regex_pattern) & 
+            #   class_level_series.between(class_level_range_start, class_level_range_end)]
             #logging.info(f"-----Filtered Class Level: \n{filtered_department}")
             return filtered_department
 
         except Exception as e:
-            logger.exception("Exception occurred during filtering class level dept")
+            logger.exception(f"Exception occurred during filtering class level dept {e}")
             return pd.DataFrame()
 
 

@@ -1473,13 +1473,13 @@ Theater Arts:
 	('Joseph Gilg', 'P')
 	('Jerry Hooker', 'P')
 	('Theresa May', 'P')
+<<<<<<< Updated upstream
 	('Grant F. McKernie', 'P')
 	('Michael Malek Najjar', 'P')
 	('Janet Rose', 'P')
 	('John Schmor', 'P')
 	('John C. Watson', 'P')
 	('Jerry R. Williams', 'P')
-Women's and Gender Studies:
 	('Joan R. Acker', 'P')
 	('Laura J. Alpert', 'P')
 	('Barbara K. Altmann', 'P')
@@ -1570,3 +1570,10 @@ Women's and Gender Studies:
 	('Stephanie Wood', 'P')
 	('Priscilla Yamin', 'P')
 	('Naomi Zack', 'P')
+=======
+	('Grant F. McKernie', 'T')
+	('Michael Malek Najjar', 'P')
+	('Janet Rose', 'P')
+	('John Schmor', 'P')
+	('John C. Watson', 'T')
+	('Jerry R. Williams', 'T')

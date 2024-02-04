@@ -363,12 +363,22 @@ def clearBox():
 
 
 def change_theme():
+    """
+    Calls the tkinter method .tk.call in order to call the azure-dark execuatable wiithin assets which help with the light/dark mode
+    visual changes wihtin the UI
+    """
     if root.tk.call("ttk::style", "theme", "use")=="azure-dark":
         root.tk.call("set_theme", "light")
     else:
         root.tk.call("set_theme", "dark")
 
 def toggle():
+    """
+    toggle() bears the task of configuring the background (bg) color if each of the objects within the UI and by using .config()
+    changing the background in real time based off the global variable color_Mode which gets triggered by the user hitting the 
+    Light/dark mode toggle in the top status bar of the UI
+
+    """
     global color_Mode
 
     if color_Mode == False:
@@ -424,6 +434,11 @@ def toggle():
         print(f"Global ColorMode: {color_Mode}\n")
 
 def closeGUI():
+    """ 
+    closeGUI() is called when the user presses the Quit EasyA button located on the navBar Frame. The function when called closes the
+    connetion that is made with the database, destroys the root frame of the GUI and then calls exit() in order to close the session in
+    the terminal that is running the software
+    """
     conn.close()
     root.destroy()
     exit()
@@ -440,6 +455,12 @@ called by the "command" parameter within said tk.checkbox or tk.combobox
 """
 
 def sub_select0(event):
+    """
+    sub_select0(event) takes in a user selection from the Subject field and adds it to selectedDIC with the key name "Subject" and 
+    the Subject abbreviation as the value of the new key. 
+    once sub_select0(event) registers a selection made by the user, it then unblocks the rest of the dropdown boxes from the user. This 
+    feature was implemented in order to guarentee the user picks a subject before being able to pick any other proceeding option.
+    """
     global currSubject
     global selectedDic
     selected = subMenu0.get()
@@ -458,6 +479,27 @@ def sub_select0(event):
 
 
 def sub_select1(event):
+    """
+    sub_select1(event) takes in a user selection from Course Level and creates a new key,value entry in selectedDic with they key 
+    name being "class_level" and the value being the class level number (100, 200,...,600) or All Courses. To mitigate user error, 
+    if the user selects "All courses", the function also adds the key,value pairs:
+            "class_code" : selectedDic['Subject']
+            "graph_type" : "department"
+
+        The reason for this is that when the user selects "All courses", the only valid graph that can be created is a department graph 
+        that contains all courses within the selected subject
+
+    However, if the user selects a specific course level, then the function will populate selectedDic with the key,value pairs:
+            "class_code" = *user selected class level*
+            "graph_type" = "class_level_dept"
+
+        These key,value are chosen due to preemptivly anticipate the user wanting to submit a request showing all classes within the 
+        specific department and specific level within that department. 
+
+    if a specific class level is chosen, then the proceeding dropdown "Course" is then populated to show all courses within the database
+    that are in that class level that the user selects. This is a dynamic feature as if the user changes course level or subject, the 
+    function will be recalled and display the classes matching the new, updated user selection 
+    """
     global currCourseLvl
     global currSubject
     global selectedDic
@@ -483,13 +525,21 @@ def sub_select1(event):
     print(selectedDic)
 
 def sub_select2(event):
+    """
+    sub_select2(event) takes in the user selection from the courses dropdown menu and determines which option was chosen by the user
+    if the user chooses "All courses selected", it will then modify the "class_code" key to have the value selectedDic['Subject'] 
+    as "all courses selected" refers to all courses within the selected course level
+
+    else if the user selects a specific course, then selectedDic["class_code"] is updated to have the course code that was selected and
+    selectedDic["graph_type"] is updated to have the value "single_class"
+    """
     global selectedDic
     selected = subMenu2.get()
     print(selected)
     if "selected" in str(selected): 
-        selectedDic["class_code"] = selectedDic['Subject']
-        subMenu5.set("department")
-        selectedDic["graph_type"] = "department"
+        selectedDic["class_code"] = str(selectedDic['Subject']) + str(selectedDic["class_level"]
+        subMenu5.set("class_level_dept")
+        selectedDic["graph_type"] = "class_level_dept"
     else:
         selectedDic["class_code"] = selected
         selectedDic["graph_type"] = "single_class"
@@ -498,21 +548,30 @@ def sub_select2(event):
     print(selectedDic)
 
 def sub_select4(event):
+    """
+    sub_select4(event) takes in the users selection from the "Instructor" dropdown options and adds it to the selectedDic with the 
+    key,value pair being:
+        "Instructor" = *user selection*
+    """
     selected = subMenu4.get()
     print(selected)
     sendSelected(selected)
     selectedDic["instructor_type"] = selected
     print(selectedDic)
 
-def sub_select5(event):
-    selected = subMenu5.get()
-    print(selected)
-    sendSelected(selected)
-    selectedDic["graph_type"] = selected
-    print(selectedDic)
+#def sub_select5(event):
+#    selected = subMenu5.get()
+#    print(selected)
+#    sendSelected(selected)
+#    selectedDic["graph_type"] = selected
+#    print(selectedDic)
 
 
 def sub_select6():
+    """
+    sub_select6() takes in the user input from the two Radiobutton() objects which determine whether the user selects A's or D/F grades to
+    be graphed based off all preceeding selections made by the user
+    """
     global hasGrade
     hasGrade = True
     selected = ''
@@ -527,6 +586,10 @@ def sub_select6():
     print(selectedDic)
 
 def sub_select7():
+    """
+    sub_selct7() takes in the users input regarding if they want the number of classes taught by the faculty displayed on the graph 
+    or not. 
+    """
     selected = ''
     global classCountSelection
     if classCount.get() == 1:
@@ -539,6 +602,10 @@ def sub_select7():
     print(selectedDic)
 
 def sub_select8():
+    """
+    sub_select8() takes in the users selection regarding if they want the default Natural Science Subjects List to choose from or if 
+    they want the entire availble Course subjects provides by the database obtained via the Database Module 
+    """
     global naturalONLY
     if NaturalS.get() == 1:
         naturalONLY = False 
@@ -551,6 +618,10 @@ def sub_select8():
     print(selectedDic)
 
 def sub_select9():
+    """
+    sub_select9() takes in the users input regarding if they want the default option of instructor names on the x-axis of the graph
+    or if they desire to see course on the x-axis. This toggle is important when selecting class_level_dept graphs or department graph types
+    """
     global xaxis
     if xaxisToggle.get() == 1:
         xaxis = True
@@ -561,6 +632,11 @@ def sub_select9():
     print(selectedDic)
 
 def aboutPage():
+    """
+    aboutPage() contains the logic needed to display the about page that has the names of group members of this project and the source that
+    was used to populate the database and a disclaimer regarding the available data that is used by the EasyA software 
+    It also cites the Project 1 doc 
+    """
     global color_Mode
     aPbg = navbg
     if color_Mode == False:

@@ -93,7 +93,7 @@ def Scrape_FacinDept(department_link, session):
 
             # Iterate over each <p> tag within faculty_container
             for faculty_paragraph in filtered_faculty_paragraphs:
-                # separate all values not need form scrap
+            # separate all values not need form scrap
                 faculty_name = faculty_paragraph.text.split(',')[0].strip()
 
                 # Check if the previous <h3> header contains "Faculty" to cheack facultiy type

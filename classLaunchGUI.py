@@ -81,7 +81,8 @@ darklogobg="#242424"
 # Connction created to the database upon startup in order to populate Courese Options by connecting to the database via the .connect() method from the sqlite3 library
 #
 courseOPT = []
-conn = sqlite3.connect('assets/CompleteDatabase.sqlite')
+conn = sqlite3.connect('Databases/CompleteDatabase.sqlite')
+print("Connection to Database successful...")
 cursor = conn.cursor()
 cursor.execute("""SELECT name FROM sqlite_master WHERE type='table';""")
 data = cursor.fetchall()
@@ -454,6 +455,9 @@ def closeGUI():
     the terminal that is running the software
     """
     conn.close()
+    print(".\n.\n.\n.\n.\n")
+    print("closing connection to Database...")
+    print("Shutting down EasyA application....")
     root.destroy()
     exit()
 

@@ -1,0 +1,1702 @@
+2a3
+> 	('Alfredo Burlando', 'P')
+4a6
+> 	('Stephen Dueppen', 'P')
+9a12
+> 	('Melissa Graboyes', 'P')
+11c14,17
+< 	('Karen McPherson', 'P')
+---
+> 	('Habib Iddrisu', 'P')
+> 	('Leslie McLees', 'P')
+> 	('Lanie Millar', 'P')
+> 	('Angela Montague', 'P')
+12a19,21
+> 	('Ron Severson', 'P')
+> 	('H. Leslie Steeves', 'P')
+> 	('Nelson Ting', 'P')
+15a25
+> 	('David R. Woken', 'P')
+16a27,57
+> American English Institute:
+> 	('Agnieszka Alboszta', 'P')
+> 	('Robert K. Elliott', 'P')
+> 	('Nicole M. Eustice', 'P')
+> 	('Alison Evans', 'P')
+> 	('Bruce Evans', 'P')
+> 	('Daniel Forman', 'P')
+> 	('Alicia R. Going', 'P')
+> 	('Sandra Greenstreet', 'P')
+> 	('Deborah Healey', 'P')
+> 	('Char Heitman', 'P')
+> 	('Deanna Hochstein', 'P')
+> 	('Laura G. Holland', 'P')
+> 	('Leslie Opp-Beckman', 'P')
+> 	('Sueanne Parker', 'P')
+> 	('Patricia Pashby', 'P')
+> 	('Becki Quick', 'P')
+> 	('Lara M. Ravitch', 'P')
+> 	('Jennifer Rice', 'P')
+> 	('Korey Rice', 'P')
+> 	('Beth Richardson', 'P')
+> 	('Robin Rogers', 'P')
+> 	('Celeste Scholz', 'P')
+> 	('Janine Sepulveda', 'P')
+> 	('Donna Shaw', 'P')
+> 	('Beth Sheppard', 'P')
+> 	('Thomas Tasker', 'P')
+> 	('Ilsa Trummer', 'P')
+> 	('Kay Westerfield', 'P')
+> 	('Misti Williamsen', 'P')
+> 	('Belinda Young-Davy', 'P')
+19,21c60,62
+< 	('William S. Ayres', 'T')
+< 	('Diane B. Baxter', 'T')
+< 	('Aletta Biersack', 'T')
+---
+> 	('William S. Ayres', 'P')
+> 	('Diane B. Baxter', 'P')
+> 	('Aletta Biersack', 'P')
+25c66
+< 	('Don E. Dumond', 'P')
+---
+> 	('Stephen Dueppen', 'P')
+27,28c68,72
+< 	('Jon M. Erlandson', 'T')
+< 	('Stephen R. Frost', 'T')
+---
+> 	('Jon M. Erlandson', 'P')
+> 	('Scott Fitzpatrick', 'P')
+> 	('Stephen R. Frost', 'P')
+> 	('Daphne Gallagher', 'P')
+> 	('Terry L. Hunt', 'P')
+30c74
+< 	('Lamia Karim', 'T')
+---
+> 	('Lamia Karim', 'P')
+33c77
+< 	('Gyoung-Ah Lee', 'T')
+---
+> 	('Gyoung-Ah Lee', 'P')
+35,36c79,81
+< 	('Sandra L. Morgen', 'T')
+< 	('Madonna L. Moss', 'T')
+---
+> 	('Sandra L. Morgen', 'P')
+> 	('Madonna L. Moss', 'P')
+> 	("Theresa O'Nell", 'P')
+38,40c83,84
+< 	('Theresa D. O’Nell', 'T')
+< 	('Philip W. Scher', 'T')
+< 	('Carol T. Silverman', 'T')
+---
+> 	('Philip W. Scher', 'P')
+> 	('Carol T. Silverman', 'P')
+42,50c86,91
+< 	('J. Josh Snodgrass', 'T')
+< 	('Lynn Stephen', 'T')
+< 	('Kirstin Sterner', 'T')
+< 	('Lawrence S. Sugiyama', 'T')
+< 	('Nelson Ting', 'T')
+< 	('Frances J. White', 'T')
+< 	('Harry F. Wolcott', 'P')
+< 	('Stephen R. Wooten', 'T')
+< 	('Philip D. Young', 'P')
+---
+> 	('J. Josh Snodgrass', 'P')
+> 	('Lynn Stephen', 'P')
+> 	('Kirstin Sterner', 'P')
+> 	('Lawrence S. Sugiyama', 'P')
+> 	('Nelson Ting', 'P')
+> 	('Frances J. White', 'P')
+58a100
+> 	('Roy Chan', 'P')
+60d101
+< 	('Stephen W. Durrant', 'P')
+70,72d110
+< 	('Karrie Koesel', 'P')
+< 	('Stephen W. Kohl', 'P')
+< 	('Robert Kyr', 'P')
+76c114
+< 	('John R. Lukacs', 'P')
+---
+> 	('Kenneth B. Liberman', 'P')
+80d117
+< 	('Tze-Lan Sang', 'P')
+89a127
+> 	('Yashar Ahmadian', 'P')
+91,95c129,133
+< 	('Alice Barkan', 'T')
+< 	('Brendan J. M. Bohannan', 'T')
+< 	('Bruce A. Bowerman', 'T')
+< 	('William E. Bradshaw', 'T')
+< 	('Scott D. Bridgham', 'T')
+---
+> 	('Alice Barkan', 'P')
+> 	('Brendan J. M. Bohannan', 'P')
+> 	('Bruce A. Bowerman', 'P')
+> 	('William E. Bradshaw', 'P')
+> 	('Scott D. Bridgham', 'P')
+97c135
+< 	('Mark C. Carrier', 'T')
+---
+> 	('Mark C. Carrier', 'P')
+100,112c138,152
+< 	('John S. Conery', 'T')
+< 	('William A. Cresko', 'T')
+< 	('Alan Dickman', 'T')
+< 	('Chris Q. Doe', 'T')
+< 	('Judith S. Eisen', 'T')
+< 	('Richard B. Emlet', 'T')
+< 	('Jessica L. Green', 'T')
+< 	('Karen J. Guillemin', 'T')
+< 	('Victoria Herman', 'T')
+< 	('Janet Hodder', 'T')
+< 	('Cristin L. Hulslander', 'T')
+< 	('Eric A. Johnson', 'T')
+< 	('George F. Sprague Jr.', 'T')
+---
+> 	('John S. Conery', 'P')
+> 	('William A. Cresko', 'P')
+> 	('George R. von Dassow', 'P')
+> 	('Alan Dickman', 'P')
+> 	('Chris Q. Doe', 'P')
+> 	('Judith S. Eisen', 'P')
+> 	('Richard B. Emlet', 'P')
+> 	('Jessica L. Green', 'P')
+> 	('Karen J. Guillemin', 'P')
+> 	('Victoria Herman', 'P')
+> 	('Janet Hodder', 'P')
+> 	('Cristin L. Hulslander', 'P')
+> 	('Santiago Jaramillo', 'P')
+> 	('Eric A. Johnson', 'P')
+> 	('George F. Sprague Jr.', 'P')
+114c154
+< 	('Alan J. Kelly', 'T')
+---
+> 	('Alan J. Kelly', 'P')
+116,125c156,167
+< 	('Shawn R. Lockery', 'T')
+< 	('V. Patteson Lombardi', 'T')
+< 	('Svetlana Maslakova', 'T')
+< 	('Frederick W. Munz', 'P')
+< 	('Cristopher M. Neill', 'T')
+< 	('Peter M. O’Day', 'T')
+< 	('Patrick C. Phillips', 'T')
+< 	('John H. Postlethwait', 'T')
+< 	('William Roberts', 'T')
+< 	('Bitty A. Roy', 'T')
+---
+> 	('Diana E. Libuda', 'P')
+> 	('Shawn R. Lockery', 'P')
+> 	('V. Patteson Lombardi', 'P')
+> 	('Svetlana Maslakova', 'P')
+> 	('Cristopher M. Niell', 'P')
+> 	('Peter M. O’Day', 'P')
+> 	('Patrick C. Phillips', 'P')
+> 	('John H. Postlethwait', 'P')
+> 	('Anne Powell', 'P')
+> 	('Jana Prikryl', 'P')
+> 	('William Roberts', 'P')
+> 	('Bitty A. Roy', 'P')
+129,132c171,173
+< 	('Debbie Schlenoff', 'T')
+< 	('Eric Selker', 'T')
+< 	('Jeanne M. Selker', 'T')
+< 	('Alan Shanks', 'T')
+---
+> 	('Debbie Schlenoff', 'P')
+> 	('Eric Selker', 'P')
+> 	('Alan Shanks', 'P')
+134c175
+< 	('Karen U. Sprague', 'T')
+---
+> 	('Karen U. Sprague', 'P')
+136,139c177,180
+< 	('Kryn Stankunas', 'T')
+< 	('Carl A. Stiefbold', 'T')
+< 	('Matthew A. Streisfeld', 'T')
+< 	('Terry Takahashi', 'T')
+---
+> 	('Kryn Stankunas', 'P')
+> 	('Carl A. Stiefbold', 'P')
+> 	('Matthew A. Streisfeld', 'P')
+> 	('Terry Takahashi', 'P')
+141,142c182
+< 	('Joseph W. Thornton', 'T')
+< 	('Nathan J. Tublitz', 'T')
+---
+> 	('Nathan J. Tublitz', 'P')
+145,146c185,186
+< 	('Philip E. Washbourne', 'T')
+< 	('Janis C. Weeks', 'T')
+---
+> 	('Philip E. Washbourne', 'P')
+> 	('Janis C. Weeks', 'P')
+148c188
+< 	('Monte Westerfield', 'T')
+---
+> 	('Monte Westerfield', 'P')
+150c190
+< 	('Peter B. Wetherwax', 'T')
+---
+> 	('Peter B. Wetherwax', 'P')
+152,154c192,193
+< 	('A. Michelle Wood', 'T')
+< 	('Craig M. Young', 'T')
+< 	('Hui Zong', 'T')
+---
+> 	('A. Michelle Wood', 'P')
+> 	('Craig M. Young', 'P')
+158d196
+< 	('Patricia M. Dewey', 'P')
+161a200
+> 	('Patricia Dewey Lambert', 'P')
+168,169c207
+< 	('Andy Berglund', 'T')
+< 	('Shannon W. Boettcher', 'T')
+---
+> 	('Shannon W. Boettcher', 'P')
+171c209
+< 	('Jeffrey A. Cina', 'T')
+---
+> 	('Jeffrey A. Cina', 'P')
+173c211
+< 	('Kenneth M. Doxsee', 'T')
+---
+> 	('Kenneth M. Doxsee', 'P')
+175,176c213
+< 	('Paul C. Engelking', 'T')
+< 	('Deborah B. Exton', 'T')
+---
+> 	('Deborah B. Exton', 'P')
+178,180c215,217
+< 	('Marina G. Guenza', 'T')
+< 	('Julie A. Haack', 'T')
+< 	('Michael M. Haley', 'T')
+---
+> 	('Marina G. Guenza', 'P')
+> 	('Julie A. Haack', 'P')
+> 	('Michael M. Haley', 'P')
+182c219
+< 	('Diane K. Hawley', 'T')
+---
+> 	('Diane K. Hawley', 'P')
+185,187c222,223
+< 	('Darren W. Johnson', 'T')
+< 	('David C. Johnson', 'T')
+< 	('Raymond G. Wolfe Jr.', 'P')
+---
+> 	('Darren W. Johnson', 'P')
+> 	('David C. Johnson', 'P')
+189,190c225,226
+< 	('Michael E. Kellman', 'T')
+< 	('Michael Koscho', 'T')
+---
+> 	('Michael E. Kellman', 'P')
+> 	('Michael Koscho', 'P')
+192c228
+< 	('Andrew H. Marcus', 'T')
+---
+> 	('Andrew H. Marcus', 'P')
+194,205c230,242
+< 	('George V. Nazin', 'T')
+< 	('Brad J. Nolen', 'T')
+< 	('Catherine J. Page', 'T')
+< 	('Michael D. Pluth', 'T')
+< 	('Kenneth E. Prehoda', 'T')
+< 	('Geraldine L. Richmond', 'T')
+< 	('Victoria J. De Rose', 'T')
+< 	('John A. Schellman', 'P')
+< 	('Tom H. Stevens', 'T')
+< 	('David R. "Randy" Sullivan', 'T')
+< 	('David R. Tyler', 'T')
+< 	('Gregory M. Williams', 'T')
+---
+> 	('George V. Nazin', 'P')
+> 	('Brad J. Nolen', 'P')
+> 	('Catherine J. Page', 'P')
+> 	('Michael D. Pluth', 'P')
+> 	('Kenneth E. Prehoda', 'P')
+> 	('James Prell', 'P')
+> 	('Geraldine L. Richmond', 'P')
+> 	('Victoria J. De Rose', 'P')
+> 	('Tom H. Stevens', 'P')
+> 	('David R. "Randy" Sullivan', 'P')
+> 	('David R. Tyler', 'P')
+> 	('Gregory M. Williams', 'P')
+> 	('Cathy Wong', 'P')
+206a244
+> 	('Peter Alilunas', 'P')
+209,214c247,248
+< 	('Steven T. Brown', 'P')
+< 	('Carl R. Bybee', 'P')
+< 	('William Cadbury', 'P')
+< 	('Kenneth S. Calhoon', 'P')
+< 	('John Fenn', 'P')
+< 	('Alisa D. Freedman', 'P')
+---
+> 	('Michael Bray', 'P')
+> 	('Keith Eggener', 'P')
+216,219c250
+< 	('Richard Herskowitz', 'P')
+< 	('Colin H. Ives', 'P')
+< 	('Kathryn Rowe Karlin', 'P')
+< 	('Dong Hoon Kim', 'P')
+---
+> 	('Masami Kawai', 'P')
+221,223d251
+< 	('Julia Lesage', 'P')
+< 	('David Leiwei Li', 'P')
+< 	('Katharina E. Loew', 'P')
+225d252
+< 	('Debra L. Merskin', 'P')
+227,239c254,257
+< 	('Daisuke Miyao', 'P')
+< 	('Kate Mondloch', 'P')
+< 	('Priscilla P. Ovalle', 'P')
+< 	('Jon Palfreman', 'P')
+< 	('Elizabeth M. Peterson', 'P')
+< 	('Jenifer Presto', 'P')
+< 	('John T. Ryan', 'P')
+< 	('Biswarup Sen', 'P')
+< 	('Sharon R. Sherman', 'P')
+< 	('Carol Stabile', 'P')
+< 	('Ying Tan', 'P')
+< 	('Kartz Ucci', 'P')
+< 	('Janet Wasko', 'P')
+---
+> 	('Shauna Riedel-Bash', 'P')
+> 	('Sergio Rigoletto', 'P')
+> 	('Andre Sirois', 'P')
+> 	('Daniel Gomez Steinhart', 'P')
+243a262
+> 	('Kevin D. Dicus', 'P')
+248a268
+> 	('Kristen Seaman', 'P')
+252,253c272
+< 	('Michael Allan', 'T')
+< 	('Barbara K. Altmann', 'P')
+---
+> 	('Michael Allan', 'P')
+257,259c276,280
+< 	('Steven T. Brown', 'T')
+< 	('Carl R. Bybee', 'P')
+< 	('Kenneth S. Calhoon', 'T')
+---
+> 	('Steven T. Brown', 'P')
+> 	('Cory Browning', 'P')
+> 	('Kenneth S. Calhoon', 'P')
+> 	('Roy Chan', 'P')
+> 	('Anita Chari', 'P')
+261d281
+< 	('Suzanne Clark', 'P')
+264,266c284
+< 	('Karen R. Emmerich', 'T')
+< 	('Maram Epstein', 'P')
+< 	('Lisa Freinkel', 'T')
+---
+> 	('Lisa Freinkel', 'P')
+268,269c286,287
+< 	('Warren Ginsberg', 'T')
+< 	('Sangita Gopal', 'T')
+---
+> 	('Warren Ginsberg', 'P')
+> 	('Sangita Gopal', 'P')
+273,275c291
+< 	('Katya E. Hokanson', 'T')
+< 	('Kathleen Rowe Karlyn', 'P')
+< 	('Linda Kintz', 'P')
+---
+> 	('Katya E. Hokanson', 'P')
+276a293
+> 	('Colin Koopman', 'P')
+281c298
+< 	('Dawn Marlan', 'T')
+---
+> 	('Dawn Marlan', 'P')
+283d299
+< 	('Randall E. McGowen', 'P')
+285c301,302
+< 	('Leah Middlebrook', 'T')
+---
+> 	('Leah Middlebrook', 'P')
+> 	('Lanie Millar', 'P')
+290c307
+< 	('Jenifer Presto', 'T')
+---
+> 	('Jenifer Presto', 'P')
+294a312
+> 	('Sergio Rigoletto', 'P')
+297d314
+< 	('Tze-Lan Sang', 'P')
+301d317
+< 	('Carol T. Silverman', 'P')
+305a322
+> 	('Daniela Vallega-Neu', 'P')
+328d344
+< 	('Kent A. Stevens', 'P')
+329a346
+> 	('Joseph Sventek', 'P')
+331a349
+> 	('Dave Wilkins', 'P')
+334c352
+< 	('Michal Young', 'P')
+---
+> 	('Xiaodi Wu', 'P')
+336,340c354,358
+< 	('Daniel Anderson', 'T')
+< 	('Jason Brown', 'T')
+< 	('Geri Doran', 'T')
+< 	('Ehud Havazelet', 'T')
+< 	('Garrett K. Hongo', 'T')
+---
+> 	('Daniel Anderson', 'P')
+> 	('Jason Brown', 'P')
+> 	('Marjorie Celona', 'P')
+> 	('Geri Doran', 'P')
+> 	('Garrett K. Hongo', 'P')
+341a360,392
+> Earth Sciences:
+> 	('Ilya N. Bindeman', 'P')
+> 	('Sam Boggs', 'P')
+> 	('Katharine V. Cashman', 'P')
+> 	('John Donovan', 'P')
+> 	('Rebecca J. Dorsey', 'P')
+> 	('Dennis K. Fletcher', 'P')
+> 	('Thomas Giachetti', 'P')
+> 	('Eugene D. Humphreys', 'P')
+> 	('Qusheng Jin', 'P')
+> 	('A. Dana Johnston', 'P')
+> 	('Leif A. Karlstrom', 'P')
+> 	('M. Allan Kays', 'P')
+> 	('David Krinsley', 'P')
+> 	('John M. Logan', 'P')
+> 	('Alexander R. McBirney', 'P')
+> 	('Marli B. Miller', 'P')
+> 	('William N. Orr', 'P')
+> 	('James Palandri', 'P')
+> 	('Mark H. Reed', 'P')
+> 	('Alan W. Rempel', 'P')
+> 	('Gregory J. Retallack', 'P')
+> 	('Jack M. Rice', 'P')
+> 	('Joshua J. Roering', 'P')
+> 	('Norman M. Savage', 'P')
+> 	('David A. Sutherland', 'P')
+> 	('Douglas R. Toomey', 'P')
+> 	('Emilie Hooft Toomey', 'P')
+> 	('Harve S. Waff', 'P')
+> 	('Paul J. Wallace', 'P')
+> 	('James M. Watkins', 'P')
+> 	('Daniel Weill', 'P')
+> 	('Ray J. Weldon', 'P')
+343,359c394,415
+< 	('Lucien Brown', 'T')
+< 	('Maram Epstein', 'T')
+< 	('Alisa D. Freedman', 'T')
+< 	('Denise Gigliotti', 'T')
+< 	('Alison Groppe', 'T')
+< 	('Reiko Hashimoto', 'T')
+< 	('Kaori Idemaru', 'T')
+< 	('Rika Ikei', 'T')
+< 	('Zhuo Jing-Schmidt', 'T')
+< 	('Dong Hoon Kim', 'T')
+< 	('Daisuke Miyao', 'T')
+< 	('Naoko Nakadate', 'T')
+< 	('Tze-Lan Sang', 'T')
+< 	('Glynne Walley', 'T')
+< 	('Yugen Wang', 'T')
+< 	('Jason Webb', 'T')
+< 	('Jean Yuanpeng Wu', 'T')
+---
+> 	('Lucien Brown', 'P')
+> 	('Roy Chan', 'P')
+> 	('Weijun Chen', 'P')
+> 	('Rachel DiNitto', 'P')
+> 	('Maram Epstein', 'P')
+> 	('Alisa D. Freedman', 'P')
+> 	('Yukari Furikado-Koranda', 'P')
+> 	('Denise Gigliotti', 'P')
+> 	('Alison Groppe', 'P')
+> 	('Luke Habberstad', 'P')
+> 	('Reiko Hashimoto', 'P')
+> 	('Kaori Idemaru', 'P')
+> 	('Rika Ikei', 'P')
+> 	('Zhuo Jing-Schmidt', 'P')
+> 	('Dong Hoon Kim', 'P')
+> 	('Eun Young Lee', 'P')
+> 	('Fengjun Mao', 'P')
+> 	('Naoko Nakadate', 'P')
+> 	("Yoko O'Brien", 'P')
+> 	('Glynne Walley', 'P')
+> 	('Yugen Wang', 'P')
+> 	('Jean Yuanpeng Wu', 'P')
+361,363c417,419
+< 	('Bruce A. Blonigen', 'T')
+< 	('Alfredo Burlando', 'T')
+< 	('Trudy Ann Cameron', 'T')
+---
+> 	('Bruce A. Blonigen', 'P')
+> 	('Alfredo Burlando', 'P')
+> 	('Trudy Ann Cameron', 'P')
+365,369c421,426
+< 	('Shankha Chakraborty', 'T')
+< 	('Anca D. Cristea', 'T')
+< 	('Timothy A. Duy', 'T')
+< 	('Christopher J. Ellis', 'T')
+< 	('George W. Evans', 'T')
+---
+> 	('Shankha Chakraborty', 'P')
+> 	('Anca D. Cristea', 'P')
+> 	('Timothy A. Duy', 'P')
+> 	('Christopher J. Ellis', 'P')
+> 	('David Evans', 'P')
+> 	('George W. Evans', 'P')
+372,373c429,430
+< 	('Benjamin Hansen', 'T')
+< 	('William T. Harbaugh', 'T')
+---
+> 	('Benjamin Hansen', 'P')
+> 	('William T. Harbaugh', 'P')
+376,382c433,439
+< 	('Van Kolpin', 'T')
+< 	('Peter J. Lambert', 'T')
+< 	('Cathleen S. Leué', 'P')
+< 	('Ralph Mastromonaco', 'T')
+< 	('Anne van den Nouweland', 'T')
+< 	('Jeremy M. Piger', 'T')
+< 	('Nicholas Sly', 'T')
+---
+> 	('Van Kolpin', 'P')
+> 	('Michael Kuhn', 'P')
+> 	('Peter J. Lambert', 'P')
+> 	('Ralph Mastromonaco', 'P')
+> 	('Keaton Miller', 'P')
+> 	('Anne van den Nouweland', 'P')
+> 	('Jeremy M. Piger', 'P')
+384,385c441,442
+< 	('Glen R. Waddell', 'T')
+< 	('Caroline E. Weber', 'T')
+---
+> 	('Glen R. Waddell', 'P')
+> 	('Caroline E. Weber', 'P')
+387c444
+< 	('Wesley W. Wilson', 'T')
+---
+> 	('Wesley W. Wilson', 'P')
+392d448
+< 	('Louise M. Bishop', 'P')
+420d475
+< 	('Gloria E. Johnson', 'P')
+438d492
+< 	('George Rowe', 'P')
+479,480d532
+< 	('Mark Carey', 'P')
+< 	('George C. Carroll', 'P')
+489d540
+< 	('Matthew Dennis', 'P')
+494,496d544
+< 	('Jeffrey Edmundson', 'P')
+< 	('James R. Elliott', 'P')
+< 	('Richard B. Emlet', 'P')
+524a573
+> 	('Stephanie LeMenager', 'P')
+530a580
+> 	('Galen Martin', 'P')
+540d589
+< 	('Erin Moore', 'P')
+543d591
+< 	('Brook Muller', 'P')
+546d593
+< 	('Max Nielsen-Pincus', 'P')
+550d596
+< 	('Stephen E. Ponder', 'P')
+587c633
+< 	('Stephen R. Wooten', 'P')
+---
+> 	('Stephen Wooten', 'P')
+591,596c637,642
+< 	('Charise L. Cheney', 'T')
+< 	('Lynn H. Fujiwara', 'T')
+< 	('Michael Hames-García', 'T')
+< 	('Daniel HoSang', 'T')
+< 	('Brian Klopotek', 'T')
+< 	('Ernesto J. Martínez', 'T')
+---
+> 	('Charise L. Cheney', 'P')
+> 	('Lynn H. Fujiwara', 'P')
+> 	('Michael Hames-García', 'P')
+> 	('Daniel HoSang', 'P')
+> 	('Brian Klopotek', 'P')
+> 	('Ernesto J. Martínez', 'P')
+600c646
+< 	('Irmary Reyes-Santos', 'T')
+---
+> 	('Alaí Reyes-Santos', 'P')
+602c648
+< 	('Melissa N. Stuckey', 'P')
+---
+> 	('Stephanie "Lani" Teves', 'P')
+605a652,654
+> 	('Sarah Wald', 'P')
+> 	('Julie Weise', 'P')
+> 	('Priscilla Yamin', 'P')
+607c656,659
+< 	('Patricia M. Dewey', 'P')
+---
+> 	('Susan C. Anderson', 'P')
+> 	('Sonja Boos', 'P')
+> 	('Cory Browning', 'P')
+> 	('Alexander Dracobly', 'P')
+608a661
+> 	('D. Gantt Gurley', 'P')
+611c664,671
+< 	('George J. Sheridan Jr.', 'P')
+---
+> 	('Katya Hokanson', 'P')
+> 	('Martin Klebes', 'P')
+> 	('Patricia Dewey Lambert', 'P')
+> 	('Peter D. Laufer', 'P')
+> 	('David M. Leubke', 'P')
+> 	('Jeffrey S. Librett', 'P')
+> 	('Katharina Loew', 'P')
+> 	('Massimo Lollini', 'P')
+612a673,675
+> 	('Alexander Mathäs', 'P')
+> 	('John McCole', 'P')
+> 	('Randall E. McGowen', 'P')
+613a677
+> 	('Leah Middlebrook', 'P')
+617,618d680
+< 	('Priscilla Southwell', 'P')
+< 	('Michael Stern', 'P')
+620d681
+< 	('Roger Adkins', 'P')
+625,626d685
+< 	('Matthew Dennis', 'P')
+< 	('Patricia M. Dewey', 'P')
+629d687
+< 	('James D. Fox', 'P')
+631d688
+< 	('Lori Hager', 'P')
+634a692
+> 	('Patricia Dewey Lambert', 'P')
+640d697
+< 	('Rachelle Saltzman', 'P')
+643d699
+< 	('Sharon R. Sherman', 'P')
+644a701
+> 	('Lani N. Teves', 'P')
+646c703
+< 	('Juan Eduardo "Ed" Wolf', 'P')
+---
+> 	('Ed Wolf', 'P')
+658d714
+< 	('Blake Andrew', 'P')
+660d715
+< 	('Jacob Bartruff', 'P')
+663d717
+< 	('Clark', 'P')
+668,670d721
+< 	('Susan W. Hardwick', 'P')
+< 	('Derrick Hindery', 'P')
+< 	('Donald G. Holtgrieve', 'P')
+672,673d722
+< 	('Everett G. Smith Jr.', 'P')
+< 	('Kenneth Kato', 'P')
+677a727
+> 	('Leslie McLees', 'P')
+681d730
+< 	('Lise Nelson', 'P')
+683c732
+< 	('Alethea Steingisser', 'P')
+---
+> 	('Alethea Y. Steingisser', 'P')
+688,718d736
+< Geological Sciences:
+< 	('Ilya N. Bindeman', 'T')
+< 	('Sam Boggs', 'P')
+< 	('Katharine V. Cashman', 'T')
+< 	('John Donovan', 'P')
+< 	('Rebecca J. Dorsey', 'T')
+< 	('Dennis K. Fletcher', 'P')
+< 	('Eugene D. Humphreys', 'T')
+< 	('Qusheng Jin', 'T')
+< 	('A. Dana Johnston', 'T')
+< 	('M. Allan Kays', 'P')
+< 	('David Krinsley', 'P')
+< 	('John M. Logan', 'P')
+< 	('Alexander R. McBirney', 'P')
+< 	('Marli B. Miller', 'T')
+< 	('William N. Orr', 'P')
+< 	('James Palandri', 'P')
+< 	('Mark H. Reed', 'T')
+< 	('Alan W. Rempel', 'T')
+< 	('Gregory J. Retallack', 'T')
+< 	('Jack M. Rice', 'P')
+< 	('Joshua J. Roering', 'T')
+< 	('Norman M. Savage', 'P')
+< 	('David A. Sutherland', 'T')
+< 	('Douglas R. Toomey', 'T')
+< 	('Emilie Hooft Toomey', 'T')
+< 	('Harve S. Waff', 'P')
+< 	('Paul J. Wallace', 'T')
+< 	('James M. Watkins', 'T')
+< 	('Daniel Weill', 'P')
+< 	('Ray J. Weldon', 'T')
+720a739,740
+> 	('Corinne Bayerl', 'P')
+> 	('Sonja Boos', 'P')
+722d741
+< 	('Peter B. Gontrum', 'P')
+726d744
+< 	('Marilyn Linton', 'P')
+728c746,747
+< 	('Alexander Mathas', 'P')
+---
+> 	('Dawn A. Marlan', 'P')
+> 	('Alexander Mathäs', 'P')
+739a759,760
+> 	('Corinne Bayerl', 'P')
+> 	('Sonja Boos', 'P')
+743a765
+> 	('Amanda E. Doxtater', 'P')
+752,753d773
+< 	('Katharina Loew', 'P')
+< 	('David M. Luebke', 'P')
+759c779
+< 	('Sherwin Simmons', 'P')
+---
+> 	('Stephen Rodgers', 'P')
+763a784
+> 	('Matthias Vogel', 'P')
+767,770c788,789
+< 	('Carlos Aguirre', 'T')
+< 	('Nathanael Andrade', 'T')
+< 	('Sean Anthony', 'T')
+< 	('Ina Asim', 'T')
+---
+> 	('Carlos Aguirre', 'P')
+> 	('Nathanael Andrade', 'P')
+773,774c792,793
+< 	('Lindsay F. Braun', 'T')
+< 	('Richard Maxwell Brown', 'P')
+---
+> 	('Lindsay F. Braun', 'P')
+> 	('Jamie M. Bufalino', 'P')
+778,779c797,798
+< 	('Matthew Dennis', 'T')
+< 	('Alexander Dracobly', 'T')
+---
+> 	('Matthew Dennis', 'P')
+> 	('Alexander Dracobly', 'P')
+781,787c800,805
+< 	('Andrew E. Goble', 'T')
+< 	('Bryna Goodman', 'T')
+< 	('Jeffrey E. Hanes', 'T')
+< 	('Robert S. Haskett', 'T')
+< 	('April Haynes', 'T')
+< 	('Ellen Herman', 'T')
+< 	('Julie Hessler', 'T')
+---
+> 	('Andrew E. Goble', 'P')
+> 	('Bryna Goodman', 'P')
+> 	('Jeffrey E. Hanes', 'P')
+> 	('Robert S. Haskett', 'P')
+> 	('Ellen Herman', 'P')
+> 	('Julie Hessler', 'P')
+790c808
+< 	('George J. Sheridan Jr.', 'T')
+---
+> 	('George J. Sheridan Jr.', 'P')
+792,793c810,811
+< 	('R. Alan Kimball', 'T')
+< 	('David M. Luebke', 'T')
+---
+> 	('R. Alan Kimball', 'P')
+> 	('David M. Luebke', 'P')
+796,800c814,818
+< 	('Glenn A. May', 'T')
+< 	('John McCole', 'T')
+< 	('Randall E. McGowen', 'T')
+< 	('Ian F. McNeely', 'T')
+< 	('James C. Mohr', 'T')
+---
+> 	('Glenn A. May', 'P')
+> 	('John McCole', 'P')
+> 	('Randall E. McGowen', 'P')
+> 	('Ian F. McNeely', 'P')
+> 	('James C. Mohr', 'P')
+802c820
+< 	('Jeffrey Ostler', 'T')
+---
+> 	('Jeffrey Ostler', 'P')
+807,813c825,829
+< 	('Melissa N. Stuckey', 'T')
+< 	('Arafaat Valiani', 'T')
+< 	('Louise Carroll Wade', 'P')
+< 	('Julie Weise', 'T')
+< 	('Marsha Weisiger', 'T')
+< 	('Lisa Wolverton', 'T')
+< 	('Reuben Zahler', 'T')
+---
+> 	('Gretchen Soderlund', 'P')
+> 	('Julie Weise', 'P')
+> 	('Marsha Weisiger', 'P')
+> 	('Lisa Wolverton', 'P')
+> 	('Reuben Zahler', 'P')
+815,818c831,834
+< 	('Ina Asim', 'P')
+< 	('Kenneth S. Calhoon', 'P')
+< 	('Christopher Eckerman', 'P')
+< 	('Mary K. Jaeger', 'P')
+---
+> 	('Yvonne A. Braun', 'P')
+> 	('Kevin D. Dicus', 'P')
+> 	('Katya E. Hokanson', 'P')
+> 	('Mary Jaeger', 'P')
+820,821c836,841
+< 	('James C. Mohr', 'P')
+< 	('John Nicols', 'P')
+---
+> 	('Jeffrey S. Librett', 'P')
+> 	('P', 'P')
+> 	('F. Regina Psaki', 'P')
+> 	('Michael Stern', 'P')
+> 	('Lisa Wolverton', 'P')
+> 	('Mary E. Wood', 'P')
+824,828c844,847
+< 	('Richard L. Brown', 'P')
+< 	('Chien-Chi Chang', 'P')
+< 	('Mark S. Chesnutt', 'P')
+< 	('Li-Shan Chou', 'T')
+< 	('Anita Christie', 'T')
+---
+> 	('Alice Callahan', 'P')
+> 	('Mark Chesnutt', 'P')
+> 	('Li-Shan Chou', 'P')
+> 	('Anita Christie', 'P')
+831,832c850,852
+< 	('Sierra Dawson', 'T')
+< 	('Hans Dreyer', 'T')
+---
+> 	('Brian Dalton', 'P')
+> 	('Sierra Dawson', 'P')
+> 	('Hans Dreyer', 'P')
+835c855
+< 	('Jeffrey Gilbert', 'T')
+---
+> 	('Eben Futral', 'P')
+837d856
+< 	('Grace Golden', 'T')
+839,844c858,862
+< 	('Sarah Grall', 'P')
+< 	('Michael Hahn', 'T')
+< 	('John Halliwill', 'T')
+< 	('Aaron Harding', 'P')
+< 	('Jerold Hawn', 'P')
+< 	('Stanley L. James', 'P')
+---
+> 	('Michael Hahn', 'P')
+> 	('John Halliwill', 'P')
+> 	('Robin Hopkins', 'P')
+> 	('Adrianne Huxtable', 'P')
+> 	('Stanley James', 'P')
+846c864,865
+< 	('Donald C. Jones', 'P')
+---
+> 	('Donald Jones', 'P')
+> 	('Sungwoo Kang', 'P')
+848c867
+< 	('Andrew Karduna', 'T')
+---
+> 	('Andrew Karduna', 'P')
+851c870
+< 	('Brett (Brick) Lantz', 'P')
+---
+> 	('Brett "Brick" Lantz', 'P')
+854c873,876
+< 	('Andrew Lovering', 'T')
+---
+> 	('Andrew Lovering', 'P')
+> 	('Philip Matern', 'P')
+> 	('Kimber Mattox', 'P')
+> 	('Carrie McCurdy', 'P')
+856c878,879
+< 	('Christopher T. Minson', 'T')
+---
+> 	('Jennifer Miner', 'P')
+> 	('Christopher Minson', 'P')
+860,862c883,885
+< 	('Rick Robertson', 'P')
+< 	('Jon Runyeon', 'T')
+< 	('Anne Shumway-Cook', 'P')
+---
+> 	('Joshua Pfeiffer', 'P')
+> 	('Jon Runyeon', 'P')
+> 	('Matthew Shapiro', 'P')
+865a889
+> 	('Brad Wilkins', 'P')
+868a893,894
+> 	('Oluwakemi Balogun', 'P')
+> 	('Diane B. Baxter', 'P')
+872c898,899
+< 	('Yvonne A. Braun', 'T')
+---
+> 	('Lindsay F. Braun', 'P')
+> 	('Yvonne A. Braun', 'P')
+876c903
+< 	('Kathie Carpenter', 'T')
+---
+> 	('Kathie Carpenter', 'P')
+880d906
+< 	('Frederick Colby', 'P')
+884d909
+< 	('Christopher J. Ellis', 'P')
+885a911
+> 	('Michael Fakhri', 'P')
+889c915
+< 	('Dennis C. Galvan', 'T')
+---
+> 	('Dennis C. Galvan', 'P')
+891d916
+< 	('Lisa M. Gilman', 'P')
+898c923
+< 	('Derrick Hindery', 'T')
+---
+> 	('Derrick Hindery', 'P')
+899a925
+> 	('Zhuo Jing-Schmidt', 'P')
+905a932
+> 	('Michelle McKinley', 'P')
+911d937
+< 	('Lise Nelson', 'P')
+922a949
+> 	('Jeffrey Stolle', 'P')
+928,930c955,957
+< 	('Anita M. Weiss', 'T')
+< 	('Stephen R. Wooten', 'T')
+< 	('Kristin Yarris', 'T')
+---
+> 	('Anita M. Weiss', 'P')
+> 	('Stephen R. Wooten', 'P')
+> 	('Kristin Yarris', 'P')
+936c963
+< 	('Judith R. Baskin', 'T')
+---
+> 	('Judith R. Baskin', 'P')
+939,941d965
+< 	('Maram Epstein', 'P')
+< 	('Daniel K. Falk', 'P')
+< 	('Federica Francesconi', 'T')
+944d967
+< 	('Marion Sherman Goldman', 'P')
+946c969,970
+< 	('Deborah A. Green', 'T')
+---
+> 	('Deborah A. Green', 'P')
+> 	('D. Gantt Gurley', 'P')
+948d971
+< 	('Kenneth I. Helphand', 'P')
+951c974,975
+< 	('Jeffrey S. Librett', 'P')
+---
+> 	('Heidi N. Kaufman', 'P')
+> 	('Heidi N. Kaufman', 'P')
+954d977
+< 	('Jack P. Maddex', 'P')
+955a979
+> 	('Andrew Riley', 'P')
+960a985
+> 	('Mary Wood', 'P')
+967a993
+> 	('Mayra Bottaro', 'P')
+968a995,997
+> 	('Christopher Chavez', 'P')
+> 	('Alexandre Dossin', 'P')
+> 	('Michael Dreiling', 'P')
+970a1000,1001
+> 	('Dennis Galvan', 'P')
+> 	('Pedro García-Caro', 'P')
+976a1008
+> 	('Luz Hernandez', 'P')
+977a1010
+> 	('Claudia Holguín', 'P')
+980a1014
+> 	('Galen Martin', 'P')
+984c1018,1019
+< 	('Lise Nelson', 'P')
+---
+> 	('Lanie Millar', 'P')
+> 	('Edward Olivos', 'P')
+985a1021
+> 	('Doris Payne', 'P')
+988c1024
+< 	('Irmary Reyes-Santos', 'P')
+---
+> 	('Alaí Reyes-Santos', 'P')
+992a1029
+> 	('Hector Tobar', 'P')
+993a1031
+> 	('Jessica Vasquez-Tokos', 'P')
+994a1033
+> 	('Julie Weise', 'P')
+1000d1038
+< 	('Agnieszka Alboszta', 'P')
+1001a1040
+> 	('Melissa Michaud Baese-Berk', 'P')
+1005,1007d1043
+< 	('Pat Bryan', 'P')
+< 	('Jill Cargile', 'P')
+< 	('Peggy Dame', 'P')
+1010,1014d1045
+< 	('Thomas Delaney', 'P')
+< 	('Robert K. Elliott', 'P')
+< 	('Nicole M. Eustice', 'P')
+< 	('Alison Evans', 'P')
+< 	('Bruce Evans', 'P')
+1018,1022d1048
+< 	('Alicia R. Going', 'P')
+< 	('Deborah Healey', 'P')
+< 	('Char Heitman', 'P')
+< 	('Deanna Hochstein', 'P')
+< 	('Laura G. Holland', 'P')
+1028,1029d1053
+< 	('Cynthia L. Kieffer', 'P')
+< 	('Sydney Kinnaman', 'P')
+1031d1054
+< 	('Marvin LeNoue', 'P')
+1035,1036d1057
+< 	('Leslie Opp-Beckman', 'P')
+< 	('Patricia Pashby', 'P')
+1040,1041d1060
+< 	('Cathryn Phelps', 'P')
+< 	('Lara M. Ravitch', 'P')
+1043,1049c1062
+< 	('Jennifer Rice', 'P')
+< 	('Korey Rice', 'P')
+< 	('Robin Rogers', 'P')
+< 	('Janine Sepulveda', 'P')
+< 	('Donna Shaw', 'P')
+< 	('Thomas Tasker', 'P')
+< 	('Bonny Tibbitts', 'P')
+---
+> 	('Julie M.\xa0Sykes', 'P')
+1052c1065
+< 	('Kay Westerfield', 'P')
+---
+> 	('Charlotte R. Vaughn', 'P')
+1055d1067
+< 	('Belinda Young-Davy', 'P')
+1058d1069
+< 	('Frank W. Anderson', 'P')
+1080d1090
+< 	('John V. Leahy', 'P')
+1103d1112
+< 	('Donald R. Truax', 'P')
+1120a1130
+> 	('Ina Asim', 'P')
+1124c1134
+< 	('Nicola Camerlenghi', 'P')
+---
+> 	('Steven T. Brown', 'P')
+1127d1136
+< 	('James W. Earl', 'P')
+1129a1139
+> 	('Deborah A. Green', 'P')
+1131a1142
+> 	('Maile Hutterer', 'P')
+1133a1145
+> 	('Charles H. Lachman', 'P')
+1138a1151
+> 	('Mark T. Unno', 'P')
+1139a1153
+> 	('Marc Vanscheeuwijck', 'P')
+1148,1150c1162
+< 	('Edward Awh', 'P')
+< 	('Paul Dassonville', 'P')
+< 	('Chris Q. Doe', 'P')
+---
+> 	('Yashar Ahmadian', 'P')
+1155,1161d1166
+< 	('Cristopher Neill', 'P')
+< 	('Peter M. O’Day', 'P')
+< 	('John H. Postlethwait', 'P')
+< 	('William Roberts', 'P')
+< 	('Terry Takahashi', 'P')
+< 	('Edward Vogel', 'P')
+< 	('Janis C. Weeks', 'P')
+1179c1184
+< 	('Steven Brence', 'T')
+---
+> 	('Steven Brence', 'P')
+1181,1182c1186,1187
+< 	('Mark Johnson', 'T')
+< 	('Colin Koopman', 'T')
+---
+> 	('Mark Johnson', 'P')
+> 	('Colin Koopman', 'P')
+1184,1192c1189,1198
+< 	('Bonnie Mann', 'T')
+< 	('Scott L. Pratt', 'T')
+< 	('Beata Stawarska', 'T')
+< 	('Ted Toadvine', 'T')
+< 	('Alejandro Vallega', 'T')
+< 	('Daniela Vallega-Neu', 'T')
+< 	('Peter Warnek', 'T')
+< 	('Naomi Zack', 'T')
+< 	('Rocio Zambrana', 'T')
+---
+> 	('Bonnie Mann', 'P')
+> 	('Nicolae Morar', 'P')
+> 	('Scott L. Pratt', 'P')
+> 	('Beata Stawarska', 'P')
+> 	('Ted Toadvine', 'P')
+> 	('Alejandro Vallega', 'P')
+> 	('Daniela Vallega-Neu', 'P')
+> 	('Peter Warnek', 'P')
+> 	('Naomi Zack', 'P')
+> 	('Rocio Zambrana', 'P')
+1195,1199c1201,1207
+< 	('Dietrich Belitz', 'T')
+< 	('Gregory D. Bothun', 'T')
+< 	('James E. Brau', 'T')
+< 	('Spencer Chang', 'T')
+< 	('Eric Corwin', 'T')
+---
+> 	('Benjamín Alemán', 'P')
+> 	('Dietrich Belitz', 'P')
+> 	('Gregory D. Bothun', 'P')
+> 	('James E. Brau', 'P')
+> 	('Spencer Chang', 'P')
+> 	('Timothy Cohen', 'P')
+> 	('Eric Corwin', 'P')
+1201,1211c1209,1216
+< 	('Paul L. Csonka', 'T')
+< 	('Nilendra G. Deshpande', 'T')
+< 	('Miriam Deutsch', 'T')
+< 	('Russell J. Donnelly', 'T')
+< 	('Steven J. van Enk', 'T')
+< 	('R. Scott Fisher', 'T')
+< 	('Raymond E. Frey', 'T')
+< 	('Marvin D. Girardeau', 'P')
+< 	('Stephen Gregory', 'T')
+< 	('Roger Haydock', 'T')
+< 	('Stephen D. H. Hsu', 'T')
+---
+> 	('Paul L. Csonka', 'P')
+> 	('Nilendra G. Deshpande', 'P')
+> 	('Miriam Deutsch', 'P')
+> 	('Steven J. van Enk', 'P')
+> 	('R. Scott Fisher', 'P')
+> 	('Raymond E. Frey', 'P')
+> 	('Stephen Gregory', 'P')
+> 	('Roger Haydock', 'P')
+1213,1214c1218,1219
+< 	('James N. Imamura', 'T')
+< 	('Timothy Jenkins', 'T')
+---
+> 	('James N. Imamura', 'P')
+> 	('Timothy Jenkins', 'P')
+1216,1217c1221,1222
+< 	('Stephen D. Kevan', 'T')
+< 	('Graham Kribs', 'T')
+---
+> 	('Stephen D. Kevan', 'P')
+> 	('Graham Kribs', 'P')
+1219,1221c1224,1226
+< 	('Dean W. Livelybrooks', 'T')
+< 	('Stephanie Majewski', 'T')
+< 	('Brian W. Matthews', 'T')
+---
+> 	('Dean W. Livelybrooks', 'P')
+> 	('Stephanie Majewski', 'P')
+> 	('Brian W. Matthews', 'P')
+1223,1224c1228,1229
+< 	('Benjamin McMorran', 'T')
+< 	('Stanley J. Micklavzina', 'T')
+---
+> 	('Benjamin McMorran', 'P')
+> 	('Stanley J. Micklavzina', 'P')
+1226,1229c1231,1232
+< 	('Jens Nockel', 'T')
+< 	('Jack C. Overley', 'P')
+< 	('Kwangjai Park', 'P')
+< 	('Raghuveer Parthasarathy', 'T')
+---
+> 	('Jens Nöckel', 'P')
+> 	('Raghuveer Parthasarathy', 'P')
+1231,1232c1234,1235
+< 	('Michael G. Raymer', 'T')
+< 	('Stephen J. Remington', 'T')
+---
+> 	('Michael G. Raymer', 'P')
+> 	('Stephen J. Remington', 'P')
+1234c1237
+< 	('James M. Schombert', 'T')
+---
+> 	('James M. Schombert', 'P')
+1235a1239
+> 	('Brian J. Smith', 'P')
+1237,1242c1241,1246
+< 	('Davison E. Soper', 'T')
+< 	('Daniel Steck', 'T')
+< 	('David M. Strom', 'T')
+< 	('Richard P. Taylor', 'T')
+< 	('John J. Toner', 'T')
+< 	('Eric Torrence', 'T')
+---
+> 	('Davison E. Soper', 'P')
+> 	('Daniel Steck', 'P')
+> 	('David M. Strom', 'P')
+> 	('Richard P. Taylor', 'P')
+> 	('John J. Toner', 'P')
+> 	('Eric Torrence', 'P')
+1244c1248
+< 	('Hailin Wang', 'T')
+---
+> 	('Hailin Wang', 'P')
+1248,1250c1252,1254
+< 	('Deborah Baumgold', 'T')
+< 	('Gerald Berk', 'T')
+< 	('Anita Chari', 'T')
+---
+> 	('Deborah Baumgold', 'P')
+> 	('Gerald Berk', 'P')
+> 	('Anita Chari', 'P')
+1252,1254c1256,1258
+< 	('Jane K. Cramer', 'T')
+< 	('Dennis C. Galvan', 'T')
+< 	('Alison Gash', 'T')
+---
+> 	('Jane K. Cramer', 'P')
+> 	('Dennis C. Galvan', 'P')
+> 	('Alison Gash', 'P')
+1256,1257c1260,1261
+< 	('Burke Hendrix', 'T')
+< 	('Daniel HoSang', 'T')
+---
+> 	('Burke Hendrix', 'P')
+> 	('Daniel HoSang', 'P')
+1259c1263
+< 	('Karrie Koesel', 'T')
+---
+> 	('Karrie Koesel', 'P')
+1262c1266
+< 	('Joseph E. Lowndes', 'T')
+---
+> 	('Joseph E. Lowndes', 'P')
+1264,1265c1268,1269
+< 	('Ronald B. Mitchell', 'T')
+< 	('Mikhail Myagkov', 'T')
+---
+> 	('Ronald B. Mitchell', 'P')
+> 	('Mikhail Myagkov', 'P')
+1267,1270c1271,1273
+< 	('Craig Parsons', 'T')
+< 	('Lars Skalnes', 'T')
+< 	('Priscilla Southwell', 'T')
+< 	('David Steinberg', 'T')
+---
+> 	('Craig Parsons', 'P')
+> 	('Lars Skalnes', 'P')
+> 	('Priscilla Southwell', 'P')
+1272,1274c1275,1277
+< 	('Daniel Tichenor', 'T')
+< 	('Tuong Vu', 'T')
+< 	('Priscilla Yamin', 'T')
+---
+> 	('Daniel Tichenor', 'P')
+> 	('Tuong Vu', 'P')
+> 	('Priscilla Yamin', 'P')
+1277,1286c1280,1291
+< 	('Jennifer Ablow', 'T')
+< 	('Nicholas Allen', 'T')
+< 	('Holly Arrow', 'T')
+< 	('Edward Awh', 'T')
+< 	('Dare A. Baldwin', 'T')
+< 	('Elliot Berkman', 'T')
+< 	('Paul Dassonville', 'T')
+< 	('Kimberly Andrews Espy', 'T')
+< 	('Philip A. Fisher', 'T')
+< 	('Jennifer J. Freyd', 'T')
+---
+> 	('Jennifer Ablow', 'P')
+> 	('Nicholas Allen', 'P')
+> 	('Holly Arrow', 'P')
+> 	('Dare A. Baldwin', 'P')
+> 	('Elliot Berkman', 'P')
+> 	('Paul Dassonville', 'P')
+> 	('Crystal Dehle', 'P')
+> 	('Dagmar Zeithamova Demircan', 'P')
+> 	('Nicole M. Dudukovic', 'P')
+> 	('Caitlin M. Fausey', 'P')
+> 	('Philip A. Fisher', 'P')
+> 	('Jennifer J. Freyd', 'P')
+1290c1295
+< 	('Gordon C. Nagayama Hall', 'T')
+---
+> 	('Gordon C. Nagayama Hall', 'P')
+1292c1297
+< 	('Sara D. Hodges', 'T')
+---
+> 	('Sara D. Hodges', 'P')
+1294c1299,1300
+< 	('Clifford Kentros', 'T')
+---
+> 	('Christina M. Karns', 'P')
+> 	('Jagdeep Kaur-Bala', 'P')
+1297c1303
+< 	('Heidemarie K. Laurent', 'T')
+---
+> 	('Brice A. Kuhl', 'P')
+1300d1305
+< 	('Richard A. Littman', 'P')
+1302,1308c1307,1314
+< 	('Robert Mauro', 'T')
+< 	('Ulrich Mayr', 'T')
+< 	('Jeffrey Measelle', 'T')
+< 	('Pranjal Mehta', 'T')
+< 	('Louis J. Moses', 'T')
+< 	('Helen Neville', 'T')
+< 	('Jennifer Pfeifer', 'T')
+---
+> 	('Robert Mauro', 'P')
+> 	('Ulrich Mayr', 'P')
+> 	('Jeffrey Measelle', 'P')
+> 	('Pranjal Mehta', 'P')
+> 	('Louis J. Moses', 'P')
+> 	('Helen Neville', 'P')
+> 	('Jordan Pennefather', 'P')
+> 	('Jennifer Pfeifer', 'P')
+1312,1322c1318,1327
+< 	('Gerard Saucier', 'T')
+< 	('Margaret E. Sereno', 'T')
+< 	('Azim Shariff', 'T')
+< 	('Paul Slovic', 'T')
+< 	('Sanjay Srivastava', 'T')
+< 	('Norman D. Sundberg', 'P')
+< 	('Marjorie Taylor', 'T')
+< 	('Don M. Tucker', 'T')
+< 	('Nash Unsworth', 'T')
+< 	('Edward Vogel', 'T')
+< 	('Michael Wehr', 'T')
+---
+> 	('Gerard Saucier', 'P')
+> 	('Margaret E. Sereno', 'P')
+> 	('Azim Shariff', 'P')
+> 	('Paul Slovic', 'P')
+> 	('Matt Smear', 'P')
+> 	('Sanjay Srivastava', 'P')
+> 	('Marjorie Taylor', 'P')
+> 	('Don M. Tucker', 'P')
+> 	('Nash Unsworth', 'P')
+> 	('Michael Wehr', 'P')
+1323a1329
+> 	('Maureen Zalewski', 'P')
+1324a1331
+> 	('Faten Arfaoui', 'P')
+1327c1334
+< 	('Daniel K. Falk', 'P')
+---
+> 	('Hanan Elsherif', 'P')
+1329a1337
+> 	('Luke Habberstad', 'P')
+1332a1341
+> 	('David Reis', 'P')
+1334c1343
+< 	('J. T. Sanders', 'P')
+---
+> 	('Andrew Riley', 'P')
+1341,1345c1350,1354
+< 	('Alexandre Albert-Galtier', 'T')
+< 	('Barbara K. Altmann', 'T')
+< 	('Olga M. Avalos', 'T')
+< 	('C. Brian Barnett', 'T')
+< 	('Mayra Bottaro', 'T')
+---
+> 	('Alexandre Albert-Galtier', 'P')
+> 	('Rafael Arias', 'P')
+> 	('Olga M. Avalos', 'P')
+> 	('Mayra Bottaro', 'P')
+> 	('Cory Browning', 'P')
+1348,1349c1357,1359
+< 	('Nadia Ceccacci', 'T')
+< 	('Amy Costales', 'T')
+---
+> 	('Nadia Ceccacci', 'P')
+> 	('Jeffrey Contreras', 'P')
+> 	('Amy Costales', 'P')
+1351c1361
+< 	('Robert L. Davis', 'T')
+---
+> 	('Robert L. Davis', 'P')
+1353,1355c1363,1366
+< 	('Juanita Devereaux', 'T')
+< 	('André Djiffack', 'T')
+< 	('Paula Ellister', 'T')
+---
+> 	('Juanita Devereaux', 'P')
+> 	('Connie Dickey', 'P')
+> 	('André Djiffack', 'P')
+> 	('Paula Ellister', 'P')
+1357,1359c1368,1369
+< 	('Hilary Fisher', 'T')
+< 	('Pedro García-Caro', 'T')
+< 	('Leonardo García-Pabón', 'T')
+---
+> 	('Pedro García-Caro', 'P')
+> 	('Leonardo García-Pabón', 'P')
+1361,1370c1371,1381
+< 	('Amalia Gladhart', 'T')
+< 	('Evlyn Gould', 'T')
+< 	('Gina Herrmann', 'T')
+< 	('Nathalie Hester', 'T')
+< 	('Claudia Holguin', 'T')
+< 	('Kelley León Howarth', 'T')
+< 	('Harinder Kaur Khalsa', 'T')
+< 	('Mónica Lara', 'T')
+< 	('Massimo Lollini', 'T')
+< 	('Lillian Darwin Lopez', 'T')
+---
+> 	('Amalia Gladhart', 'P')
+> 	('Evlyn Gould', 'P')
+> 	('Paulo Henriquez', 'P')
+> 	('Gina Herrmann', 'P')
+> 	('Nathalie Hester', 'P')
+> 	('Claudia Holguin', 'P')
+> 	('Kelley León Howarth', 'P')
+> 	('Harinder Kaur Khalsa', 'P')
+> 	('Mónica Lara', 'P')
+> 	('Massimo Lollini', 'P')
+> 	('Lillian Darwin Lopez', 'P')
+1373,1382c1384,1395
+< 	('Karen McPherson', 'T')
+< 	('Shelley Merello', 'T')
+< 	('Leah Middlebrook', 'T')
+< 	('Bryan J. Moore', 'T')
+< 	('Fabienne Moore', 'T')
+< 	('Rosario Murcia', 'T')
+< 	('Amanda W. Powell', 'T')
+< 	('F. Regina Psaki', 'T')
+< 	('Heather Quarles', 'T')
+< 	('Cecilia Enjuto Rangel', 'T')
+---
+> 	('Karen McPherson', 'P')
+> 	('Leah Middlebrook', 'P')
+> 	('Lanie Millar', 'P')
+> 	('Patrick Moneyang', 'P')
+> 	('Bryan J. Moore', 'P')
+> 	('Fabienne Moore', 'P')
+> 	('Rosario Murcia', 'P')
+> 	('Amanda W. Powell', 'P')
+> 	('F. Regina Psaki', 'P')
+> 	('Heather Quarles', 'P')
+> 	('Cecilia Enjuto Rangel', 'P')
+> 	('Carrie Reilly', 'P')
+1384,1386c1397,1399
+< 	('Sergio Rigoletto', 'T')
+< 	('Andrew Rothgery', 'T')
+< 	('Simone Da Silva', 'T')
+---
+> 	('Sergio Rigoletto', 'P')
+> 	('Andrew Rothgery', 'P')
+> 	('Simone Da Silva', 'P')
+1389,1394c1402,1407
+< 	('David Wacks', 'T')
+< 	('Nathan Whalen', 'T')
+< 	('Melanie Williams', 'T')
+< 	('Gloria Zabala', 'T')
+< 	('Alex Zunterstein', 'T')
+< 	('Laurie deGonzalez', 'T')
+---
+> 	('David Wacks', 'P')
+> 	('Nathan Whalen', 'P')
+> 	('Melanie Williams', 'P')
+> 	('Gloria Zabala', 'P')
+> 	('Alex Zunterstein', 'P')
+> 	('Laurie deGonzalez', 'P')
+1396a1410
+> 	('Roy Chan', 'P')
+1399c1413
+< 	('Katya E. Hokanson', 'T')
+---
+> 	('Katya E. Hokanson', 'P')
+1400a1415
+> 	('Alexander Kashirin', 'P')
+1402,1403c1417
+< 	('Karrie Koesel', 'P')
+< 	('Yelaina Kripkov', 'T')
+---
+> 	('Yelaina Kripkov', 'P')
+1405c1419
+< 	('Richard Morris', 'P')
+---
+> 	('Anna Mikhaylova', 'P')
+1408,1410c1422,1423
+< 	('Julia Nemirovskaya', 'T')
+< 	('Jenifer Presto', 'T')
+< 	('Nathan Rosen', 'P')
+---
+> 	('Julia Nemirovskaya', 'P')
+> 	('Jenifer Presto', 'P')
+1412a1426
+> 	('Sherwin Simmons', 'P')
+1414a1429
+> 	('Andrew Verner', 'P')
+1418d1432
+< 	('Roger Adkins', 'P')
+1433,1434c1447,1450
+< 	('Michael B. Aguilera', 'T')
+< 	('Scott Coltrane', 'T')
+---
+> 	('Michael B. Aguilera', 'P')
+> 	('Oluwakemi Balogun', 'P')
+> 	('Vallon L. Burris', 'P')
+> 	('Scott Coltrane', 'P')
+1436,1438c1452,1454
+< 	('Michael C. Dreiling', 'T')
+< 	('James R. Elliott', 'T')
+< 	('John B. Foster', 'T')
+---
+> 	('Michael C. Dreiling', 'P')
+> 	('Clare R. Evans', 'P')
+> 	('John B. Foster', 'P')
+1440,1443c1456,1458
+< 	('Aaron O. Gullickson', 'T')
+< 	('Patricia A. Gwartney', 'T')
+< 	('Jill A. Harrison', 'T')
+< 	('Jocelyn Hollander', 'T')
+---
+> 	('Aaron O. Gullickson', 'P')
+> 	('Jill A. Harrison', 'P')
+> 	('Jocelyn Hollander', 'P')
+1445d1459
+< 	('Benton Johnson', 'P')
+1447,1448c1461,1463
+< 	('Ryan Light', 'T')
+< 	('Gregory McLauchlan', 'T')
+---
+> 	('Ryan Light', 'P')
+> 	('Raoul S. Liévanos', 'P')
+> 	('Gregory McLauchlan', 'P')
+1450,1451c1465,1466
+< 	('Kari Norgaard', 'T')
+< 	('Matthew Norton', 'T')
+---
+> 	('Kari Norgaard', 'P')
+> 	('Matthew Norton', 'P')
+1453,1460c1468,1475
+< 	('Eileen M. Otis', 'T')
+< 	('Cheri "C.J." Pascoe', 'T')
+< 	('Elaine Replogle', 'T')
+< 	('Ellen K. Scott', 'T')
+< 	('Jiannbin Lee Shiao', 'T')
+< 	('Caleb Southworth', 'T')
+< 	('Jessica M. Vasquez', 'T')
+< 	('Richard York', 'T')
+---
+> 	('Eileen M. Otis', 'P')
+> 	('C. J. Pascoe', 'P')
+> 	('Elaine Replogle', 'P')
+> 	('Ellen K. Scott', 'P')
+> 	('Jiannbin Lee Shiao', 'P')
+> 	('Caleb Southworth', 'P')
+> 	('Jessica M. Vasquez-Tokos', 'P')
+> 	('Richard York', 'P')
+1473,1474c1488,1489
+< 	('Alexandra Bonds', 'T')
+< 	('Bradley Branam', 'T')
+---
+> 	('Alexandra Bonds', 'P')
+> 	('Bradley Branam', 'P')
+1476,1479c1491,1494
+< 	('La Donna Forsgren', 'T')
+< 	('Joseph Gilg', 'T')
+< 	('Jerry Hooker', 'T')
+< 	('Theresa May', 'T')
+---
+> 	('La Donna Forsgren', 'P')
+> 	('Joseph Gilg', 'P')
+> 	('Jerry Hooker', 'P')
+> 	('Theresa May', 'P')
+1481,1483c1496,1498
+< 	('Michael Malek Najjar', 'T')
+< 	('Janet Rose', 'T')
+< 	('John Schmor', 'T')
+---
+> 	('Michael Malek Najjar', 'P')
+> 	('Janet Rose', 'P')
+> 	('John Schmor', 'P')
+1488,1491d1502
+< 	('Barbara Bader Aldave', 'P')
+< 	('Laura J. Alpert', 'P')
+< 	('Barbara K. Altmann', 'P')
+< 	('Susan C. Anderson', 'P')
+1493,1494c1504
+< 	('Oluwakemi Balogun', 'T')
+< 	('Judith R. Baskin', 'P')
+---
+> 	('Oluwakemi Balogun', 'P')
+1500,1501c1510
+< 	('Elizabeth A. Bohls', 'P')
+< 	('Yvonne A. Braun', 'T')
+---
+> 	('Yvonne A. Braun', 'P')
+1505,1506d1513
+< 	('Frances B. Cogan', 'P')
+< 	('Jane K. Cramer', 'P')
+1510d1516
+< 	('Linda M. Forrest', 'P')
+1513d1518
+< 	('Lynn H. Fujiwara', 'T')
+1518d1522
+< 	('Marion Sherman Goldman', 'P')
+1523d1526
+< 	('Susan W. Hardwick', 'P')
+1526d1528
+< 	('Daniel HoSang', 'P')
+1527a1530
+> 	('Mary Jaeger', 'P')
+1529,1532d1531
+< 	('Kathleen Rowe Karlyn', 'P')
+< 	('Lauren J. Kessler', 'P')
+< 	('Linda Kintz', 'P')
+< 	('Brian Klopotek', 'P')
+1535,1536d1533
+< 	('David Leiwei Li', 'P')
+< 	('Joseph E. Lowndes', 'P')
+1540d1536
+< 	('Ernesto J. Martínez', 'T')
+1542d1537
+< 	('Randall E. McGowen', 'P')
+1550,1552d1544
+< 	('Lise Nelson', 'P')
+< 	('Kari Norgaard', 'P')
+< 	('Dorothee Ostmeier', 'P')
+1559,1562c1551,1552
+< 	('Forest Pyle', 'P')
+< 	('Judith Raiskin', 'T')
+< 	('Elizabeth Reis', 'T')
+< 	('Mary K. Rothbart', 'P')
+---
+> 	('Judith Raiskin', 'P')
+> 	('Elizabeth Reis', 'P')
+1564,1566d1553
+< 	('Tze-Lan Sang', 'P')
+< 	('Ellen K. Scott', 'T')
+< 	('Stephen J. Shoemaker', 'P')
+1569c1556
+< 	('Carol Stabile', 'T')
+---
+> 	('Carol Stabile', 'P')
+1570a1558
+> 	('Leslie H. Steeves', 'P')
+1572a1561
+> 	('Stephanie "Lani" Teves', 'P')
+1574,1576d1562
+< 	('Mia Tuan', 'P')
+< 	('Mark T. Unno', 'P')
+< 	('Dominick R. Vetri', 'P')
+1586d1571
+< 	('Virpi Zuck', 'P')

@@ -1,3 +1,10 @@
+"""
+Filename: classLaunchGUI.py
+Author: Freddy Lopez
+Date Created: 01/14/2024
+Date Last Modified: 02/04/2024
+Description: classLaunchGUI.py contains the functionality and structure of the Graphic User Interface regarding the software called EasyA. Upon execution the GUI displays the main landing page which consits of the dropdown options which the user can select in order to submit a query regarding A's or D/F's for a specific class (eg. CIS 422), class Level (eg. CIS 400 (show all CIS 400 level classes)), or grades across an entire department (eg. All CIS classes offered at UO that were not redacted from the source
+"""
 import tkinter as tk
 import sqlite3
 from tkinter import *
@@ -9,6 +16,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 import matplotlib.pyplot as plt 
 import graphing.graph_gen as graph
+import re
 
 
 
@@ -121,10 +129,15 @@ def coursePopulate(Subject, CourseLvl):
 
     data2 = cursor2.fetchall()
     codeTemplate = str(Subject)+str(CourseLvl[0])
-    print(codeTemplate)
+    #print(codeTemplate)
     for sub in data2:
         code = sub[0]
-        if codeTemplate in code:
+        res = re.findall('(\d+|[A-Za-z]+)', code)
+        #print(res)
+        #print(codeTemplate) 
+        tmp = str(res[0])+str(res[1][0])
+        #print(f"code: {code}")
+        if codeTemplate == tmp:
             if code not in courselvlList:
                 #print(f"sub: {code}")
                 courselvlList.append(code)
@@ -286,6 +299,9 @@ def submitQuery():
     has all the nessessary keys needed to provide the graphing module all the information it needs in order to create an accurate graph
     '''
 
+    global xaxis
+    global color_Mode
+
     global hasGrade
     if (hasGrade == False) and (len(selectedDic) == 0):
         win = Win()
@@ -295,8 +311,6 @@ def submitQuery():
         win = Win()
         win.popup("Must Select either A or D/F")
     else:
-        global xaxis
-        global color_Mode
         print(f"==========global hasGrade: {hasGrade}")
         selectedList.append(gradeSel)
         if "instructor_type" not in selectedDic:

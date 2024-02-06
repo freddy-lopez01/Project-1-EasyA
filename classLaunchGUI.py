@@ -121,7 +121,16 @@ courselvlList = []
 # Function to populate courses dropdown 
 
 path = "../DataBases/GradeDatabase.sqlite"
-def coursePopulate(Subject, CourseLvl): 
+def coursePopulate(Subject, CourseLvl):
+    '''
+    coursePopulate(Subject, CourseLvl) takes in the subject that the user selected and the courseLvl that was 
+    selected and then connects to the /Databases/GradeDatabase.sqlite and fetches the column 'course_data' matching
+    the codeTemplate variable obtained from combining the Subject code (eg. CIS) and the first digit of the course
+    level (eg. 400) resulting in codeTemplate (eg. CIS4) that will then be used to compare all the classes found
+    within the 'course_data'. The process is then repeated for each class in the database and only add classes that match
+    the codeTemplate will be added to courselvlList which is used by the courses Combobox. courselvlList is cleared and
+    every time a user selects a new subject or course level. 
+    '''
     global courselvlList
     courselvlList.clear()
     conn2 = sqlite3.connect('./Databases/GradeDatabase.sqlite')

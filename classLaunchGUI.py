@@ -3,7 +3,10 @@ Filename: classLaunchGUI.py
 Author: Freddy Lopez
 Date Created: 01/14/2024
 Date Last Modified: 02/04/2024
-Description: classLaunchGUI.py contains the functionality and structure of the Graphic User Interface regarding the software called EasyA. Upon execution the GUI displays the main landing page which consits of the dropdown options which the user can select in order to submit a query regarding A's or D/F's for a specific class (eg. CIS 422), class Level (eg. CIS 400 (show all CIS 400 level classes)), or grades across an entire department (eg. All CIS classes offered at UO that were not redacted from the source
+Description: classLaunchGUI.py contains the functionality and structure of the Graphic User Interface regarding the software called EasyA. 
+Upon execution the GUI displays the main landing page which consits of the dropdown options which the user can select in order to submit a query 
+regarding A's or D/F's for a specific class (eg. CIS 422), class Level (eg. CIS 400 (show all CIS 400 level classes)), or grades across an entire 
+department (eg. All CIS classes offered at UO that were not redacted from the source)
 """
 import tkinter as tk
 import sqlite3
